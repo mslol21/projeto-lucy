@@ -6,6 +6,7 @@ const sections = [
   { id: "saude-masculina", label: "17 Nov: Próstata" },
   { id: "fascia-cuidado", label: "Fáscia e cuidado" },
   { id: "historia", label: "Trajetória de Lucy" },
+  { id: "checklist", label: "Checklist corporal" },
 ] as const;
 export function ReadingIndex() {
   const [active,setActive] = useState<string>("conteudo-principal");
