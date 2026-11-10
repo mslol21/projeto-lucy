@@ -1,5 +1,10 @@
 import React from "react";
 import { Header } from "@/components/layout/Header";
+import { ShareActions } from "@/components/engagement/ShareActions";
+import { ReadingIndex } from "@/components/engagement/ReadingIndex";
+import { FasciaConnectionSection } from "@/components/engagement/FasciaConnectionSection";
+import { BodyAwarenessChecklist } from "@/components/engagement/BodyAwarenessChecklist";
+import { GuideLeadCard } from "@/components/engagement/GuideLeadCard";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { LucyStorySection } from "@/components/sections/LucyStorySection";
@@ -15,13 +20,17 @@ import { ReferencesSection } from "@/components/sections/ReferencesSection";
 
 export default function HomePage() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col pb-20 lg:pb-0">
       <Header />
+      <ReadingIndex />
       <main className="flex-1">
         <HeroSection />
         <DatesPurposeSection />
         <DiabetesSection />
         <MenHealthSection />
+        <BodyAwarenessChecklist />
+        <FasciaConnectionSection />
+        <GuideLeadCard />
         <LucyStorySection />
         <NeuropathySection />
         <MethodBridgeSection />
@@ -31,6 +40,7 @@ export default function HomePage() {
         <ReferencesSection />
       </main>
       <Footer />
+      <ShareActions />
     </div>
   );
 }
