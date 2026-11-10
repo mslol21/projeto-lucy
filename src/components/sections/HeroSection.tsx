@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { HeroArt } from "@/components/sections/HeroArt";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 
@@ -14,14 +14,7 @@ export function HeroSection() {
       <div className="mx-auto max-w-[1500px]">
         <h1 id="hero-title" className="sr-only">Novembro Azul 2026: 14 de novembro, Dia Mundial do Diabetes, e 17 de novembro, Dia Nacional de Combate ao Câncer de Próstata</h1>
         <div className="relative aspect-[1672/941] w-full overflow-hidden bg-[#e7f3fc]">
-          <Image
-            src="/images/novembro-azul-hero.webp"
-            alt="Escola de Fasciaterapia e Movimento, Projeto Lucy: laço azul de conscientização, 14 de novembro Dia Mundial do Diabetes, 17 de novembro Dia Nacional de Combate ao Câncer de Próstata."
-            fill
-            priority
-            sizes="100vw"
-            className="object-contain"
-          />
+          <HeroArt />
         </div>
       </div>
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-5 px-5 py-6 sm:px-8 sm:py-8">
