@@ -31,7 +31,7 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <div className="hidden 2xl:block"><ShareActions variant="desktop" /></div>
+        <div className="hidden xl:block"><ShareActions variant="desktop" /></div>
         <button type="button" onClick={() => setMobileMenuOpen((v) => !v)} aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"} aria-controls="mobile-editorial-menu" aria-expanded={mobileMenuOpen} className="inline-flex size-11 items-center justify-center border border-[#C7D8E1] xl:hidden">
           {mobileMenuOpen ? <X size={23} /> : <Menu size={23} />}
         </button>
