@@ -8,6 +8,7 @@ import { GuideLeadCard } from "@/components/engagement/GuideLeadCard";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { WelcomingGuideSection } from "@/components/sections/WelcomingGuideSection";
+import { CampaignIdentitySection } from "@/components/sections/CampaignIdentitySection";
 import { LucyStorySection } from "@/components/sections/LucyStorySection";
 import { MethodBridgeSection } from "@/components/sections/MethodBridgeSection";
 import { DatesPurposeSection } from "@/components/sections/DatesPurposeSection";
@@ -27,6 +28,7 @@ export default function HomePage() {
       <main className="reader-friendly flex-1">
         <HeroSection />
         <WelcomingGuideSection />
+        <CampaignIdentitySection />
         <DatesPurposeSection />
         <DiabetesSection />
         <MenHealthSection />
