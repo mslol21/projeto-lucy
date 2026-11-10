@@ -13,7 +13,7 @@ export function HeroSection() {
       </div>
       <div className="mx-auto max-w-7xl px-5 pb-16 pt-10 sm:px-8 sm:pb-20 sm:pt-14">
         <div className="mb-7 flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[.15em] text-[#456C86]">
-          <span className="bg-[#DDEAF1] px-3 py-1.5">Edição especial</span>
+          <span className="inline-flex items-center gap-2 bg-[#DDEAF1] px-3 py-1.5"><svg aria-hidden="true" viewBox="0 0 36 44" className="h-5 w-4 fill-none text-[#276C9C]"><path d="M18 3C6 3 5 12 7 19c2 7 11 16 18 22l6-6C22 28 12 19 13 13c1-4 6-5 9-2 3 3 3 8 0 12l-6 8" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" /></svg>Edição especial</span>
           <span>Saúde e bem-estar</span><span aria-hidden="true">•</span><span>Novembro de 2026</span>
         </div>
         <div className="grid gap-9 border-b border-[#DCE4E7] pb-11 lg:grid-cols-[1.12fr_0.88fr] lg:items-center lg:gap-14">
