@@ -11,6 +11,7 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { WelcomingGuideSection } from "@/components/sections/WelcomingGuideSection";
 import { CampaignIdentitySection } from "@/components/sections/CampaignIdentitySection";
 import { LucyStorySection } from "@/components/sections/LucyStorySection";
+import { VideoTestimonialsSection } from "@/components/sections/VideoTestimonialsSection";
 import { MethodBridgeSection } from "@/components/sections/MethodBridgeSection";
 import { DatesPurposeSection } from "@/components/sections/DatesPurposeSection";
 import { DiabetesSection } from "@/components/sections/DiabetesSection";
@@ -36,6 +37,7 @@ export default function HomePage() {
         <FasciaConnectionSection />
         <GuideLeadCard />
         <LucyStorySection />
+        <VideoTestimonialsSection />
         <NeuropathySection />
         <MethodBridgeSection />
         <BodyAwarenessSection />
