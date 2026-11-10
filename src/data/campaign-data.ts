@@ -36,14 +36,14 @@ export const CAMPAIGN_INFO = {
       day: "14 de Novembro",
       title: "Dia Mundial do Diabetes",
       badge: "Conscientização & Cuidado Contínuo",
-      summary: "Uma data para promover a educação em saúde, desmistificar o diagnóstico e incentivar o acompanhamento precoce e humanizado.",
+      summary: "Uma data para entender melhor o diabetes, reconhecer sinais de atenção e valorizar o acompanhamento em saúde.",
       href: "#diabetes",
     },
     menHealth: {
       day: "17 de Novembro",
       title: "Dia Nacional de Combate ao Câncer de Próstata",
       badge: "Saúde Integral Masculina",
-      summary: "Espaço para quebrar tabus, incentivar o diálogo com profissionais de saúde e praticar a escuta atenta dos sinais do próprio corpo.",
+      summary: "Uma oportunidade para falar com clareza sobre sintomas, fatores de risco e a importância da avaliação médica individualizada.",
       href: "#saude-masculina",
     },
   },
@@ -125,7 +125,7 @@ export const DIABETES_DATA = {
     },
   ],
   careImportance:
-    "Receber o diagnóstico de diabetes não é o fim da autonomia — é o começo de uma aliança consciente com o próprio corpo. Com informação qualificada, acesso ao tratamento e apoio compassivo, é plenamente viável viver com qualidade, vigor e bem-estar pleno.",
+    "O diagnóstico de diabetes pode trazer mudanças importantes. Informação confiável, acompanhamento profissional, acesso ao tratamento e apoio ajudam a construir uma rotina de cuidado possível para cada pessoa.",
 };
 
 export const PROSTATE_DATA = {
@@ -176,11 +176,11 @@ export const BODY_AWARENESS_DATA = {
   pillars: [
     {
       title: "Percepção Corporal & Fáscias",
-      desc: "As fáscias formam uma vasta rede viscoelástica de tecido conjuntivo que envolve músculos, órgãos e nervos. Quando aprendemos a escutar as microtensões e o movimento interno desse tecido, percebemos sinais sutis de estresse antes que se tornem dores crônicas.",
+      desc: "As fáscias são tecidos conjuntivos presentes em diversas estruturas do corpo. A escola trabalha a percepção corporal e o movimento como parte de sua proposta educativa e de cuidado individualizado.",
     },
     {
       title: "Movimento Consciente",
-      desc: "O movimento não precisa ser exaustivo para ser transformador. Práticas suaves, com atenção plena ao ritmo respiratório e aos apoios dos pés, nutrem a circulação, acalmam o sistema nervoso e devolvem vitalidade aos tecidos.",
+      desc: "Movimentos suaves, adaptados às possibilidades de cada pessoa, podem integrar uma rotina de atividade física e atenção ao próprio corpo, com orientação profissional quando necessária.",
     },
     {
       title: "Acompanhamento Individualizado",
@@ -188,7 +188,7 @@ export const BODY_AWARENESS_DATA = {
     },
     {
       title: "Respeito Aos Próprios Limites",
-      desc: "Reconhecer quando o corpo pede descanso, hidratação ou investigação médica é a mais refinada expressão de inteligência biológica.",
+      desc: "Reconhecer sintomas, respeitar limites e procurar orientação profissional quando necessário também fazem parte do cuidado.",
     },
   ],
   ethicalDisclaimer:
@@ -229,7 +229,7 @@ export const MYTHS_AND_TRUTHS: MythTruthItem[] = [
     statement: "Todo homem a partir de 40 anos deve fazer toque retal e PSA todo ano sem falta.",
     verdict: "Mito",
     explanation:
-      "De acordo com as diretrizes do Ministério da Saúde e do INCA, não se recomenda o rastreamento em massa de homens assintomáticos sem ponderação de riscos e benefícios. Homens com sintomas urinários devem sempre ser examinados. Para homens sem sintomas a partir dos 50 anos (ou 45 com histórico familiar), a indicação deve ser resultado de uma decisão compartilhada com o médico.",
+      "De acordo com as diretrizes do Ministério da Saúde e do INCA, não se recomenda o rastreamento em massa de homens assintomáticos sem ponderação de riscos e benefícios. Homens com sintomas urinários devem sempre ser examinados. Para pessoas sem sintomas, decisões sobre exames devem considerar os benefícios e possíveis danos, em conversa individual com um médico.",
     officialRef: "INCA — Posicionamento sobre Detecção Precoce do Câncer de Próstata",
   },
   {
@@ -256,7 +256,7 @@ export const MYTHS_AND_TRUTHS: MythTruthItem[] = [
     statement: "Terapias corporais como a fasciaterapia curam o diabetes ou previnem o câncer.",
     verdict: "Mito",
     explanation:
-      "A Fasciaterapia e o trabalho somático atuam na reorganização da tonicidade muscular, alívio de dores, melhora da consciência corporal e bem-estar global. Não possuem ação de cura de neoplasias ou de reversão primária de causas hormonais.",
+      "A fasciaterapia é apresentada pela escola como prática de percepção corporal e movimento. Não há comprovação de que previna ou cure diabetes e câncer, e ela não substitui tratamentos indicados para essas condições.",
     officialRef: "Escola de Fasciaterapia e Movimento — Princípios Éticos",
   },
 ];
