@@ -19,7 +19,7 @@ export function ReadingIndex() {
     return ()=>observer.disconnect();
   }, []);
   return (
-    <nav aria-label="Índice da leitura" className="fixed right-3 top-1/2 z-30 hidden w-36 -translate-y-1/2 border border-[#D2E1E8] bg-white/95 p-3 shadow-sm backdrop-blur-md xl:block 2xl:right-8">
+    <nav aria-label="Índice da leitura" className="fixed right-3 top-1/2 z-30 hidden w-36 -translate-y-1/2 border border-[#D2E1E8] bg-white/95 p-3 shadow-sm backdrop-blur-md 2xl:block 2xl:right-3">
       <p className="mb-3 text-[10px] font-bold uppercase tracking-widest text-[#526D7E]">Nesta edição</p>
       <ol className="space-y-1">
         {sections.map((s,i)=><li key={s.id}><a href={`/#${s.id}`} aria-current={active===s.id?"location":undefined} className={`flex gap-2 border-l-2 px-2 py-2 text-[11px] leading-4 focus-visible:outline-2 focus-visible:outline-offset-2 ${active===s.id?"border-[#2A72A3] bg-[#EBF3F8] font-bold text-[#17385B]":"border-transparent text-[#587081] hover:border-[#90B5CA]"}`}><span>{String(i+1).padStart(2,"0")}.</span>{s.label}</a></li>)}
