@@ -10,7 +10,7 @@ interface AccordionProps {
 
 export function Accordion({ items }: AccordionProps) {
   const [openItems, setOpenItems] = useState<Record<string, boolean>>({
-    [items[0]?.id || ""]: true, // primeiro item aberto por padrão para convite visual
+    [items[0]?.id || ""]: true,
   });
 
   const toggleItem = (id: string) => {
@@ -55,10 +55,10 @@ export function Accordion({ items }: AccordionProps) {
         return (
           <div
             key={item.id}
-            className={`border rounded-2xl transition-all duration-300 overflow-hidden ${
+            className={`border rounded-2xl rounded-tr-[36px] transition-all duration-300 overflow-hidden ${
               isOpen
-                ? "bg-white border-[#84B7CE]/60 shadow-sm"
-                : "bg-white/60 border-stone-200 hover:border-stone-300 hover:bg-white"
+                ? "bg-white border-[#527fae]/60 shadow-[0_4px_20px_rgba(23,56,91,0.06)]"
+                : "bg-white/70 border-stone-200 hover:border-stone-300 hover:bg-white"
             }`}
           >
             <h3>

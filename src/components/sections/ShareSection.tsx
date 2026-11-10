@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Share2, Copy, Check, MessageCircle, Heart } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
+import { BrandEmblem } from "@/components/ui/BrandEmblem";
 import { CAMPAIGN_INFO } from "@/data/campaign-data";
 
 export function ShareSection() {
@@ -17,7 +18,7 @@ export function ShareSection() {
       setCopied(true);
       setTimeout(() => setCopied(false), 3000);
     } catch {
-      // Fallback simples
+      // Fallback
       const textArea = document.createElement("textarea");
       textArea.value = `${shareText}\n${campaignUrl}`;
       document.body.appendChild(textArea);
@@ -43,7 +44,7 @@ export function ShareSection() {
           url: campaignUrl,
         });
       } catch {
-        // Usuário cancelou ou navegador não suportou no momento
+        // Cancelado pelo usuário
       }
     } else {
       handleCopy();
@@ -64,27 +65,35 @@ export function ShareSection() {
           subtitle="A conscientização se multiplica quando partilhamos carinho, conhecimento e acolhimento com quem amamos."
         />
 
-        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-stone-200/90 shadow-sm text-center relative overflow-hidden space-y-8">
-          <div className="inline-flex p-3 rounded-full bg-[#84B7CE]/15 text-[#17385B] mb-2">
-            <Heart className="w-8 h-8 text-[#84B7CE] fill-[#84B7CE]/20" aria-hidden="true" />
+        <div className="bg-white/90 backdrop-blur-md rounded-3xl rounded-tr-[64px] p-8 sm:p-12 border border-stone-200/90 shadow-[0_10px_35px_-5px_rgba(23,56,91,0.06)] text-center relative overflow-hidden space-y-8">
+          {/* Marca d'água sutil ao fundo */}
+          <div className="absolute -left-6 -bottom-6 opacity-5 pointer-events-none">
+            <BrandEmblem className="w-48 h-60" />
+          </div>
+
+          <div className="inline-flex p-3 rounded-full bg-[#527fae]/15 text-[#17385B] mb-2">
+            <Heart className="w-8 h-8 text-[#527fae] fill-[#527fae]/20" aria-hidden="true" />
           </div>
 
           <blockquote className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#17385B] font-medium leading-relaxed max-w-2xl mx-auto">
             &ldquo;{CAMPAIGN_INFO.shareableQuote}&rdquo;
           </blockquote>
 
-          <p className="text-xs sm:text-sm uppercase tracking-widest text-[#415A77] font-semibold">
-            {CAMPAIGN_INFO.institution.name} • Novembro Azul {CAMPAIGN_INFO.year}
-          </p>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F5F2EB] border border-stone-200 text-xs uppercase tracking-widest text-[#415A77] font-semibold">
+            <BrandEmblem className="w-3 h-4" />
+            <span>{CAMPAIGN_INFO.institution.name}</span>
+          </div>
 
-          <div className="pt-4 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+          <div className="pt-4 flex flex-wrap items-center justify-center gap-3 sm:gap-4 relative z-10">
             {/* Botão Copiar Mensagem */}
             <Button
               type="button"
               onClick={handleCopy}
               variant="outline"
               size="md"
-              className={copied ? "border-emerald-600 text-emerald-700 bg-emerald-50" : ""}
+              className={`rounded-2xl rounded-tr-[28px] ${
+                copied ? "border-emerald-600 text-emerald-700 bg-emerald-50" : ""
+              }`}
               aria-live="polite"
             >
               {copied ? (
@@ -106,7 +115,7 @@ export function ShareSection() {
               onClick={handleWhatsApp}
               variant="primary"
               size="md"
-              className="bg-[#128C7E] hover:bg-[#075E54] text-white"
+              className="bg-[#128C7E] hover:bg-[#075E54] text-white rounded-2xl rounded-tr-[28px]"
             >
               <MessageCircle className="w-4 h-4 text-white" aria-hidden="true" />
               <span>Enviar pelo WhatsApp</span>
@@ -118,9 +127,9 @@ export function ShareSection() {
               onClick={handleNativeShare}
               variant="secondary"
               size="md"
-              className="bg-[#84B7CE] text-[#17385B] hover:bg-[#72a6bd]"
+              className="bg-[#527fae] text-white hover:bg-[#436b94] rounded-2xl rounded-tr-[28px]"
             >
-              <Share2 className="w-4 h-4 text-[#17385B]" aria-hidden="true" />
+              <Share2 className="w-4 h-4 text-white" aria-hidden="true" />
               <span>Outros aplicativos</span>
             </Button>
           </div>

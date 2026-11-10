@@ -27,14 +27,14 @@ export function Footer() {
     <footer className="bg-[#17385B] text-[#F5F2EB] pt-16 pb-12 border-t border-[#84B7CE]/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-white/10 items-start">
-          {/* Identificação Institucional com Logo */}
+          {/* Identificação Institucional com Logo HD em Acrílico */}
           <div className="md:col-span-5 space-y-4">
-            <div className="inline-block bg-white p-2.5 rounded-2xl shadow-sm">
+            <div className="inline-block bg-white p-3 rounded-2xl rounded-tr-[36px] shadow-md border border-white/80">
               <Image
-                src="/images/logo-escola-fasciaterapia.png"
+                src="/images/logo-horizontal-hd.png"
                 alt="Logo da Escola de Fasciaterapia e Movimento"
-                width={150}
-                height={50}
+                width={200}
+                height={58}
                 className="h-10 w-auto object-contain"
               />
             </div>
@@ -91,7 +91,7 @@ export function Footer() {
           </div>
 
           {/* Aviso Legal Ético em Saúde */}
-          <div className="md:col-span-4 space-y-3 bg-white/5 p-6 rounded-2xl border border-white/10">
+          <div className="md:col-span-4 space-y-3 bg-white/5 p-6 rounded-2xl rounded-tr-[36px] border border-white/10">
             <div className="flex items-center gap-2 text-[#84B7CE]">
               <ShieldCheck className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
               <h4 className="text-xs font-semibold tracking-wider uppercase">

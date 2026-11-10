@@ -22,14 +22,14 @@ export function ReferencesSection() {
           {OFFICIAL_REFERENCES.map((ref) => (
             <article
               key={ref.title}
-              className="bg-white rounded-3xl p-7 sm:p-8 border border-stone-200/90 shadow-xs flex flex-col justify-between hover:border-[#84B7CE] transition-all duration-200"
+              className="bg-white/90 backdrop-blur-xs rounded-3xl rounded-tr-[48px] p-7 sm:p-8 border border-stone-200/90 shadow-[0_4px_20px_rgba(23,56,91,0.04)] flex flex-col justify-between hover:border-[#527fae] transition-all duration-200"
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-[#84B7CE]">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-[#527fae]">
                     {ref.institution}
                   </span>
-                  <div className="p-2 rounded-xl bg-[#F5F2EB] text-[#17385B]">
+                  <div className="p-2.5 rounded-2xl bg-[#F5F2EB] text-[#17385B]">
                     <BookOpen className="w-4 h-4" aria-hidden="true" />
                   </div>
                 </div>
@@ -48,7 +48,7 @@ export function ReferencesSection() {
                   href={ref.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-between w-full text-xs font-semibold text-[#17385B] hover:text-[#84B7CE] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#17385B] rounded py-1"
+                  className="inline-flex items-center justify-between w-full text-xs font-semibold text-[#17385B] hover:text-[#527fae] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#17385B] rounded-lg py-1.5"
                 >
                   <span>Acessar portal oficial</span>
                   <ExternalLink className="w-3.5 h-3.5 ml-1" aria-hidden="true" />
@@ -59,7 +59,7 @@ export function ReferencesSection() {
         </div>
 
         {/* Compromisso de integridade da informação */}
-        <div className="mt-12 p-6 rounded-2xl bg-white/70 border border-stone-200/70 text-center max-w-2xl mx-auto flex items-center justify-center gap-3">
+        <div className="mt-12 p-6 rounded-2xl rounded-tr-[36px] bg-white/80 border border-stone-200/80 text-center max-w-2xl mx-auto flex items-center justify-center gap-3 shadow-2xs">
           <ShieldCheck className="w-5 h-5 text-[#17385B] flex-shrink-0" aria-hidden="true" />
           <p className="text-xs text-[#415A77] leading-relaxed">
             Revisado e curado institucionalmente em conformidade com as diretrizes do Ministério da Saúde e do INCA para 2026.

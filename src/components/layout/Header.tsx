@@ -9,26 +9,26 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-[#F5F2EB]/95 backdrop-blur-md border-b border-stone-200/70 transition-colors">
+    <header className="sticky top-0 z-40 w-full bg-[#F5F2EB]/92 backdrop-blur-md border-b border-stone-200/70 shadow-[0_4px_20px_-4px_rgba(23,56,91,0.04)] transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logo Oficial da Escola */}
+          {/* Logo Oficial HD da Escola */}
           <a
             href="#"
-            className="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#17385B] rounded-lg p-1"
+            className="flex items-center gap-3.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#17385B] rounded-lg p-1.5"
             aria-label="Escola de Fasciaterapia e Movimento — Lucy Aihara"
           >
-            <div className="relative h-12 w-auto flex items-center">
+            <div className="relative h-12 flex items-center">
               <Image
-                src="/images/logo-escola-fasciaterapia.png"
-                alt="Logotipo da Escola de Fasciaterapia e Movimento"
-                width={160}
-                height={52}
+                src="/images/logo-horizontal-hd.png"
+                alt="Logotipo oficial da Escola de Fasciaterapia e Movimento"
+                width={220}
+                height={64}
                 priority
-                className="h-11 w-auto object-contain transition-transform group-hover:scale-102"
+                className="h-11 sm:h-12 w-auto object-contain transition-transform group-hover:scale-[1.02]"
               />
             </div>
-            <div className="hidden sm:flex flex-col border-l border-stone-300 pl-3">
+            <div className="hidden xl:flex flex-col border-l border-stone-300 pl-3">
               <span className="text-[11px] font-semibold text-[#17385B] uppercase tracking-wider">
                 Lucy Aihara
               </span>
@@ -45,14 +45,14 @@ export function Header() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="px-3 py-1.5 text-sm font-medium text-[#17385B]/80 hover:text-[#17385B] rounded-full hover:bg-stone-200/50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#17385B]"
+                  className="px-3.5 py-1.5 text-sm font-medium text-[#17385B]/85 hover:text-[#17385B] rounded-full hover:bg-white/80 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#17385B]"
                 >
                   {link.label}
                 </a>
               ))}
             </nav>
 
-            <span className="inline-flex items-center px-3 py-1 text-xs font-semibold rounded-full bg-[#84B7CE]/20 text-[#17385B] border border-[#84B7CE]/40">
+            <span className="inline-flex items-center px-3.5 py-1 text-xs font-semibold rounded-full bg-[#527fae]/15 text-[#17385B] border border-[#527fae]/30 shadow-2xs">
               {CAMPAIGN_INFO.year}
             </span>
           </div>
@@ -62,7 +62,7 @@ export function Header() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg text-[#17385B] hover:bg-stone-200/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#17385B]"
+              className="p-2 rounded-xl text-[#17385B] hover:bg-stone-200/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#17385B]"
               aria-expanded={mobileMenuOpen}
               aria-label={mobileMenuOpen ? "Fechar menu de navegação" : "Abrir menu de navegação"}
             >
@@ -86,7 +86,7 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-3 py-2.5 rounded-xl text-base font-medium text-[#17385B] hover:bg-stone-200/60 transition-colors"
+                className="px-3 py-2.5 rounded-xl text-base font-medium text-[#17385B] hover:bg-white transition-colors"
               >
                 {link.label}
               </a>
