@@ -82,3 +82,43 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #84B7CE;
 }
+
+/* Detalhes editoriais de Novembro Azul: nenhum efeito impede a leitura. */
+.november-reading-progress {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #367eaf;
+  transform: scaleX(0);
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+.november-date-accent {
+  transform: scaleX(0.12);
+  transition: transform 450ms ease;
+}
+
+.group:hover > .november-date-accent,
+.group:focus-within > .november-date-accent {
+  transform: scaleX(1);
+}
+
+@supports (animation-timeline: scroll()) {
+  .november-reading-progress {
+    animation: november-reading linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+
+@keyframes november-reading {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .november-reading-progress { animation: none !important; transform: scaleX(0); }
+  .november-date-accent { transition: none !important; }
+}
