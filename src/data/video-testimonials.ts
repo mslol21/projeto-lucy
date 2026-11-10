@@ -7,7 +7,7 @@
  * Nunca publicar identidade, condição clínica ou resultado de tratamento sem consentimento.
  */
 export type VideoTestimonial = {
-  id: "depoimento-01" | "depoimento-02" | "depoimento-03";
+  id: "depoimento-01" | "depoimento-02" | "depoimento-03" | "depoimento-04";
   title: string;
   videoSrc?: string;
   captionsSrc?: string;
@@ -24,4 +24,7 @@ export const VIDEO_TESTIMONIALS: readonly VideoTestimonial[] = [
   // Duas fotografias e dois vídeos foram recebidos na conversa.
   // NÃO inserir as mídias no repositório público antes de autorização expressa.
   { id: "depoimento-03", title: "Depoimento 03", authorized: false, materialUnderReview: true },
+  // Duas fotos e um vídeo de aproximadamente 2min39s enviados para o quarto depoimento.
+  // Não publicar a mídia potencialmente clínica sem autorização expressa.
+  { id: "depoimento-04", title: "Depoimento 04", authorized: false, materialUnderReview: true },
 ];
