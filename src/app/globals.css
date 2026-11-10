@@ -122,3 +122,40 @@ body {
   .november-reading-progress { animation: none !important; transform: scaleX(0); }
   .november-date-accent { transition: none !important; }
 }
+
+/* Acolhimento editorial: linhas confortáveis e leitura com menos carga visual. */
+.reader-friendly {
+  font-kerning: normal;
+  overflow-wrap: break-word;
+}
+.reader-friendly p {
+  text-wrap: pretty;
+}
+.reader-friendly :is(#diabetes, #saude-masculina, #historia, #fascia-cuidado, #metodo) p {
+  line-height: 1.8;
+}
+.reader-friendly :is(#diabetes, #saude-masculina) p.text-xs {
+  font-size: 0.875rem;
+  line-height: 1.75;
+}
+.reader-friendly :is(#diabetes, #saude-masculina) li.text-xs,
+.reader-friendly :is(#diabetes, #saude-masculina) li p.text-xs {
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+.reader-friendly :is(#diabetes, #saude-masculina) :is(p, li) {
+  hyphens: auto;
+}
+.reader-friendly section[id] {
+  scroll-margin-top: 6rem;
+}
+@media (min-width: 1024px) {
+  .reader-friendly :is(#diabetes, #saude-masculina) > div {
+    max-width: 72rem;
+  }
+}
+@media (max-width: 639px) {
+  .reader-friendly :is(#diabetes, #saude-masculina) .rounded-3xl {
+    border-radius: 1.15rem;
+  }
+}
