@@ -22,6 +22,7 @@ export function FasciaConnectionSection() {
           ); })}
         </div>
         <Link href="/conhecimento/metodo-danis-bois" className="mt-7 inline-flex min-h-11 items-center gap-2 border-b border-[#17385B] text-sm font-semibold">Saiba mais sobre o Método Danis Bois <ArrowUpRight size={16} aria-hidden="true"/></Link>
+        <div className="mt-6 rounded-xl border border-[#D5E2E8] bg-[#F0F7FA] p-5"><p className="text-sm font-semibold text-[#17385B]">A fáscia também está presente ao redor dos rins.</p><p className="mt-2 text-sm leading-7 text-[#435D6D]">Conheça a anatomia da fáscia renal e entenda por que cuidar da função dos rins em pessoas com diabetes é um tema diferente da terapia manual.</p><Link href="/conhecimento/fascia-renal" className="mt-3 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-[#235779] underline underline-offset-4">Ler artigo sobre fáscia renal <ArrowUpRight size={16} aria-hidden="true" /></Link></div>
         <p className="mt-4 text-xs leading-6 text-[#526B78]">A efetividade específica da fasciaterapia pelo Método Danis Bois para neuropatia diabética ou câncer de próstata não está estabelecida por evidência clínica robusta.</p>
       </div>
     </section>
