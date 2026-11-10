@@ -17,6 +17,16 @@ export function HeroSection() {
           <HeroArt />
         </div>
       </div>
+      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-3 px-5 pt-5 sm:hidden" aria-label="Datas em destaque">
+        <a href="/#diabetes" className="rounded-xl border border-[#C8DFEB] bg-white px-4 py-4 focus-visible:outline-2 focus-visible:outline-offset-2">
+          <span className="block font-serif text-2xl font-bold">14/11</span>
+          <span className="mt-1 block text-sm leading-5">Dia Mundial do Diabetes</span>
+        </a>
+        <a href="/#saude-masculina" className="rounded-xl border border-[#C8DFEB] bg-white px-4 py-4 focus-visible:outline-2 focus-visible:outline-offset-2">
+          <span className="block font-serif text-2xl font-bold">17/11</span>
+          <span className="mt-1 block text-sm leading-5">Combate ao Câncer de Próstata</span>
+        </a>
+      </div>
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-5 px-5 py-6 sm:px-8 sm:py-8">
         <p className="max-w-2xl text-sm leading-7 text-[#405A6D] sm:text-base">
           Duas datas, um convite para cuidar da vida. Conheça o especial de novembro e a trajetória de Lucy Aihara.
