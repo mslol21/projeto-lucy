@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --color-deep-blue: #17385B;
+  --color-deep-blue-hover: #10263f;
+  --color-soft-blue: #84B7CE;
+  --color-soft-blue-light: #d6e8f1;
+  --color-ivory: #F5F2EB;
+  --color-ivory-light: #fbf9f5;
+  --color-sage: #C7D9D2;
+  --color-sage-light: #e6eee9;
+  --color-sage-dark: #587970;
+  
+  --font-serif: var(--font-lora), Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+:root {
+  --bg-primary: #F5F2EB;
+  --text-primary: #17385B;
+  --text-muted: #415A77;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: #F5F2EB;
+  color: #17385B;
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+/* Foco acessível */
+:focus-visible {
+  outline: 3px solid #17385B;
+  outline-offset: 3px;
+}
+
+/* Utilitário para títulos Lora */
+.font-display {
+  font-family: var(--font-serif);
+}
+
+/* Seleção de texto suave */
+::selection {
+  background-color: #84B7CE;
+  color: #17385B;
+}
+
+/* Scrollbar sutil */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #F5F2EB;
+}
+::-webkit-scrollbar-thumb {
+  background: #C7D9D2;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #84B7CE;
+}
