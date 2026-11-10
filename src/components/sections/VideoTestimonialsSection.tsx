@@ -23,7 +23,7 @@ export function VideoTestimonialsSection() {
           </p>
         </div>
 
-        <div className="mt-9 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-9 grid gap-6 md:grid-cols-2">
           {VIDEO_TESTIMONIALS.map((item) => {
             const published = Boolean(item.authorized && item.videoSrc && item.captionsSrc && item.transcript);
             return (
