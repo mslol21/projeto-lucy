@@ -17,18 +17,20 @@ export function LucyStorySection() {
   const reducedMotion = useReducedMotion();
 
   return (
-    <section id="historia" aria-labelledby="historia-titulo" className="relative overflow-hidden bg-[#F5F0E8] py-24 text-[#17385B] sm:py-32">
+    <section id="historia" aria-labelledby="historia-titulo" className="relative scroll-mt-20 overflow-hidden bg-[#F5F0E8] py-16 text-[#17385B] sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
-          <div className="lg:sticky lg:top-28 lg:self-start">
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-12 xl:gap-16">
+          <div className="min-w-0 lg:sticky lg:top-24 lg:self-start">
             <p className="text-xs font-bold uppercase tracking-[.22em] text-[#426b8a]">A história por trás da escola</p>
-            <h2 id="historia-titulo" className="mt-5 max-w-[12ch] font-serif text-[clamp(2.5rem,5vw,5rem)] leading-[1.08] tracking-tight">
-              A vida acontece muito além de um diagnóstico.
+            <h2 id="historia-titulo" className="mt-4 max-w-[22ch] font-serif text-[clamp(2.1rem,3.2vw,3.65rem)] leading-[1.13] tracking-[-0.025em] [text-wrap:balance] lg:max-w-none">
+              <span className="lg:block">A vida acontece</span>{" "}
+              <span className="lg:block">muito além de</span>{" "}
+              <span className="lg:block">um diagnóstico.</span>
             </h2>
-            <p className="mt-6 max-w-md text-base leading-relaxed text-[#415A77]">
+            <p className="mt-5 max-w-[55ch] text-base leading-8 text-[#415A77]">
               Não é uma história sobre vencer uma doença. É sobre continuar aprendendo, fazendo escolhas e encontrando novos significados para o movimento.
             </p>
-            <div className="relative mt-8 aspect-[5/3] max-w-lg overflow-hidden rounded-[2rem] bg-[#d2dfdf]">
+            <div className="relative mt-7 aspect-[5/3] max-w-lg overflow-hidden rounded-2xl bg-[#d2dfdf]">
               <Image src="/images/placa-acrilica-consultorio.jpg" fill sizes="(max-width: 1024px) 90vw, 450px" alt="Identidade da Escola de Fasciaterapia e Movimento no consultório" className="object-cover" />
             </div>
           </div>
