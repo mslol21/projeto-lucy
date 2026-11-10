@@ -7,7 +7,6 @@ import { BodyAwarenessChecklist } from "@/components/engagement/BodyAwarenessChe
 import { GuideLeadCard } from "@/components/engagement/GuideLeadCard";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { NovemberBlueArtworkSection } from "@/components/sections/NovemberBlueArtworkSection";
 import { LucyStorySection } from "@/components/sections/LucyStorySection";
 import { MethodBridgeSection } from "@/components/sections/MethodBridgeSection";
 import { DatesPurposeSection } from "@/components/sections/DatesPurposeSection";
@@ -26,7 +25,6 @@ export default function HomePage() {
       <ReadingIndex />
       <main className="flex-1">
         <HeroSection />
-        <NovemberBlueArtworkSection />
         <DatesPurposeSection />
         <DiabetesSection />
         <MenHealthSection />
