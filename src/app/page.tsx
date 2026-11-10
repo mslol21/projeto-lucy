@@ -4,6 +4,7 @@ import { ShareActions } from "@/components/engagement/ShareActions";
 import { ReadingIndex } from "@/components/engagement/ReadingIndex";
 import { FasciaConnectionSection } from "@/components/engagement/FasciaConnectionSection";
 import { BodyAwarenessChecklist } from "@/components/engagement/BodyAwarenessChecklist";
+import { NeuropathySnaQuestionnaire } from "@/components/engagement/NeuropathySnaQuestionnaire";
 import { GuideLeadCard } from "@/components/engagement/GuideLeadCard";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
@@ -40,6 +41,7 @@ export default function HomePage() {
         <BodyAwarenessSection />
         <FaqSection />
         <ShareSection />
+        <NeuropathySnaQuestionnaire />
         <BodyAwarenessChecklist />
         <ReferencesSection />
       </main>
