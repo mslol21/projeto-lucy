@@ -32,7 +32,6 @@ export default function HomePage() {
         <DatesPurposeSection />
         <DiabetesSection />
         <MenHealthSection />
-        <BodyAwarenessChecklist />
         <FasciaConnectionSection />
         <GuideLeadCard />
         <LucyStorySection />
@@ -41,6 +40,7 @@ export default function HomePage() {
         <BodyAwarenessSection />
         <FaqSection />
         <ShareSection />
+        <BodyAwarenessChecklist />
         <ReferencesSection />
       </main>
       <Footer />
