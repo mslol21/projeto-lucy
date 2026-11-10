@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { DatesPurposeSection } from "@/components/sections/DatesPurposeSection";
 import { DiabetesSection } from "@/components/sections/DiabetesSection";
+import { NeuropathySection } from "@/components/sections/NeuropathySection";
 import { MenHealthSection } from "@/components/sections/MenHealthSection";
 import { BodyAwarenessSection } from "@/components/sections/BodyAwarenessSection";
 import { FaqSection } from "@/components/sections/FaqSection";
@@ -18,6 +19,7 @@ export default function HomePage() {
         <HeroSection />
         <DatesPurposeSection />
         <DiabetesSection />
+        <NeuropathySection />
         <MenHealthSection />
         <BodyAwarenessSection />
         <FaqSection />

@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import { ExternalLink, Globe, ShieldCheck } from "lucide-react";
+import Link from "next/link";
+import { ExternalLink, Globe, ShieldCheck, BookOpen, ArrowRight } from "lucide-react";
 import { CAMPAIGN_INFO } from "@/data/campaign-data";
 
 function InstagramIcon({ className = "w-4 h-4" }: { className?: string }) {
@@ -28,7 +29,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-white/10 items-start">
           {/* Identificação Institucional com Logo HD em Acrílico */}
-          <div className="md:col-span-5 space-y-4">
+          <div className="md:col-span-4 space-y-4">
             <div className="inline-block bg-white p-3 rounded-2xl rounded-tr-[36px] shadow-md border border-white/80">
               <Image
                 src="/images/logo-horizontal-hd.png"
@@ -40,32 +41,98 @@ export function Footer() {
             </div>
             <div>
               <span className="inline-block text-xs font-semibold tracking-widest uppercase text-[#84B7CE] bg-[#84B7CE]/10 px-3 py-1 rounded-full border border-[#84B7CE]/20 mt-1">
-                Campanha Institucional Educativa
+                Campanha & Centro de Conhecimento
               </span>
             </div>
-            <h3 className="font-serif text-2xl sm:text-3xl font-normal text-[#F5F2EB] tracking-tight">
+            <h3 className="font-serif text-2xl font-normal text-[#F5F2EB] tracking-tight">
               {CAMPAIGN_INFO.institution.name}
             </h3>
-            <p className="text-[#C7D9D2] text-sm sm:text-base leading-relaxed max-w-md">
-              Fundada por <strong className="text-white font-medium">{CAMPAIGN_INFO.institution.founder}</strong> (Fisioterapeuta, Educadora Física e Fasciaterapeuta — InCor/HCFMUSP). Um espaço dedicado à percepção corporal, movimento consciente e à construção de uma relação acolhedora com o próprio corpo.
+            <p className="text-[#C7D9D2] text-sm leading-relaxed max-w-sm">
+              Fundada por <strong className="text-white font-medium">{CAMPAIGN_INFO.institution.founder}</strong> (Fisioterapeuta, Educadora Física e Fasciaterapeuta — InCor/HCFMUSP). Espaço dedicado à percepção corporal, movimento consciente e escuta do tecido fascial.
             </p>
             <p className="text-xs text-[#84B7CE]/90 italic">
               &ldquo;{CAMPAIGN_INFO.slogan}&rdquo;
             </p>
           </div>
 
-          {/* Links Oficiais da Escola */}
-          <div className="md:col-span-3 space-y-4">
-            <h4 className="text-sm font-semibold tracking-wider uppercase text-[#84B7CE]">
-              Canais Oficiais
+          {/* Links do Centro de Conhecimento */}
+          <div className="md:col-span-4 space-y-4">
+            <div className="flex items-center gap-2 text-[#84B7CE]">
+              <BookOpen className="w-4 h-4" />
+              <h4 className="text-xs font-semibold tracking-wider uppercase">
+                Centro de Conhecimento
+              </h4>
+            </div>
+            <ul className="space-y-2.5 text-xs sm:text-sm">
+              <li>
+                <Link
+                  href="/conhecimento"
+                  className="text-[#C7D9D2] hover:text-white transition-colors flex items-center gap-1.5"
+                >
+                  <ArrowRight className="w-3 h-3 text-[#84B7CE]" />
+                  <span>Índice do Centro de Conhecimento</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/conhecimento/metodo-danis-bois"
+                  className="text-[#C7D9D2] hover:text-white transition-colors flex items-center gap-1.5"
+                >
+                  <ArrowRight className="w-3 h-3 text-[#84B7CE]" />
+                  <span>O Método Danis Bois (Origem & Prática)</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/conhecimento/neuropatia-diabetica"
+                  className="text-[#C7D9D2] hover:text-white transition-colors flex items-center gap-1.5"
+                >
+                  <ArrowRight className="w-3 h-3 text-[#84B7CE]" />
+                  <span>Neuropatia Diabética & Sensibilidade</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/conhecimento/fasciaterapia-e-dor"
+                  className="text-[#C7D9D2] hover:text-white transition-colors flex items-center gap-1.5"
+                >
+                  <ArrowRight className="w-3 h-3 text-[#84B7CE]" />
+                  <span>A Fáscia e as Dores Crônicas</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/conhecimento/evidencias-cientificas"
+                  className="text-[#C7D9D2] hover:text-white transition-colors flex items-center gap-1.5"
+                >
+                  <ArrowRight className="w-3 h-3 text-[#84B7CE]" />
+                  <span>Metodologia & Níveis de Evidência</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/conhecimento/lucy-aihara"
+                  className="text-[#C7D9D2] hover:text-white transition-colors flex items-center gap-1.5"
+                >
+                  <ArrowRight className="w-3 h-3 text-[#84B7CE]" />
+                  <span>Trajetória de Lucy Aihara</span>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Canais Oficiais e Atendimento */}
+          <div className="md:col-span-4 space-y-4">
+            <h4 className="text-xs font-semibold tracking-wider uppercase text-[#84B7CE]">
+              Canais Oficiais & Consultório
             </h4>
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-3 text-xs sm:text-sm">
               <li>
                 <a
                   href={CAMPAIGN_INFO.institution.siteUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-[#C7D9D2] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#84B7CE] rounded"
+                  className="inline-flex items-center gap-2 text-[#C7D9D2] hover:text-white transition-colors"
                 >
                   <Globe className="w-4 h-4 text-[#84B7CE]" aria-hidden="true" />
                   <span>Site Oficial da Escola</span>
@@ -77,41 +144,47 @@ export function Footer() {
                   href={CAMPAIGN_INFO.institution.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-[#C7D9D2] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#84B7CE] rounded"
+                  className="inline-flex items-center gap-2 text-[#C7D9D2] hover:text-white transition-colors"
                 >
                   <InstagramIcon className="w-4 h-4 text-[#84B7CE]" />
                   <span>Instagram @fasciaterapia.fasciavocemesmo</span>
                   <ExternalLink className="w-3.5 h-3.5 opacity-70" aria-hidden="true" />
                 </a>
               </li>
-              <li className="pt-2 text-xs text-[#C7D9D2]/80 leading-relaxed">
-                Atendimento e consultório: Consolação / Higienópolis, São Paulo - SP.
+              <li className="pt-2 text-xs text-[#C7D9D2]/80 leading-relaxed border-t border-white/10">
+                Atendimento clínico e cursos em São Paulo - SP (Consolação / Higienópolis).
               </li>
             </ul>
-          </div>
 
-          {/* Aviso Legal Ético em Saúde */}
-          <div className="md:col-span-4 space-y-3 bg-white/5 p-6 rounded-2xl rounded-tr-[36px] border border-white/10">
-            <div className="flex items-center gap-2 text-[#84B7CE]">
-              <ShieldCheck className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
-              <h4 className="text-xs font-semibold tracking-wider uppercase">
-                Aviso de Responsabilidade Ética
-              </h4>
+            {/* Selo Ético */}
+            <div className="bg-white/5 p-4 rounded-xl border border-white/10 space-y-2 text-xs text-[#C7D9D2]">
+              <div className="flex items-center gap-2 text-[#84B7CE]">
+                <ShieldCheck className="w-4 h-4 flex-shrink-0" />
+                <span className="font-semibold uppercase tracking-wider text-[10px]">
+                  Compromisso Ético em Saúde
+                </span>
+              </div>
+              <p className="leading-relaxed">
+                Este portal tem caráter puramente educativo e não substitui a consulta médica individualizada ou fisioterapia para doenças crônicas.
+              </p>
             </div>
-            <p className="text-xs sm:text-sm text-[#C7D9D2] leading-relaxed">
-              As informações contidas nesta página possuem caráter exclusivamente educativo, institucional e de conscientização preventiva. Elas não substituem o diagnóstico, o aconselhamento médico individualizado ou o acompanhamento por profissionais de saúde qualificados. Em caso de dúvidas ou sintomas, consulte uma unidade de saúde.
-            </p>
           </div>
         </div>
 
-        {/* Rodapé inferior com copyright */}
+        {/* Linha Inferior com Copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#C7D9D2]/70">
           <p>
             © {CAMPAIGN_INFO.year} {CAMPAIGN_INFO.institution.name}. Todos os direitos reservados.
           </p>
-          <p className="text-center sm:text-right">
-            Campanha Novembro Azul: 14 de Novembro (Diabetes) • 17 de Novembro (Câncer de Próstata)
-          </p>
+          <div className="flex items-center gap-4">
+            <Link href="/" className="hover:text-white transition-colors">
+              Campanha Novembro Azul 2026
+            </Link>
+            <span>•</span>
+            <Link href="/conhecimento" className="hover:text-white transition-colors">
+              Centro de Conhecimento
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

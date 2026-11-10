@@ -59,13 +59,13 @@ export const CAMPAIGN_INFO = {
 };
 
 export const NAV_LINKS: NavItem[] = [
-  { label: "O Propósito", href: "#datas" },
-  { label: "Diabetes", href: "#diabetes" },
-  { label: "Saúde Masculina", href: "#saude-masculina" },
-  { label: "O Corpo & Consciência", href: "#corpo-atencao" },
-  { label: "Mitos e Verdades", href: "#mitos-verdades" },
-  { label: "Compartilhe", href: "#compartilhar" },
-  { label: "Fontes Oficiais", href: "#fontes" },
+  { label: "O Propósito", href: "/#datas" },
+  { label: "Diabetes", href: "/#diabetes" },
+  { label: "Neuropatia", href: "/#neuropatia" },
+  { label: "Saúde Masculina", href: "/#saude-masculina" },
+  { label: "O Corpo & Fascia", href: "/#corpo-atencao" },
+  { label: "Mitos e Verdades", href: "/#mitos-verdades" },
+  { label: "Centro de Conhecimento", href: "/conhecimento" },
 ];
 
 export const DIABETES_DATA = {
