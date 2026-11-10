@@ -2,7 +2,7 @@ import React from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { LucyStorySection, ReflectionSection } from "@/components/sections/LucyStorySection";
+import { LucyStorySection } from "@/components/sections/LucyStorySection";
 import { MethodBridgeSection } from "@/components/sections/MethodBridgeSection";
 import { DatesPurposeSection } from "@/components/sections/DatesPurposeSection";
 import { DiabetesSection } from "@/components/sections/DiabetesSection";
@@ -19,13 +19,12 @@ export default function HomePage() {
       <Header />
       <main className="flex-1">
         <HeroSection />
-        <LucyStorySection />
-        <ReflectionSection />
-        <MethodBridgeSection />
         <DatesPurposeSection />
         <DiabetesSection />
-        <NeuropathySection />
         <MenHealthSection />
+        <LucyStorySection />
+        <NeuropathySection />
+        <MethodBridgeSection />
         <BodyAwarenessSection />
         <FaqSection />
         <ShareSection />

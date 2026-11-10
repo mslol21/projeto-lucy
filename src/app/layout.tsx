@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Lora, Inter } from "next/font/google";
 import "./globals.css";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://projeto-lucy.vercel.app";
+
 const lora = Lora({
   variable: "--font-lora",
   subsets: ["latin"],
@@ -24,10 +26,10 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.escoladefasciaterapiaemovimento.com"),
-  title: "Novembro Azul 2026 | Escola de Fasciaterapia e Movimento",
+  metadataBase: new URL(siteUrl),
+  title: "Novembro Azul 2026: Diabetes e Câncer de Próstata | Escola de Fasciaterapia",
   description:
-    "Cuidar de si é também aprender a se conhecer. Campanha educativa da Escola de Fasciaterapia e Movimento sobre o Dia Mundial do Diabetes (14/11) e o Dia Nacional de Combate ao Câncer de Próstata (17/11). Informar também é uma forma de cuidar.",
+    "Novembro Azul 2026: informação sobre o Dia Mundial do Diabetes (14/11) e o Dia Nacional de Combate ao Câncer de Próstata (17/11), com a história de Lucy Aihara.",
   keywords: [
     "Novembro Azul 2026",
     "Escola de Fasciaterapia e Movimento",
@@ -56,15 +58,15 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "/novembro-azul-2026",
+    canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://www.escoladefasciaterapiaemovimento.com/novembro-azul-2026",
-    title: "Novembro Azul 2026 | Escola de Fasciaterapia e Movimento",
+    url: siteUrl,
+    title: "Novembro Azul 2026: duas datas para cuidar da saúde",
     description:
-      "Cuidar de si é também aprender a se conhecer. Informação acolhedora e baseada em evidências científicas sobre o Diabetes e a Saúde Masculina.",
+      "14 de novembro: Dia Mundial do Diabetes. 17 de novembro: Dia Nacional de Combate ao Câncer de Próstata. Conteúdos e histórias sobre saúde.",
     siteName: "Escola de Fasciaterapia e Movimento",
   },
   twitter: {
@@ -105,9 +107,9 @@ export default function RootLayout({
       },
       {
         "@type": "WebPage",
-        "@id": "https://www.escoladefasciaterapiaemovimento.com/novembro-azul-2026/#webpage",
-        url: "https://www.escoladefasciaterapiaemovimento.com/novembro-azul-2026",
-        name: "Campanha Educativa Novembro Azul 2026",
+        "@id": `${siteUrl}/#webpage`,
+        url: siteUrl,
+        name: "Novembro Azul 2026: diabetes e câncer de próstata",
         description:
           "Cuidar de si é também aprender a se conhecer. Página informativa com dados oficiais do INCA e da Sociedade Brasileira de Diabetes.",
         isPartOf: {
