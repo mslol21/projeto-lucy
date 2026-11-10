@@ -2,6 +2,7 @@ import React from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
+import { LucyStorySection, ReflectionSection } from "@/components/sections/LucyStorySection";
 import { DatesPurposeSection } from "@/components/sections/DatesPurposeSection";
 import { DiabetesSection } from "@/components/sections/DiabetesSection";
 import { NeuropathySection } from "@/components/sections/NeuropathySection";
@@ -13,10 +14,12 @@ import { ReferencesSection } from "@/components/sections/ReferencesSection";
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
         <HeroSection />
+        <LucyStorySection />
+        <ReflectionSection />
         <DatesPurposeSection />
         <DiabetesSection />
         <NeuropathySection />
