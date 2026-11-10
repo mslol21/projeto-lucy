@@ -7,6 +7,7 @@ import { BodyAwarenessChecklist } from "@/components/engagement/BodyAwarenessChe
 import { GuideLeadCard } from "@/components/engagement/GuideLeadCard";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
+import { WelcomingGuideSection } from "@/components/sections/WelcomingGuideSection";
 import { LucyStorySection } from "@/components/sections/LucyStorySection";
 import { MethodBridgeSection } from "@/components/sections/MethodBridgeSection";
 import { DatesPurposeSection } from "@/components/sections/DatesPurposeSection";
@@ -23,8 +24,9 @@ export default function HomePage() {
     <div className="flex min-h-screen flex-col pb-20 lg:pb-0">
       <Header />
       <ReadingIndex />
-      <main className="flex-1">
+      <main className="reader-friendly flex-1">
         <HeroSection />
+        <WelcomingGuideSection />
         <DatesPurposeSection />
         <DiabetesSection />
         <MenHealthSection />
