@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, BookOpen, HeartHandshake, ShieldCheck, Activity, ClipboardCheck, HeartPulse } from "lucide-react";
+import { ArrowRight, BookOpen, HeartHandshake, ShieldCheck, Activity, ClipboardCheck, HeartPulse, Brain } from "lucide-react";
 
 const paths = [
   {
@@ -36,6 +36,13 @@ const paths = [
     title: "Trajetória de Lucy",
     description: "Conheça a profissional por trás da escola.",
     Icon: HeartHandshake,
+  },
+  {
+    href: "/#neuropatia-sna",
+    label: "Neuropatia e SNA",
+    title: "Questionário de neuropatia",
+    description: "Observe sintomas com ou sem dor e alterações de funções automáticas.",
+    Icon: Brain,
   },
   {
     href: "/#checklist",
