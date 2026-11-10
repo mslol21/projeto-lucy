@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, BookOpen } from "lucide-react";
+import { ShareActions } from "@/components/engagement/ShareActions";
 
 const editorialNav = [
   { label: "Especial de novembro", href: "/#datas" },
@@ -30,6 +31,7 @@ export function Header() {
             </Link>
           ))}
         </nav>
+        <div className="hidden xl:block"><ShareActions variant="desktop" /></div>
         <button type="button" onClick={() => setMobileMenuOpen((v) => !v)} aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"} aria-controls="mobile-editorial-menu" aria-expanded={mobileMenuOpen} className="inline-flex size-11 items-center justify-center border border-[#C7D8E1] lg:hidden">
           {mobileMenuOpen ? <X size={23} /> : <Menu size={23} />}
         </button>
