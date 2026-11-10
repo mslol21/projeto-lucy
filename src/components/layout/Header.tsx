@@ -18,21 +18,21 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <header className="sticky top-0 z-50 border-b border-[#D6E1E7] bg-[#FDFDFB]/95 text-[#17385B] backdrop-blur-md">
-      <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between gap-4 px-5 sm:px-8">
+      <div className="mx-auto flex h-[68px] max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex min-w-0 shrink-0 items-center gap-3 focus-visible:outline-2 focus-visible:outline-offset-4" aria-label="Escola de Fasciaterapia e Movimento — página inicial" onClick={() => setMobileMenuOpen(false)}>
-          <Image src="/images/logo-horizontal-hd.png" width={190} height={55} alt="Escola de Fasciaterapia e Movimento" priority className="h-10 w-auto object-contain" />
-          <span className="hidden border-l border-[#CBD6DC] pl-3 text-xs font-semibold leading-5 xl:block">Especial<br />Novembro Azul</span>
+          <Image src="/images/logo-horizontal-hd.png" width={190} height={55} alt="Escola de Fasciaterapia e Movimento" priority className="h-9 w-auto object-contain" />
+          <span className="hidden border-l border-[#CBD6DC] pl-3 text-[11px] font-semibold leading-4 2xl:block">Especial<br />Novembro Azul</span>
         </Link>
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Navegação principal">
+        <nav className="hidden items-center gap-0.5 xl:flex" aria-label="Navegação principal">
           {editorialNav.map((item) => (
-            <Link key={item.href} href={item.href} className={`px-3 py-3 text-[13px] font-semibold transition-colors hover:bg-[#EAF1F3] hover:text-[#315F7B] ${item.href === "/conhecimento" ? "ml-2 inline-flex items-center gap-2 border border-[#C7D8E1]" : ""}`}>
+            <Link key={item.href} href={item.href} className={`px-2.5 py-2.5 text-[12px] font-semibold transition-colors hover:bg-[#EAF1F3] hover:text-[#315F7B] ${item.href === "/conhecimento" ? "ml-2 inline-flex items-center gap-2 border border-[#C7D8E1]" : ""}`}>
               {item.href === "/conhecimento" && <BookOpen size={15} aria-hidden="true" />}
               {item.label}
             </Link>
           ))}
         </nav>
         <div className="hidden xl:block"><ShareActions variant="desktop" /></div>
-        <button type="button" onClick={() => setMobileMenuOpen((v) => !v)} aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"} aria-controls="mobile-editorial-menu" aria-expanded={mobileMenuOpen} className="inline-flex size-11 items-center justify-center border border-[#C7D8E1] lg:hidden">
+        <button type="button" onClick={() => setMobileMenuOpen((v) => !v)} aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"} aria-controls="mobile-editorial-menu" aria-expanded={mobileMenuOpen} className="inline-flex size-11 items-center justify-center border border-[#C7D8E1] xl:hidden">
           {mobileMenuOpen ? <X size={23} /> : <Menu size={23} />}
         </button>
       </div>
