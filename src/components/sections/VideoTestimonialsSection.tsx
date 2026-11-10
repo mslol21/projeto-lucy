@@ -23,7 +23,7 @@ export function VideoTestimonialsSection() {
           </p>
         </div>
 
-        <div className="mt-9 grid gap-6 md:grid-cols-2">
+        <div className="mt-9 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {VIDEO_TESTIMONIALS.map((item) => {
             const published = Boolean(item.authorized && item.videoSrc && item.captionsSrc && item.transcript);
             return (
@@ -46,7 +46,7 @@ export function VideoTestimonialsSection() {
                       <Film size={27} strokeWidth={1.6} aria-hidden="true" />
                     </div>
                     <p className="text-sm font-semibold text-[#355B72]">Espaço reservado para vídeo</p>
-                    <p className="max-w-[30ch] text-xs leading-5 text-[#526E7E]">Conteúdo ainda não publicado</p>
+                    <p className="max-w-[30ch] text-xs leading-5 text-[#526E7E]">{item.materialUnderReview ? "Material em preparação" : "Conteúdo ainda não publicado"}</p>
                   </div>
                 )}
                 <div className="p-6">
@@ -62,7 +62,7 @@ export function VideoTestimonialsSection() {
                     </>
                   ) : (
                     <p className="mt-3 min-h-12 text-sm leading-7 text-[#526E7E]">
-                      Depoimento e vídeo serão adicionados futuramente.
+                      {item.materialUnderReview ? "Materiais audiovisuais recebidos. Publicação pendente de autorização e preparação das legendas e do relato." : "Depoimento e vídeo serão adicionados futuramente."}
                     </p>
                   )}
                 </div>
