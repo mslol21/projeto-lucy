@@ -3,6 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { LucyStorySection, ReflectionSection } from "@/components/sections/LucyStorySection";
+import { MethodBridgeSection } from "@/components/sections/MethodBridgeSection";
 import { DatesPurposeSection } from "@/components/sections/DatesPurposeSection";
 import { DiabetesSection } from "@/components/sections/DiabetesSection";
 import { NeuropathySection } from "@/components/sections/NeuropathySection";
@@ -20,6 +21,7 @@ export default function HomePage() {
         <HeroSection />
         <LucyStorySection />
         <ReflectionSection />
+        <MethodBridgeSection />
         <DatesPurposeSection />
         <DiabetesSection />
         <NeuropathySection />
