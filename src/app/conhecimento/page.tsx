@@ -87,6 +87,15 @@ export default function KnowledgeHubPage() {
             </p>
           </div>
 
+          <section aria-labelledby="renal-destaque" className="mb-10 grid gap-5 rounded-2xl border border-[#C9DEE7] bg-[#EFF6F9] p-6 sm:p-8 md:grid-cols-[1fr_auto] md:items-center">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[.14em] text-[#3D7794]">Novo artigo · Anatomia e saúde renal</p>
+              <h3 id="renal-destaque" className="mt-2 font-serif text-2xl text-[#17385B]">A fáscia também envolve os rins?</h3>
+              <p className="mt-3 max-w-2xl text-sm leading-7 text-[#415A77]">Entenda a fáscia renal, sua organização anatômica e os cuidados recomendados com os rins em pessoas com diabetes.</p>
+            </div>
+            <Link href="/conhecimento/fascia-renal" className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-[#17385B] px-5 py-3 text-sm font-semibold text-white hover:bg-[#28577c]">Ler artigo <ArrowRight size={17} aria-hidden="true" /></Link>
+          </section>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {articles.map((article) => (
               <article
