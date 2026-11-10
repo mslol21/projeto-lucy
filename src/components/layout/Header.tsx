@@ -1,118 +1,114 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, X, BookOpen } from "lucide-react";
-import { NAV_LINKS, CAMPAIGN_INFO } from "@/data/campaign-data";
+import { usePathname } from "next/navigation";
+import { Menu, X, BookOpen, ArrowUpRight } from "lucide-react";
+import { NAV_LINKS } from "@/data/campaign-data";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  const base = isHome
+    ? "border-white/10 bg-[#081629]/95 text-[#F5F0E8]"
+    : "border-stone-200/70 bg-[#F5F2EB]/95 text-[#17385B]";
+  const defaultLink = isHome
+    ? "text-[#e3eaf0] hover:bg-white/10 hover:text-white"
+    : "text-[#17385B] hover:bg-white/80";
+  const closeMenu = () => setMobileMenuOpen(false);
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-[#F5F2EB]/92 backdrop-blur-md border-b border-stone-200/70 shadow-[0_4px_20px_-4px_rgba(23,56,91,0.04)] transition-all">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo Oficial HD da Escola */}
+    <header className={`sticky top-0 z-50 w-full border-b backdrop-blur-xl ${base}`}>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-[76px] items-center justify-between gap-4">
           <Link
             href="/"
-            className="flex items-center gap-3.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#17385B] rounded-lg p-1.5"
-            aria-label="Escola de Fasciaterapia e Movimento — Lucy Aihara"
+            onClick={closeMenu}
+            className="flex min-w-0 items-center gap-3 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4"
+            aria-label="Escola de Fasciaterapia e Movimento — início"
           >
-            <div className="relative h-12 flex items-center">
+            <span className="flex shrink-0 items-center rounded-xl bg-[#F5F0E8] px-2 py-1.5">
               <Image
                 src="/images/logo-horizontal-hd.png"
-                alt="Logotipo oficial da Escola de Fasciaterapia e Movimento"
-                width={220}
-                height={64}
+                alt="Escola de Fasciaterapia e Movimento"
+                width={188}
+                height={55}
                 priority
-                className="h-11 sm:h-12 w-auto object-contain transition-transform group-hover:scale-[1.02]"
+                className="h-9 w-auto object-contain sm:h-10"
               />
-            </div>
-            <div className="hidden xl:flex flex-col border-l border-stone-300 pl-3">
-              <span className="text-[11px] font-semibold text-[#17385B] uppercase tracking-wider">
-                Lucy Aihara
-              </span>
-              <span className="text-[10px] text-[#415A77] tracking-tight">
-                Novembro Azul 2026
-              </span>
-            </div>
-          </Link>
-
-          {/* Navegação Desktop */}
-          <div className="hidden lg:flex items-center gap-4">
-            <nav className="flex items-center gap-1 xl:gap-2" aria-label="Navegação principal">
-              {NAV_LINKS.map((link) => {
-                const isKnowledge = link.href === "/conhecimento";
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className={`px-3 py-1.5 text-xs xl:text-sm font-medium rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#17385B] ${
-                      isKnowledge
-                        ? "bg-[#17385B] text-white hover:bg-[#1f4a75] shadow-2xs font-semibold flex items-center gap-1.5"
-                        : "text-[#17385B]/85 hover:text-[#17385B] hover:bg-white/80"
-                    }`}
-                  >
-                    {isKnowledge && <BookOpen className="w-3.5 h-3.5" aria-hidden="true" />}
-                    <span>{link.label}</span>
-                  </Link>
-                );
-              })}
-            </nav>
-
-            <span className="inline-flex items-center px-3 py-1 text-xs font-semibold rounded-full bg-[#527fae]/15 text-[#17385B] border border-[#527fae]/30 shadow-2xs">
-              {CAMPAIGN_INFO.year}
             </span>
-          </div>
-
-          {/* Botão Mobile */}
-          <div className="flex items-center lg:hidden">
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl text-[#17385B] hover:bg-stone-200/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#17385B]"
-              aria-expanded={mobileMenuOpen}
-              aria-label={mobileMenuOpen ? "Fechar menu de navegação" : "Abrir menu de navegação"}
-            >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
+            <span className="hidden max-w-[148px] flex-col border-l border-current/20 pl-3 xl:flex">
+              <span className="text-[11px] font-semibold tracking-wide">Lucy Aihara</span>
+              <span className={`text-[10px] ${isHome ? "text-[#B6D6EA]" : "text-[#415A77]"}`}>
+                Uma história de movimento
+              </span>
+            </span>
+          </Link>
+          <nav className="hidden items-center gap-1 lg:flex" aria-label="Navegação principal">
+            {isHome && (
+              <Link href="/#historia" className={`rounded-full px-3 py-2 text-sm font-medium transition-colors ${defaultLink}`}>
+                A história
+              </Link>
+            )}
+            {isHome && (
+              <Link href="/#metodo" className={`rounded-full px-3 py-2 text-sm font-medium transition-colors ${defaultLink}`}>
+                O método
+              </Link>
+            )}
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`rounded-full px-3 py-2 text-sm font-medium transition-colors ${
+                  link.href === "/conhecimento"
+                    ? isHome
+                      ? "bg-white text-[#081629] hover:bg-[#B6D6EA]"
+                      : "bg-[#17385B] text-white hover:bg-[#28577c]"
+                    : defaultLink
+                }`}
+              >
+                <span className="inline-flex items-center gap-1.5">
+                  {link.href === "/conhecimento" && <BookOpen size={14} aria-hidden="true" />}
+                  {link.label}
+                </span>
+              </Link>
+            ))}
+          </nav>
+          <button
+            type="button"
+            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-xl border border-current/20 lg:hidden"
+            onClick={() => setMobileMenuOpen((prev) => !prev)}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="lucy-mobile-nav"
+            aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
+          >
+            {mobileMenuOpen ? <X size={23} /> : <Menu size={23} />}
+          </button>
         </div>
       </div>
-
-      {/* Menu Mobile */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-b border-stone-200 bg-[#F5F2EB] px-4 pt-3 pb-6 space-y-2 animate-in fade-in slide-in-from-top-2 duration-200">
-          <div className="px-3 py-2 border-b border-stone-200/60 mb-2 flex items-center justify-between">
-            <span className="text-xs font-semibold tracking-wider text-[#415A77] uppercase">
-              Menu de Navegação
-            </span>
-            <span className="text-[10px] font-bold text-[#17385B] bg-[#527fae]/20 px-2 py-0.5 rounded-full">
-              2026
-            </span>
+        <nav
+          id="lucy-mobile-nav"
+          aria-label="Navegação para dispositivos móveis"
+          className={`border-t px-4 pb-5 pt-3 lg:hidden ${isHome ? "border-white/10 bg-[#081629]" : "border-stone-200 bg-[#F5F2EB]"}`}
+        >
+          <div className="mx-auto flex max-w-7xl flex-col gap-1">
+            {isHome && (
+              <>
+                <Link href="/#historia" onClick={closeMenu} className={`rounded-xl px-3 py-3 text-sm ${defaultLink}`}>A história da Lucy</Link>
+                <Link href="/#metodo" onClick={closeMenu} className={`rounded-xl px-3 py-3 text-sm ${defaultLink}`}>O Método Danis Bois</Link>
+              </>
+            )}
+            {NAV_LINKS.map((link) => (
+              <Link key={link.href} href={link.href} onClick={closeMenu} className={`flex items-center justify-between rounded-xl px-3 py-3 text-sm ${defaultLink}`}>
+                {link.label}
+                {link.href === "/conhecimento" && <ArrowUpRight size={16} aria-hidden="true" />}
+              </Link>
+            ))}
           </div>
-          <nav className="flex flex-col space-y-1" aria-label="Menu móvel">
-            {NAV_LINKS.map((link) => {
-              const isKnowledge = link.href === "/conhecimento";
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`px-3 py-2.5 rounded-xl text-sm font-medium transition-colors flex items-center justify-between ${
-                    isKnowledge
-                      ? "bg-[#17385B] text-white font-semibold"
-                      : "text-[#17385B] hover:bg-white"
-                  }`}
-                >
-                  <span>{link.label}</span>
-                  {isKnowledge && <BookOpen className="w-4 h-4 text-[#84B7CE]" />}
-                </Link>
-              );
-            })}
-          </nav>
-        </div>
+        </nav>
       )}
     </header>
   );
