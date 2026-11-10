@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ArrowRight, CalendarDays } from "lucide-react";
+import { EditorialReveal } from "@/components/ui/EditorialReveal";
 
 const topics = [
   {
@@ -27,7 +28,9 @@ export function DatesPurposeSection() {
         </div>
         <div className="grid gap-6 md:grid-cols-2">
           {topics.map((topic) => (
-            <article key={topic.day} className="group flex flex-col border border-[#D6E1E7] bg-[#F8FAFA]">
+            <EditorialReveal key={topic.day} delay={topic.day === "17" ? 0.12 : 0} className="h-full">
+            <article className="group relative flex h-full flex-col overflow-hidden border border-[#D6E1E7] bg-[#F8FAFA] transition-colors duration-300 hover:border-[#729bb5]">
+              <span aria-hidden="true" className="november-date-accent absolute inset-x-0 top-0 h-[3px] origin-left bg-[#3574A4]" />
               <div className="flex items-start gap-5 p-6 sm:gap-7 sm:p-8">
                 <div className="flex w-[75px] shrink-0 flex-col items-center border-t-4 border-[#17385B] bg-[#E4EFF4] p-3 sm:w-24">
                   <span className="font-serif text-5xl leading-none">{topic.day}</span>
@@ -43,6 +46,7 @@ export function DatesPurposeSection() {
                 {topic.label} <ArrowRight size={18} aria-hidden="true" />
               </a>
             </article>
+            </EditorialReveal>
           ))}
         </div>
         <aside className="mt-10 grid overflow-hidden border border-[#D6E1E7] bg-[#F6F7F5] md:grid-cols-[200px_1fr]">

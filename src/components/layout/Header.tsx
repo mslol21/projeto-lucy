@@ -43,6 +43,7 @@ export function Header() {
           ))}
         </nav>
       )}
+      <div className="november-reading-progress" aria-hidden="true" />
     </header>
   );
 }
