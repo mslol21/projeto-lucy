@@ -5,9 +5,9 @@
  * pessoais, transcrições ou alegações clínicas além das autorizadas.
  *
  * Para os depoimentos 03 e 04, basta copiar os arquivos MP4:
- *   public/depoimentos/depoimento-03/video-01.mp4
- *   public/depoimentos/depoimento-03/video-02.mp4
- *   public/depoimentos/depoimento-04/video-01.mp4
+ *   public/depoimentos/depoimento-03/VID-20261110-WA0021.mp4
+ *   public/depoimentos/depoimento-03/VID-20261110-WA0022.mp4
+ *   public/depoimentos/depoimento-04/VID-20261110-WA0028.mp4
  *
  * A detecção é automática após o deploy na Vercel. Não é necessário editar TSX.
  */
@@ -29,12 +29,12 @@ export const VIDEO_TESTIMONIALS: readonly VideoTestimonial[] = [
   {
     id: "depoimento-03", title: "Depoimento 03", authorized: true,
     videos: [
-      { src: "/depoimentos/depoimento-03/video-01.mp4", label: "Vídeo 1" },
-      { src: "/depoimentos/depoimento-03/video-02.mp4", label: "Vídeo 2" },
+      { src: "/depoimentos/depoimento-03/VID-20261110-WA0021.mp4", label: "Vídeo 1" },
+      { src: "/depoimentos/depoimento-03/VID-20261110-WA0022.mp4", label: "Vídeo 2" },
     ],
   },
   {
     id: "depoimento-04", title: "Depoimento 04", authorized: true,
-    videos: [{ src: "/depoimentos/depoimento-04/video-01.mp4", label: "Vídeo 1" }],
+    videos: [{ src: "/depoimentos/depoimento-04/VID-20261110-WA0028.mp4", label: "Vídeo 1" }],
   },
 ];
