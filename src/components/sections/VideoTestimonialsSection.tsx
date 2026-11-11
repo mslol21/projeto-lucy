@@ -84,6 +84,15 @@ export function VideoTestimonialsSection() {
                 )}
                 <div className="p-6">
                   <p className="text-xs font-bold uppercase tracking-[.1em] text-[#4D7890]">{item.title}</p>
+                  {item.authorized && item.articleUrl && (
+                    <div className="mt-4 rounded-xl border border-[#C9DEE8] bg-[#F0F7FA] p-4">
+                      <p className="text-xs font-bold uppercase tracking-[.08em] text-[#427996]">Artigo relacionado</p>
+                      <p className="mt-2 text-sm font-semibold leading-6 text-[#17385B]">Neuropatia diabética: relato de redução da dor e melhora da mobilidade</p>
+                      <a href={item.articleUrl} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex min-h-11 items-center gap-2 rounded-lg bg-[#17385B] px-4 py-2 text-sm font-semibold text-white hover:bg-[#28577C] focus-visible:outline-2 focus-visible:outline-offset-2">
+                        Ler artigo completo <ExternalLink size={16} aria-hidden="true" />
+                      </a>
+                    </div>
+                  )}
                   {item.authorized && item.statement && <blockquote className="mt-3 border-l-2 border-[#84B7CE] pl-4 text-base leading-7 text-[#344F60]">{item.statement}</blockquote>}
                   {item.authorized && item.displayName && <p className="mt-3 text-sm font-medium text-[#3E6378]">{item.displayName}</p>}
                   {item.authorized && item.transcript && item.videos?.length && (
