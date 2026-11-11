@@ -55,6 +55,14 @@ export function VideoTestimonialsSection() {
                       Se o vídeo não reproduzir aqui, use o botão acima para abrir diretamente no YouTube.
                     </p>
                   </div>
+                ) : item.authorized && item.transcript && !item.videos?.length ? (
+                  <div className="flex items-center gap-3 border-b border-[#DDE8EC] bg-[#EAF2F5] px-6 py-5">
+                    <FileText size={25} className="shrink-0 text-[#427996]" aria-hidden="true" />
+                    <div>
+                      <p className="text-sm font-semibold text-[#355B72]">Relato de Dona Inês</p>
+                      <p className="text-xs text-[#526E7E]">Entrevista de 28 de março de 2025 · Depoimento em texto</p>
+                    </div>
+                  </div>
                 ) : item.textPendingConsent ? (
                   <div className="flex aspect-video flex-col items-center justify-center gap-3 bg-[#EAF2F5] px-5 text-center">
                     <div className="flex size-16 items-center justify-center rounded-full border border-[#BCD5E1] bg-white text-[#427996]">
@@ -78,14 +86,22 @@ export function VideoTestimonialsSection() {
                   <p className="text-xs font-bold uppercase tracking-[.1em] text-[#4D7890]">{item.title}</p>
                   {item.authorized && item.statement && <blockquote className="mt-3 border-l-2 border-[#84B7CE] pl-4 text-base leading-7 text-[#344F60]">{item.statement}</blockquote>}
                   {item.authorized && item.displayName && <p className="mt-3 text-sm font-medium text-[#3E6378]">{item.displayName}</p>}
-                  {item.authorized && item.transcript && (
+                  {item.authorized && item.transcript && item.videos?.length && (
                     <details className="mt-5 border-t border-[#DDE8EC] pt-4">
                       <summary className="cursor-pointer text-sm font-semibold text-[#245C7D]">Ler transcrição do vídeo</summary>
                       <p className="mt-3 whitespace-pre-line text-sm leading-7 text-[#405B6B]">{item.transcript}</p>
                     </details>
                   )}
+                  {item.authorized && item.transcript && !item.videos?.length && (
+                    <div className="mt-5 space-y-4 border-t border-[#DDE8EC] pt-5 text-sm leading-7 text-[#405B6B]">
+                      {item.transcript.split("\\n\\n").map((paragraph, index) => (
+                        <p key={index}>{paragraph}</p>
+                      ))}
+                      <p className="text-xs leading-6 text-[#526E7E]">Relato pessoal sobre a experiência de atendimento. Não comprova eficácia clínica nem substitui avaliação e acompanhamento médico, especialmente em casos de trombose.</p>
+                    </div>
+                  )}
                   {item.textPendingConsent && <p className="mt-3 text-sm leading-7 text-[#526E7E]">O relato será disponibilizado exclusivamente em formato de texto após autorização para divulgação.</p>}
-                  {!youtubePublished && !hasLocalVideos && !item.textPendingConsent && <p className="mt-3 text-sm leading-7 text-[#526E7E]">Depoimento e vídeo serão adicionados futuramente.</p>}
+                  {!youtubePublished && !hasLocalVideos && !item.textPendingConsent && !(item.authorized && item.transcript) && <p className="mt-3 text-sm leading-7 text-[#526E7E]">Depoimento e vídeo serão adicionados futuramente.</p>}
                 </div>
               </article>
             );
