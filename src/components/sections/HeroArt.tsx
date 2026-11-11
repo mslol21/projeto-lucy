@@ -36,7 +36,6 @@ export function HeroArt() {
           aria-hidden="true"
           autoPlay
           muted
-          defaultMuted
           loop
           playsInline
           preload="auto"
