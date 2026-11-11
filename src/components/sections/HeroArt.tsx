@@ -65,7 +65,7 @@ export function HeroArt() {
           onLoadedData={() => setVideoLoaded(true)}
           onPlaying={() => { setVideoLoaded(true); setPlayBlocked(false); }}
           onError={() => setVideoFailed(true)}
-          className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-500 ${videoLoaded ? "opacity-100" : "opacity-0"}`}
+          className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-500 ${videoLoaded ? "opacity-100" : "opacity-0"}`}
         >
           <source src={HERO_VIDEO} type="video/mp4" />
         </video>
