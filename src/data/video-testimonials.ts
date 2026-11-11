@@ -1,31 +1,40 @@
 /**
- * Depoimentos: espaços reservados.
+ * Depoimentos da Escola de Fasciaterapia e Movimento.
  *
- * Para publicar: confirmar o escopo da autorização de imagem, voz e relato;
- * armazenar vídeo em /public/videos e legenda .vtt (ou CDN autorizada);
- * adicionar uma transcrição acessível; preencher os dados e marcar authorized=true.
- * Nunca publicar identidade, condição clínica ou resultado de tratamento sem consentimento.
+ * O usuário confirmou autorização para os vídeos. Não publique informações
+ * pessoais, transcrições ou alegações clínicas além das autorizadas.
+ *
+ * Para os depoimentos 03 e 04, basta copiar os arquivos MP4:
+ *   public/depoimentos/depoimento-03/video-01.mp4
+ *   public/depoimentos/depoimento-03/video-02.mp4
+ *   public/depoimentos/depoimento-04/video-01.mp4
+ *
+ * A detecção é automática após o deploy na Vercel. Não é necessário editar TSX.
  */
 export type VideoTestimonial = {
   id: "depoimento-01" | "depoimento-02" | "depoimento-03" | "depoimento-04";
   title: string;
-  videoSrc?: string;
   youtubeId?: string;
-  captionsSrc?: string;
-  transcript?: string;
+  /** Caminhos públicos; o player só aparece após o arquivo responder com vídeo. */
+  videos?: readonly { src: string; label: string }[];
   statement?: string;
   displayName?: string;
+  transcript?: string;
   authorized: boolean;
-  materialUnderReview?: boolean;
 };
 
 export const VIDEO_TESTIMONIALS: readonly VideoTestimonial[] = [
   { id: "depoimento-01", title: "Depoimento 01", youtubeId: "Un-wQkY4A0E", authorized: true },
   { id: "depoimento-02", title: "Depoimento 02", authorized: false },
-  // Duas fotografias e dois vídeos foram recebidos na conversa.
-  // A autorização de uso dos vídeos foi confirmada nesta conversa; hospedagem e legendagem ainda pendentes.
-  { id: "depoimento-03", title: "Depoimento 03", authorized: false, materialUnderReview: true },
-  // Duas fotos e um vídeo de aproximadamente 2min39s enviados para o quarto depoimento.
-  // Vídeo autorizado; hospedagem, contextualização clínica e legendagem pendentes.
-  { id: "depoimento-04", title: "Depoimento 04", authorized: false, materialUnderReview: true },
+  {
+    id: "depoimento-03", title: "Depoimento 03", authorized: true,
+    videos: [
+      { src: "/depoimentos/depoimento-03/video-01.mp4", label: "Vídeo 1" },
+      { src: "/depoimentos/depoimento-03/video-02.mp4", label: "Vídeo 2" },
+    ],
+  },
+  {
+    id: "depoimento-04", title: "Depoimento 04", authorized: true,
+    videos: [{ src: "/depoimentos/depoimento-04/video-01.mp4", label: "Vídeo 1" }],
+  },
 ];

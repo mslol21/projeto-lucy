@@ -1,5 +1,6 @@
 import { Film, HeartHandshake, LockKeyhole, ExternalLink, Play } from "lucide-react";
 import { VIDEO_TESTIMONIALS } from "@/data/video-testimonials";
+import { LocalTestimonialVideos } from "@/components/sections/LocalTestimonialVideos";
 
 export function VideoTestimonialsSection() {
   return (
@@ -18,16 +19,15 @@ export function VideoTestimonialsSection() {
             Histórias contadas por quem viveu o cuidado.
           </h2>
           <p className="mt-5 max-w-2xl text-base leading-8 text-[#405B6B]">
-            Aqui serão apresentados depoimentos e registros autorizados de experiências de atendimento.
-            Os relatos são pessoais e não representam garantia de resultados.
+            Depoimentos e registros de atendimento compartilhados com autorização.
+            Experiências individuais não representam garantia de resultados.
           </p>
         </div>
 
         <div className="mt-9 grid gap-6 md:grid-cols-2">
           {VIDEO_TESTIMONIALS.map((item) => {
             const youtubePublished = Boolean(item.authorized && item.youtubeId);
-            const uploadedVideoPublished = Boolean(item.authorized && item.videoSrc && item.captionsSrc && item.transcript);
-            const published = youtubePublished || uploadedVideoPublished;
+            const hasLocalVideos = Boolean(item.authorized && item.videos?.length);
             return (
               <article key={item.id} className="overflow-hidden rounded-2xl border border-[#D9E5E8] bg-white shadow-[0_8px_26px_rgba(23,56,91,.035)]">
                 {youtubePublished ? (
@@ -41,56 +41,42 @@ export function VideoTestimonialsSection() {
                       <Play size={18} aria-hidden="true" /> Assistir ao depoimento no YouTube <ExternalLink size={16} aria-hidden="true" />
                     </a>
                     <div className="aspect-video w-full">
-                    <iframe
-                      className="h-full w-full"
-                      src={"https://www.youtube.com/embed/" + item.youtubeId + "?rel=0"}
-                      title={"Vídeo — " + item.title}
-                      loading="lazy"
-                      referrerPolicy="strict-origin-when-cross-origin"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    />
+                      <iframe
+                        className="h-full w-full"
+                        src={"https://www.youtube.com/embed/" + item.youtubeId + "?rel=0"}
+                        title={"Vídeo — " + item.title}
+                        loading="lazy"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                      />
                     </div>
-                    <p className="px-4 py-3 text-center text-xs leading-5 text-[#456277]">Se o vídeo não reproduzir aqui, use o botão acima para abrir diretamente no YouTube.</p>
+                    <p className="px-4 py-3 text-center text-xs leading-5 text-[#456277]">
+                      Se o vídeo não reproduzir aqui, use o botão acima para abrir diretamente no YouTube.
+                    </p>
                   </div>
-                ) : uploadedVideoPublished ? (
-                  <video
-                    className="aspect-video w-full bg-[#E7EFF3] object-contain"
-                    controls
-                    playsInline
-                    preload="none"
-                    aria-label={item.title}
-                  >
-                    <source src={item.videoSrc} type="video/mp4" />
-                    <track kind="captions" src={item.captionsSrc} srcLang="pt-BR" label="Português" default />
-                    Seu navegador não suporta vídeo HTML5.
-                  </video>
+                ) : hasLocalVideos && item.videos ? (
+                  <LocalTestimonialVideos videos={item.videos} title={item.title} />
                 ) : (
                   <div className="flex aspect-video flex-col items-center justify-center gap-3 bg-[#EAF2F5] px-5 text-center">
                     <div className="flex size-16 items-center justify-center rounded-full border border-[#BCD5E1] bg-white text-[#427996]">
                       <Film size={27} strokeWidth={1.6} aria-hidden="true" />
                     </div>
                     <p className="text-sm font-semibold text-[#355B72]">Espaço reservado para vídeo</p>
-                    <p className="max-w-[30ch] text-xs leading-5 text-[#526E7E]">{item.materialUnderReview ? "Material em preparação" : "Conteúdo ainda não publicado"}</p>
+                    <p className="max-w-[30ch] text-xs leading-5 text-[#526E7E]">Conteúdo ainda não publicado</p>
                   </div>
                 )}
                 <div className="p-6">
                   <p className="text-xs font-bold uppercase tracking-[.1em] text-[#4D7890]">{item.title}</p>
-                  {published ? (
-                    <>
-                      {item.statement && <blockquote className="mt-3 border-l-2 border-[#84B7CE] pl-4 text-base leading-7 text-[#344F60]">{item.statement}</blockquote>}
-                      {item.displayName && <p className="mt-3 text-sm font-medium text-[#3E6378]">{item.displayName}</p>}
-                      <details className="mt-5 border-t border-[#DDE8EC] pt-4">
-                        <summary className="cursor-pointer text-sm font-semibold text-[#245C7D]">Ler transcrição do vídeo</summary>
-                        <p className="mt-3 whitespace-pre-line text-sm leading-7 text-[#405B6B]">{item.transcript}</p>
-                      </details>
-                    </>
-                  ) : (
-                    <p className="mt-3 min-h-12 text-sm leading-7 text-[#526E7E]">
-                      {item.materialUnderReview ? "Vídeo recebido e autorizado. A publicação depende de hospedar o arquivo e preparar a exibição acessível." : "Depoimento e vídeo serão adicionados futuramente."}
-                    </p>
+                  {item.statement && <blockquote className="mt-3 border-l-2 border-[#84B7CE] pl-4 text-base leading-7 text-[#344F60]">{item.statement}</blockquote>}
+                  {item.displayName && <p className="mt-3 text-sm font-medium text-[#3E6378]">{item.displayName}</p>}
+                  {item.transcript && (
+                    <details className="mt-5 border-t border-[#DDE8EC] pt-4">
+                      <summary className="cursor-pointer text-sm font-semibold text-[#245C7D]">Ler transcrição do vídeo</summary>
+                      <p className="mt-3 whitespace-pre-line text-sm leading-7 text-[#405B6B]">{item.transcript}</p>
+                    </details>
                   )}
-                  {youtubePublished && <a href={"https://www.youtube.com/watch?v=" + item.youtubeId} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex min-h-11 items-center text-sm font-semibold text-[#235779] underline underline-offset-4">Abrir vídeo no YouTube</a>}
+                  {!youtubePublished && !hasLocalVideos && <p className="mt-3 text-sm leading-7 text-[#526E7E]">Depoimento e vídeo serão adicionados futuramente.</p>}
                 </div>
               </article>
             );
@@ -98,8 +84,8 @@ export function VideoTestimonialsSection() {
         </div>
         <p className="mt-6 flex max-w-3xl items-start gap-2 text-xs leading-6 text-[#526E7E]">
           <LockKeyhole size={16} className="mt-1 shrink-0" aria-hidden="true" />
-          A publicação de relatos depende de consentimento para uso de imagem, voz e texto.
-          Experiências individuais não representam garantia de resultados terapêuticos.
+          A utilização de imagem, voz e relato depende de autorização.
+          Resultados individuais não representam garantia de resposta terapêutica.
         </p>
       </div>
     </section>
