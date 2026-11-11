@@ -20,11 +20,11 @@ export function HeroSection() {
         </div>
       </div>
       <div className="mx-auto grid max-w-6xl grid-cols-2 gap-2 px-4 pt-3 sm:hidden" aria-label="Datas da campanha">
-        <a href="/#diabetes" className="rounded-xl border border-[#BED8E6] bg-white px-3 py-3 text-[#17385B] focus-visible:outline-2 focus-visible:outline-offset-2">
+        <a href="/diabetes" className="rounded-xl border border-[#BED8E6] bg-white px-3 py-3 text-[#17385B] focus-visible:outline-2 focus-visible:outline-offset-2">
           <span className="block font-serif text-2xl font-bold">14/11</span>
           <span className="mt-1 block text-[13px] leading-5">Dia Mundial do Diabetes</span>
         </a>
-        <a href="/#saude-masculina" className="rounded-xl border border-[#BED8E6] bg-white px-3 py-3 text-[#17385B] focus-visible:outline-2 focus-visible:outline-offset-2">
+        <a href="/cancer-de-prostata" className="rounded-xl border border-[#BED8E6] bg-white px-3 py-3 text-[#17385B] focus-visible:outline-2 focus-visible:outline-offset-2">
           <span className="block font-serif text-2xl font-bold">17/11</span>
           <span className="mt-1 block text-[13px] leading-5">Combate ao Câncer de Próstata</span>
         </a>
@@ -34,10 +34,10 @@ export function HeroSection() {
           Duas datas, um convite para cuidar da vida. Conheça a campanha e a história de Lucy Aihara.
         </p>
         <nav aria-label="Acesso rápido ao conteúdo" className="flex flex-wrap gap-2">
-          <Link href="/#datas" className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-[#17385B] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#28577C] focus-visible:outline-2 focus-visible:outline-offset-3">
+          <Link href="/#temas" className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-[#17385B] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#28577C] focus-visible:outline-2 focus-visible:outline-offset-3">
             Explorar a campanha <ArrowRight size={16} aria-hidden="true" />
           </Link>
-          <Link href="/#historia" className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-[#93B2C4] bg-white px-4 py-2.5 text-sm font-semibold text-[#17385B] transition-colors hover:bg-[#F8FCFE] focus-visible:outline-2 focus-visible:outline-offset-3">
+          <Link href="/trajetoria-de-lucy" className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-[#93B2C4] bg-white px-4 py-2.5 text-sm font-semibold text-[#17385B] transition-colors hover:bg-[#F8FCFE] focus-visible:outline-2 focus-visible:outline-offset-3">
             Conheça Lucy <ArrowUpRight size={16} aria-hidden="true" />
           </Link>
         </nav>
