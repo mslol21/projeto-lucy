@@ -16,6 +16,7 @@ export type VideoTestimonial = {
   id: "depoimento-01" | "depoimento-02" | "depoimento-03" | "depoimento-04" | "depoimento-05";
   title: string;
   youtubeId?: string;
+  articleUrl?: string;
   /** Caminhos públicos; o player só aparece após o arquivo responder com vídeo. */
   videos?: readonly { src: string; label: string }[];
   statement?: string;
@@ -27,7 +28,7 @@ export type VideoTestimonial = {
 };
 
 export const VIDEO_TESTIMONIALS: readonly VideoTestimonial[] = [
-  { id: "depoimento-01", title: "Depoimento 01", youtubeId: "Un-wQkY4A0E", authorized: true },
+  { id: "depoimento-01", title: "Depoimento 01", youtubeId: "Un-wQkY4A0E", articleUrl: "https://www.escoladefasciaterapiaemovimento.com/post/neuropatia-diab%C3%A9tica-relato-de-redu%C3%A7%C3%A3o-da-dor-e-melhora-da-mobilidade", authorized: true },
   { id: "depoimento-02", title: "Depoimento 02", authorized: false },
   {
     id: "depoimento-03", title: "Depoimento 03", authorized: true,
