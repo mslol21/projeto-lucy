@@ -1,15 +1,36 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { Play } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 const HERO_VIDEO = "/gemini_generated_video_44cc0415.mp4";
 const HERO_IMAGE = "/images/novembro-azul-hero.webp";
 
 export function HeroArt() {
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [imageFailed, setImageFailed] = useState(false);
   const [videoFailed, setVideoFailed] = useState(false);
-  const [videoPlaying, setVideoPlaying] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const [playBlocked, setPlayBlocked] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = true;
+    video.defaultMuted = true;
+    const tryPlay = () => {
+      video.play().then(() => setPlayBlocked(false)).catch(() => setPlayBlocked(true));
+    };
+    tryPlay();
+  }, []);
+
+  const startVideo = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = true;
+    video.play().then(() => setPlayBlocked(false)).catch(() => setPlayBlocked(true));
+  };
 
   return (
     <div className="relative h-full w-full overflow-hidden bg-[#D8ECFB]">
@@ -33,19 +54,31 @@ export function HeroArt() {
       )}
       {!videoFailed && (
         <video
-          aria-hidden="true"
+          ref={videoRef}
+          aria-label="Animação da campanha Novembro Azul"
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
           poster={HERO_IMAGE}
-          onPlaying={() => setVideoPlaying(true)}
+          onLoadedData={() => setVideoLoaded(true)}
+          onPlaying={() => { setVideoLoaded(true); setPlayBlocked(false); }}
           onError={() => setVideoFailed(true)}
-          className={`absolute inset-0 h-full w-full object-contain motion-reduce:hidden transition-opacity duration-500 ${videoPlaying ? "opacity-100" : "opacity-0"}`}
+          className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-500 ${videoLoaded ? "opacity-100" : "opacity-0"}`}
         >
           <source src={HERO_VIDEO} type="video/mp4" />
         </video>
+      )}
+      {playBlocked && !videoFailed && (
+        <button
+          type="button"
+          onClick={startVideo}
+          className="absolute bottom-4 right-4 z-10 inline-flex min-h-11 items-center gap-2 rounded-full bg-[#17385B] px-4 py-2 text-sm font-semibold text-white shadow-lg hover:bg-[#28577C] focus-visible:outline-2 focus-visible:outline-offset-2"
+          aria-label="Reproduzir animação do Novembro Azul"
+        >
+          <Play size={16} aria-hidden="true" /> Reproduzir vídeo
+        </button>
       )}
     </div>
   );
