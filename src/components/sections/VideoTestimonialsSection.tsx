@@ -25,14 +25,15 @@ export function VideoTestimonialsSection() {
           </p>
         </div>
 
-        <div className="mt-9 grid gap-6 md:grid-cols-2">
-          {VIDEO_TESTIMONIALS.map((item) => {
+        <div className="mt-9 mb-5"><h3 className="font-serif text-2xl font-bold">Relato de caso e experiências de atendimento</h3><p className="mt-2 max-w-2xl text-sm leading-7 text-[#405B6B]">O primeiro depoimento reúne vídeo e artigo completo sobre neuropatia diabética. Os demais relatos aparecem em cartões separados.</p></div>
+        <div className="grid gap-6 md:grid-cols-2">
+          {VIDEO_TESTIMONIALS.filter((item) => item.authorized && (item.youtubeId || item.videos?.length || item.transcript)).map((item) => {
             const youtubePublished = Boolean(item.authorized && item.youtubeId);
             const hasLocalVideos = Boolean(item.authorized && item.videos?.length);
             return (
-              <article key={item.id} className="overflow-hidden rounded-2xl border border-[#D9E5E8] bg-white shadow-[0_8px_26px_rgba(23,56,91,.035)]">
+              <article key={item.id} className={`overflow-hidden rounded-2xl border border-[#D9E5E8] bg-white shadow-[0_8px_26px_rgba(23,56,91,.035)] ${item.id === "depoimento-01" ? "md:col-span-2" : ""}`}>
                 {youtubePublished ? (
-                  <div className="bg-[#E7EFF3]">
+                  <div className="bg-[#E7EFF3] md:mx-auto md:max-w-3xl">
                     <a
                       href={"https://www.youtube.com/watch?v=" + item.youtubeId}
                       target="_blank"
@@ -86,7 +87,7 @@ export function VideoTestimonialsSection() {
                 <div className="p-6">
                   <p className="text-xs font-bold uppercase tracking-[.1em] text-[#4D7890]">{item.title}</p>
                   {item.id === "depoimento-01" && (
-                    <div className="mt-5 border-t border-[#DDE8EC] pt-5">
+                    <div className="mt-5 border-t border-[#DDE8EC] pt-5 md:mx-auto md:max-w-3xl">
                       <p className="text-xs font-bold uppercase tracking-[.1em] text-[#427996]">Relato de caso · Fasciaterapia e diabetes</p>
                       <h3 className="mt-2 font-serif text-xl font-bold leading-snug text-[#17385B]">{NEUROPATHY_ARTICLE.title}</h3>
                       <p className="mt-2 text-xs text-[#526E7E]">Por {NEUROPATHY_ARTICLE.author} · {NEUROPATHY_ARTICLE.published} · Atualizado em {NEUROPATHY_ARTICLE.updated} · {NEUROPATHY_ARTICLE.readingTime}</p>
@@ -115,12 +116,12 @@ export function VideoTestimonialsSection() {
                     </details>
                   )}
                   {item.authorized && item.transcript && !item.videos?.length && (
-                    <div className="mt-5 space-y-4 border-t border-[#DDE8EC] pt-5 text-sm leading-7 text-[#405B6B]">
+                    <details className="mt-5 border-t border-[#DDE8EC] pt-5 text-sm leading-7 text-[#405B6B]"><summary className="cursor-pointer font-semibold text-[#245C7D]">Ler entrevista completa</summary><div className="mt-4 space-y-4">
                       {item.transcript.split("\\n\\n").map((paragraph, index) => (
                         <p key={index}>{paragraph}</p>
                       ))}
                       <p className="text-xs leading-6 text-[#526E7E]">Relato pessoal sobre a experiência de atendimento. Não comprova eficácia clínica nem substitui avaliação e acompanhamento médico, especialmente em casos de trombose.</p>
-                    </div>
+                    </div></details>
                   )}
                   {item.textPendingConsent && <p className="mt-3 text-sm leading-7 text-[#526E7E]">O relato será disponibilizado exclusivamente em formato de texto após autorização para divulgação.</p>}
                   {!youtubePublished && !hasLocalVideos && !item.textPendingConsent && !(item.authorized && item.transcript) && <p className="mt-3 text-sm leading-7 text-[#526E7E]">Depoimento e vídeo serão adicionados futuramente.</p>}
