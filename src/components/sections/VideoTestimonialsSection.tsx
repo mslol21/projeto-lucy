@@ -1,4 +1,4 @@
-import { Film, HeartHandshake, LockKeyhole } from "lucide-react";
+import { Film, HeartHandshake, LockKeyhole, ExternalLink, Play } from "lucide-react";
 import { VIDEO_TESTIMONIALS } from "@/data/video-testimonials";
 
 export function VideoTestimonialsSection() {
@@ -31,16 +31,27 @@ export function VideoTestimonialsSection() {
             return (
               <article key={item.id} className="overflow-hidden rounded-2xl border border-[#D9E5E8] bg-white shadow-[0_8px_26px_rgba(23,56,91,.035)]">
                 {youtubePublished ? (
-                  <div className="aspect-video w-full bg-[#E7EFF3]">
+                  <div className="bg-[#E7EFF3]">
+                    <a
+                      href={"https://www.youtube.com/watch?v=" + item.youtubeId}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex min-h-14 items-center justify-center gap-2 bg-[#17385B] px-4 py-3 text-center text-sm font-semibold text-white hover:bg-[#28577C] focus-visible:outline-2 focus-visible:outline-offset-2"
+                    >
+                      <Play size={18} aria-hidden="true" /> Assistir ao depoimento no YouTube <ExternalLink size={16} aria-hidden="true" />
+                    </a>
+                    <div className="aspect-video w-full">
                     <iframe
                       className="h-full w-full"
-                      src={"https://www.youtube-nocookie.com/embed/" + item.youtubeId}
+                      src={"https://www.youtube.com/embed/" + item.youtubeId + "?rel=0"}
                       title={"Vídeo — " + item.title}
                       loading="lazy"
                       referrerPolicy="strict-origin-when-cross-origin"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
                     />
+                    </div>
+                    <p className="px-4 py-3 text-center text-xs leading-5 text-[#456277]">Se o vídeo não reproduzir aqui, use o botão acima para abrir diretamente no YouTube.</p>
                   </div>
                 ) : uploadedVideoPublished ? (
                   <video
@@ -76,7 +87,7 @@ export function VideoTestimonialsSection() {
                     </>
                   ) : (
                     <p className="mt-3 min-h-12 text-sm leading-7 text-[#526E7E]">
-                      {item.materialUnderReview ? "Materiais recebidos e autorizados para uso em vídeo. Edição e legendagem em preparação." : "Depoimento e vídeo serão adicionados futuramente."}
+                      {item.materialUnderReview ? "Vídeo recebido e autorizado. A publicação depende de hospedar o arquivo e preparar a exibição acessível." : "Depoimento e vídeo serão adicionados futuramente."}
                     </p>
                   )}
                   {youtubePublished && <a href={"https://www.youtube.com/watch?v=" + item.youtubeId} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex min-h-11 items-center text-sm font-semibold text-[#235779] underline underline-offset-4">Abrir vídeo no YouTube</a>}
