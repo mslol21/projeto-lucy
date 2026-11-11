@@ -1,10 +1,10 @@
 /**
  * Depoimentos da Escola de Fasciaterapia e Movimento.
  *
- * O usuário confirmou autorização para os vídeos. Não publique informações
+ * A autorização de vídeo NÃO se aplica ao depoimento 04. Não publique informações
  * pessoais, transcrições ou alegações clínicas além das autorizadas.
  *
- * Para os depoimentos 03 e 04, basta copiar os arquivos MP4:
+ * Somente o depoimento 03 utiliza os arquivos MP4:
  *   public/depoimentos/depoimento-03/VID-20261110-WA0021.mp4
  *   public/depoimentos/depoimento-03/VID-20261110-WA0022.mp4
  *   public/depoimentos/depoimento-04/VID-20261110-WA0028.mp4
@@ -21,6 +21,8 @@ export type VideoTestimonial = {
   displayName?: string;
   transcript?: string;
   authorized: boolean;
+  /** Texto somente quando houver consentimento expresso para essa forma de divulgação. */
+  textPendingConsent?: boolean;
 };
 
 export const VIDEO_TESTIMONIALS: readonly VideoTestimonial[] = [
@@ -34,7 +36,9 @@ export const VIDEO_TESTIMONIALS: readonly VideoTestimonial[] = [
     ],
   },
   {
-    id: "depoimento-04", title: "Depoimento 04", authorized: true,
-    videos: [{ src: "/depoimentos/depoimento-04/VID-20261110-WA0028.mp4", label: "Vídeo 1" }],
+    id: "depoimento-04",
+    title: "Depoimento 04",
+    authorized: false,
+    textPendingConsent: true,
   },
 ];
