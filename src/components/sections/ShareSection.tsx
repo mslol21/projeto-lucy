@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { Share2, Copy, Check, MessageCircle, Heart } from "lucide-react";
+import Image from "next/image";
+import { Share2, Copy, Check, MessageCircle } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
 import { BrandEmblem } from "@/components/ui/BrandEmblem";
@@ -71,8 +72,14 @@ export function ShareSection() {
             <BrandEmblem className="w-48 h-60" />
           </div>
 
-          <div className="inline-flex p-3 rounded-full bg-[#527fae]/15 text-[#17385B] mb-2">
-            <Heart className="w-8 h-8 text-[#527fae] fill-[#527fae]/20" aria-hidden="true" />
+          <div className="mx-auto mb-2 flex justify-center">
+            <Image
+              src="/images/emblema-novembro-azul-lucy.svg"
+              alt="Novembro Azul: círculo azul e bigode com a marca da Escola de Fasciaterapia e Movimento"
+              width={120}
+              height={120}
+              className="h-24 w-24 object-contain sm:h-28 sm:w-28"
+            />
           </div>
 
           <blockquote className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#17385B] font-medium leading-relaxed max-w-2xl mx-auto">
