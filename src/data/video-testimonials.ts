@@ -8,7 +8,7 @@
  * Arquivos MP4 configurados:
  *   public/depoimentos/depoimento-03/VID-20261110-WA0021.mp4
  *   public/depoimentos/depoimento-03/VID-20261110-WA0022.mp4
- *   public/depoimentos/depoimento-04/VID-20261110-WA0028.mp4
+ *   public/depoimentos/depoimento-04/VID-20261110-WA0026.mp4
  *
  * A detecção é automática após o deploy na Vercel. Não é necessário editar TSX.
  */
@@ -40,7 +40,7 @@ export const VIDEO_TESTIMONIALS: readonly VideoTestimonial[] = [
     id: "depoimento-04",
     title: "Depoimento 04",
     authorized: true,
-    videos: [{ src: "/depoimentos/depoimento-04/VID-20261110-WA0028.mp4", label: "Vídeo 1" }],
+    videos: [{ src: "/depoimentos/depoimento-04/VID-20261110-WA0026.mp4", label: "Vídeo 1" }],
   },
   {
     id: "depoimento-05",
