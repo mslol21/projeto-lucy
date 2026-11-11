@@ -1,10 +1,11 @@
 /**
  * Depoimentos da Escola de Fasciaterapia e Movimento.
  *
- * A autorização de vídeo NÃO se aplica ao depoimento 04. Não publique informações
- * pessoais, transcrições ou alegações clínicas além das autorizadas.
+ * Os depoimentos 03 e 04 têm vídeos com publicação autorizada.
+ * O depoimento 05 é exclusivamente textual e ainda exige consentimento específico.
+ * Não publique informações pessoais, transcrições ou alegações clínicas além das autorizadas.
  *
- * Somente o depoimento 03 utiliza os arquivos MP4:
+ * Arquivos MP4 configurados:
  *   public/depoimentos/depoimento-03/VID-20261110-WA0021.mp4
  *   public/depoimentos/depoimento-03/VID-20261110-WA0022.mp4
  *   public/depoimentos/depoimento-04/VID-20261110-WA0028.mp4
@@ -12,7 +13,7 @@
  * A detecção é automática após o deploy na Vercel. Não é necessário editar TSX.
  */
 export type VideoTestimonial = {
-  id: "depoimento-01" | "depoimento-02" | "depoimento-03" | "depoimento-04";
+  id: "depoimento-01" | "depoimento-02" | "depoimento-03" | "depoimento-04" | "depoimento-05";
   title: string;
   youtubeId?: string;
   /** Caminhos públicos; o player só aparece após o arquivo responder com vídeo. */
@@ -38,6 +39,12 @@ export const VIDEO_TESTIMONIALS: readonly VideoTestimonial[] = [
   {
     id: "depoimento-04",
     title: "Depoimento 04",
+    authorized: true,
+    videos: [{ src: "/depoimentos/depoimento-04/VID-20261110-WA0028.mp4", label: "Vídeo 1" }],
+  },
+  {
+    id: "depoimento-05",
+    title: "Depoimento 05",
     authorized: false,
     textPendingConsent: true,
   },
