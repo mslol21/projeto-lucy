@@ -52,7 +52,7 @@ export function HeroArt() {
       onError={() => setVideoFailed(true)}
       className={`absolute inset-0 h-full w-full object-cover motion-reduce:hidden transition-opacity duration-700 ${videoReady ? "opacity-100" : "opacity-0"}`}
     >
-      <source src="/Gemini_generated_,video_44cc0415.mp4" type="video/mp4" />
+      <source src="/gemini_generated_video_637d74b9.mp4" type="video/mp4" />
     </video>}
   </div>;
 }
