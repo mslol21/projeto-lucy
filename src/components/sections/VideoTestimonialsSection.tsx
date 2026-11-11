@@ -18,17 +18,31 @@ export function VideoTestimonialsSection() {
             Histórias contadas por quem viveu o cuidado.
           </h2>
           <p className="mt-5 max-w-2xl text-base leading-8 text-[#405B6B]">
-            Este espaço receberá depoimentos em vídeo de pessoas atendidas pela escola,
-            compartilhados somente com a autorização de cada participante.
+            Aqui serão apresentados depoimentos e registros autorizados de experiências de atendimento.
+            Os relatos são pessoais e não representam garantia de resultados.
           </p>
         </div>
 
         <div className="mt-9 grid gap-6 md:grid-cols-2">
           {VIDEO_TESTIMONIALS.map((item) => {
-            const published = Boolean(item.authorized && item.videoSrc && item.captionsSrc && item.transcript);
+            const youtubePublished = Boolean(item.authorized && item.youtubeId);
+            const uploadedVideoPublished = Boolean(item.authorized && item.videoSrc && item.captionsSrc && item.transcript);
+            const published = youtubePublished || uploadedVideoPublished;
             return (
               <article key={item.id} className="overflow-hidden rounded-2xl border border-[#D9E5E8] bg-white shadow-[0_8px_26px_rgba(23,56,91,.035)]">
-                {published ? (
+                {youtubePublished ? (
+                  <div className="aspect-video w-full bg-[#E7EFF3]">
+                    <iframe
+                      className="h-full w-full"
+                      src={"https://www.youtube-nocookie.com/embed/" + item.youtubeId}
+                      title={"Vídeo — " + item.title}
+                      loading="lazy"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    />
+                  </div>
+                ) : uploadedVideoPublished ? (
                   <video
                     className="aspect-video w-full bg-[#E7EFF3] object-contain"
                     controls
@@ -62,9 +76,10 @@ export function VideoTestimonialsSection() {
                     </>
                   ) : (
                     <p className="mt-3 min-h-12 text-sm leading-7 text-[#526E7E]">
-                      {item.materialUnderReview ? "Materiais audiovisuais recebidos. Publicação pendente de autorização e preparação das legendas e do relato." : "Depoimento e vídeo serão adicionados futuramente."}
+                      {item.materialUnderReview ? "Materiais recebidos e autorizados para uso em vídeo. Edição e legendagem em preparação." : "Depoimento e vídeo serão adicionados futuramente."}
                     </p>
                   )}
+                  {youtubePublished && <a href={"https://www.youtube.com/watch?v=" + item.youtubeId} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex min-h-11 items-center text-sm font-semibold text-[#235779] underline underline-offset-4">Abrir vídeo no YouTube</a>}
                 </div>
               </article>
             );
