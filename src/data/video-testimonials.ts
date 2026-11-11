@@ -2,7 +2,7 @@
  * Depoimentos da Escola de Fasciaterapia e Movimento.
  *
  * Os depoimentos 03 e 04 têm vídeos com publicação autorizada.
- * O depoimento 05 é exclusivamente textual e ainda exige consentimento específico.
+ * O depoimento 05 é exclusivamente textual e teve sua divulgação autorizada.
  * Não publique informações pessoais, transcrições ou alegações clínicas além das autorizadas.
  *
  * Arquivos MP4 configurados:
@@ -45,7 +45,9 @@ export const VIDEO_TESTIMONIALS: readonly VideoTestimonial[] = [
   {
     id: "depoimento-05",
     title: "Depoimento 05",
-    authorized: false,
-    textPendingConsent: true,
+    authorized: true,
+    displayName: "Dona Inês",
+    statement: "Olha, eu me senti muito bem com esse tratamento. É, para mim é uma novidade, porque eu esperava somente que fosse assim, um tratamento só para minhas pernas, e não, eu estou vendo que é um tratamento para o corpo todo, corpo em geral. E eu estou gostando.",
+    transcript: "Paciente (Dona Inês): Olha, eu me senti muito bem com esse tratamento. É, para mim é uma novidade, porque eu esperava somente que fosse assim, um tratamento só para minhas pernas, e não, eu estou vendo que é um tratamento para o corpo todo, corpo em geral. E eu estou gostando.\n\nProfissional: A senhora estava com trombose?\n\nPaciente: Eu estou, sim, eu estou com uma trombose na perna esquerda. E acho que já vai... já senti que a perna está menos inchada, menos pesada. Então, eu acho que já está surtindo efeito.\n\nProfissional: Nós ficamos 3 horas conversando, atendendo, né? E agora são 18h, começamos às 14h. Antes de eu chegar, a senhora foi ao banheiro durante...?\n\nPaciente: E durante o tratamento eu fui duas vezes no banheiro também.\n\nProfissional: É, então fez bastante xixi, né? Fez bastante xixi e outra... outro problema que a senhora tem é o Lipedema.\n\nPaciente: Lipedema. Exatamente. Por isso que às vezes o uso da meia compressiva parece que forma um torniquete na minha perna. Então, pretendo também fazer um tratamento para o Lipedema.\n\nProfissional: Isso, e é isso que a gente está fazendo junto da fisioterapia. Seja muito bem-vinda e vamos acompanhar nos próximos capítulos. Hoje é dia 28 de março de 2025. Tá bom, muito bom, dona Inês.",
   },
 ];
