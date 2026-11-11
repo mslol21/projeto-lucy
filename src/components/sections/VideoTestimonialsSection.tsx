@@ -1,4 +1,4 @@
-import { Film, HeartHandshake, LockKeyhole, ExternalLink, Play } from "lucide-react";
+import { Film, HeartHandshake, LockKeyhole, ExternalLink, Play, FileText } from "lucide-react";
 import { VIDEO_TESTIMONIALS } from "@/data/video-testimonials";
 import { LocalTestimonialVideos } from "@/components/sections/LocalTestimonialVideos";
 
@@ -55,6 +55,14 @@ export function VideoTestimonialsSection() {
                       Se o vídeo não reproduzir aqui, use o botão acima para abrir diretamente no YouTube.
                     </p>
                   </div>
+                ) : item.textPendingConsent ? (
+                  <div className="flex aspect-video flex-col items-center justify-center gap-3 bg-[#EAF2F5] px-5 text-center">
+                    <div className="flex size-16 items-center justify-center rounded-full border border-[#BCD5E1] bg-white text-[#427996]">
+                      <FileText size={27} strokeWidth={1.6} aria-hidden="true" />
+                    </div>
+                    <p className="text-sm font-semibold text-[#355B72]">Depoimento em texto</p>
+                    <p className="max-w-[36ch] text-xs leading-5 text-[#526E7E]">Aguardando autorização para divulgação do relato</p>
+                  </div>
                 ) : hasLocalVideos && item.videos ? (
                   <LocalTestimonialVideos videos={item.videos} title={item.title} />
                 ) : (
@@ -68,15 +76,16 @@ export function VideoTestimonialsSection() {
                 )}
                 <div className="p-6">
                   <p className="text-xs font-bold uppercase tracking-[.1em] text-[#4D7890]">{item.title}</p>
-                  {item.statement && <blockquote className="mt-3 border-l-2 border-[#84B7CE] pl-4 text-base leading-7 text-[#344F60]">{item.statement}</blockquote>}
-                  {item.displayName && <p className="mt-3 text-sm font-medium text-[#3E6378]">{item.displayName}</p>}
-                  {item.transcript && (
+                  {item.authorized && item.statement && <blockquote className="mt-3 border-l-2 border-[#84B7CE] pl-4 text-base leading-7 text-[#344F60]">{item.statement}</blockquote>}
+                  {item.authorized && item.displayName && <p className="mt-3 text-sm font-medium text-[#3E6378]">{item.displayName}</p>}
+                  {item.authorized && item.transcript && (
                     <details className="mt-5 border-t border-[#DDE8EC] pt-4">
                       <summary className="cursor-pointer text-sm font-semibold text-[#245C7D]">Ler transcrição do vídeo</summary>
                       <p className="mt-3 whitespace-pre-line text-sm leading-7 text-[#405B6B]">{item.transcript}</p>
                     </details>
                   )}
-                  {!youtubePublished && !hasLocalVideos && <p className="mt-3 text-sm leading-7 text-[#526E7E]">Depoimento e vídeo serão adicionados futuramente.</p>}
+                  {item.textPendingConsent && <p className="mt-3 text-sm leading-7 text-[#526E7E]">O relato será disponibilizado exclusivamente em formato de texto após autorização para divulgação.</p>}
+                  {!youtubePublished && !hasLocalVideos && !item.textPendingConsent && <p className="mt-3 text-sm leading-7 text-[#526E7E]">Depoimento e vídeo serão adicionados futuramente.</p>}
                 </div>
               </article>
             );
