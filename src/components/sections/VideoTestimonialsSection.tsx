@@ -32,6 +32,14 @@ export function VideoTestimonialsSection() {
             const hasLocalVideos = Boolean(item.authorized && item.videos?.length);
             return (
               <article key={item.id} className={`overflow-hidden rounded-2xl border border-[#D9E5E8] bg-white shadow-[0_8px_26px_rgba(23,56,91,.035)] ${item.id === "depoimento-01" ? "md:col-span-2" : ""}`}>
+                <div className="flex items-center justify-between border-b border-[#DDE8EC] bg-[#EDF5F9] px-5 py-3 sm:px-6">
+                  <span className="inline-flex items-center rounded-full bg-[#17385B] px-4 py-2 text-sm font-bold tracking-wide text-white">
+                    {item.title}
+                  </span>
+                  <span className="text-xs font-medium text-[#526E7E]">
+                    {item.id === "depoimento-01" ? "Relato de caso" : item.videos?.length ? "Depoimento em vídeo" : "Depoimento em texto"}
+                  </span>
+                </div>
                 {youtubePublished ? (
                   <div className="bg-[#E7EFF3] md:mx-auto md:max-w-3xl">
                     <a
@@ -85,7 +93,7 @@ export function VideoTestimonialsSection() {
                   </div>
                 )}
                 <div className="p-6">
-                  <p className="text-xs font-bold uppercase tracking-[.1em] text-[#4D7890]">{item.title}</p>
+
                   {item.id === "depoimento-01" && (
                     <div className="mt-5 border-t border-[#DDE8EC] pt-5 md:mx-auto md:max-w-3xl">
                       <p className="text-xs font-bold uppercase tracking-[.1em] text-[#427996]">Relato de caso · Fasciaterapia e diabetes</p>
