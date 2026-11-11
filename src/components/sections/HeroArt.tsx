@@ -4,6 +4,8 @@ import { useState } from "react";
 
 export function HeroArt() {
   const [failed, setFailed] = useState(false);
+  const [videoReady, setVideoReady] = useState(false);
+  const [videoFailed, setVideoFailed] = useState(false);
   if (failed) {
     return (
       <div className="relative flex aspect-[1672/941] min-h-[280px] w-full flex-col items-center justify-center gap-5 overflow-hidden bg-gradient-to-b from-[#F5FBFF] to-[#D8ECFB] px-4 py-8 text-center text-[#17385B]">
@@ -27,7 +29,8 @@ export function HeroArt() {
       </div>
     );
   }
-  return <Image
+  return <div className="relative h-full w-full overflow-hidden">
+    <Image
     src="/images/novembro-azul-hero.webp"
     alt="Projeto Lucy e Escola de Fasciaterapia e Movimento. Laço azul em destaque. 14 de novembro: Dia Mundial do Diabetes. 17 de novembro: Dia Nacional de Combate ao Câncer de Próstata."
     fill
@@ -36,5 +39,20 @@ export function HeroArt() {
     sizes="100vw"
     className="object-contain"
     onError={() => setFailed(true)}
-  />;
+  />
+    {!videoFailed && <video
+      aria-hidden="true"
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="metadata"
+      poster="/images/novembro-azul-hero.webp"
+      onCanPlay={() => setVideoReady(true)}
+      onError={() => setVideoFailed(true)}
+      className={`absolute inset-0 h-full w-full object-cover motion-reduce:hidden transition-opacity duration-700 ${videoReady ? "opacity-100" : "opacity-0"}`}
+    >
+      <source src="/videos/358720.mp4" type="video/mp4" />
+    </video>}
+  </div>;
 }
