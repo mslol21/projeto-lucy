@@ -7,10 +7,10 @@ import { Menu, X, BookOpen } from "lucide-react";
 import { ShareActions } from "@/components/engagement/ShareActions";
 
 const editorialNav = [
-  { label: "Especial de novembro", href: "/#datas" },
-  { label: "Diabetes", href: "/#diabetes" },
-  { label: "Câncer de próstata", href: "/#saude-masculina" },
-  { label: "História da Lucy", href: "/#historia" },
+  { label: "Especial de novembro", href: "/visao-geral" },
+  { label: "Diabetes", href: "/diabetes" },
+  { label: "Câncer de próstata", href: "/cancer-de-prostata" },
+  { label: "História da Lucy", href: "/trajetoria-de-lucy" },
   { label: "Artigos de saúde", href: "/conhecimento" },
 ];
 
