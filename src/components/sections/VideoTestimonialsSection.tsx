@@ -1,5 +1,6 @@
 import { Film, HeartHandshake, LockKeyhole, ExternalLink, Play, FileText } from "lucide-react";
 import { VIDEO_TESTIMONIALS } from "@/data/video-testimonials";
+import { NEUROPATHY_ARTICLE } from "@/data/neuropathy-article";
 import { LocalTestimonialVideos } from "@/components/sections/LocalTestimonialVideos";
 
 export function VideoTestimonialsSection() {
@@ -84,13 +85,25 @@ export function VideoTestimonialsSection() {
                 )}
                 <div className="p-6">
                   <p className="text-xs font-bold uppercase tracking-[.1em] text-[#4D7890]">{item.title}</p>
-                  {item.authorized && item.articleUrl && (
-                    <div className="mt-4 rounded-xl border border-[#C9DEE8] bg-[#F0F7FA] p-4">
-                      <p className="text-xs font-bold uppercase tracking-[.08em] text-[#427996]">Artigo relacionado</p>
-                      <p className="mt-2 text-sm font-semibold leading-6 text-[#17385B]">Neuropatia diabética: relato de redução da dor e melhora da mobilidade</p>
-                      <a href={item.articleUrl} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex min-h-11 items-center gap-2 rounded-lg bg-[#17385B] px-4 py-2 text-sm font-semibold text-white hover:bg-[#28577C] focus-visible:outline-2 focus-visible:outline-offset-2">
-                        Ler artigo completo <ExternalLink size={16} aria-hidden="true" />
-                      </a>
+                  {item.id === "depoimento-01" && (
+                    <div className="mt-5 border-t border-[#DDE8EC] pt-5">
+                      <p className="text-xs font-bold uppercase tracking-[.1em] text-[#427996]">Relato de caso · Fasciaterapia e diabetes</p>
+                      <h3 className="mt-2 font-serif text-xl font-bold leading-snug text-[#17385B]">{NEUROPATHY_ARTICLE.title}</h3>
+                      <p className="mt-2 text-xs text-[#526E7E]">Por {NEUROPATHY_ARTICLE.author} · {NEUROPATHY_ARTICLE.published} · Atualizado em {NEUROPATHY_ARTICLE.updated} · {NEUROPATHY_ARTICLE.readingTime}</p>
+                      <p className="mt-4 text-sm leading-7 text-[#405B6B]">{NEUROPATHY_ARTICLE.introduction}</p>
+                      <details className="group mt-5 rounded-xl border border-[#C9DEE8] bg-[#F0F7FA] p-4 open:bg-white">
+                        <summary className="cursor-pointer text-sm font-bold text-[#17385B] focus-visible:outline-2 focus-visible:outline-offset-4">Ler artigo completo sobre neuropatia diabética</summary>
+                        <div className="mt-6 space-y-7">
+                          {NEUROPATHY_ARTICLE.sections.map((section) => (
+                            <section key={section.title} className="space-y-3">
+                              <h4 className="font-serif text-lg font-bold leading-snug text-[#17385B]">{section.title}</h4>
+                              {section.paragraphs.map((paragraph, index) => <p key={index} className="text-sm leading-7 text-[#405B6B]">{paragraph}</p>)}
+                            </section>
+                          ))}
+                          <p className="border-t border-[#DDE8EC] pt-4 text-xs leading-6 text-[#526E7E]">{NEUROPATHY_ARTICLE.aiDisclosure}</p>
+                          <p className="rounded-lg bg-[#EAF2F5] p-3 text-xs leading-6 text-[#405B6B]">Relato de caso individual. Não constitui evidência de eficácia do método nem substitui acompanhamento médico, controle glicêmico ou tratamentos indicados por profissionais habilitados.</p>
+                        </div>
+                      </details>
                     </div>
                   )}
                   {item.authorized && item.statement && <blockquote className="mt-3 border-l-2 border-[#84B7CE] pl-4 text-base leading-7 text-[#344F60]">{item.statement}</blockquote>}
