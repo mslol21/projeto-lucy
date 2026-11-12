@@ -27,6 +27,11 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  icons: {
+    icon: [{ url: "/images/logo-horizontal-hd.png", type: "image/png" }],
+    shortcut: "/images/logo-horizontal-hd.png",
+    apple: "/images/logo-horizontal-hd.png",
+  },
   title: "Novembro Azul 2026: Diabetes e Câncer de Próstata | Escola de Fasciaterapia",
   description:
     "Novembro Azul 2026: informação sobre o Dia Mundial do Diabetes (14/11) e o Dia Nacional de Combate ao Câncer de Próstata (17/11), com a história de Lucy Aihara.",
