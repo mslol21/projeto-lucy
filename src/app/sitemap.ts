@@ -1,57 +1,29 @@
 import type { MetadataRoute } from "next";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://projeto-lucy.vercel.app";
-  const now = new Date();
+const baseUrl = "https://www.escoladefasciaterapiaemovimento.com";
+const routes = [
+  "",
+  "visao-geral",
+  "diabetes",
+  "cancer-de-prostata",
+  "fascia-e-cuidado",
+  "trajetoria-de-lucy",
+  "neuropatia-e-sna",
+  "checklist-corporal",
+  "depoimentos",
+  "conhecimento",
+  "conhecimento/metodo-danis-bois",
+  "conhecimento/neuropatia-diabetica",
+  "conhecimento/fasciaterapia-e-dor",
+  "conhecimento/fascia-renal",
+  "conhecimento/evidencias-cientificas",
+  "conhecimento/lucy-aihara"
+];
 
-  return [
-    {
-      url: `${baseUrl}/`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/conhecimento`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/conhecimento/metodo-danis-bois`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/conhecimento/neuropatia-diabetica`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/conhecimento/fasciaterapia-e-dor`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/conhecimento/fascia-renal`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.75,
-    },
-    {
-      url: `${baseUrl}/conhecimento/evidencias-cientificas`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/conhecimento/lucy-aihara`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-  ];
+export default function sitemap(): MetadataRoute.Sitemap {
+  return routes.map((path) => ({
+    url: path ? `${baseUrl}/${path}` : baseUrl,
+    changeFrequency: "monthly",
+    priority: path === "" ? 1 : path.startsWith("conhecimento/") ? 0.7 : 0.8,
+  }));
 }
