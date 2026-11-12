@@ -97,7 +97,6 @@ export default function RootLayout({
         name: "Escola de Fasciaterapia e Movimento",
         url: "https://www.escoladefasciaterapiaemovimento.com/",
         description: "Conteúdos educativos sobre Fasciaterapia, movimento, diabetes e saúde, apresentados por Lucy Aihara.",
-        areaServed: { "@type": "Country", name: "Brasil" },
         founder: {
           "@type": "Person",
           name: "Lucy Aihara",
