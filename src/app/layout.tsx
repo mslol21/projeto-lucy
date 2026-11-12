@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     shortcut: "/images/logo-horizontal-hd.png",
     apple: "/images/logo-horizontal-hd.png",
   },
-  title: "Novembro Azul 2026: Diabetes e Câncer de Próstata | Escola de Fasciaterapia",
+  title: { default: "Novembro Azul 2026: Diabetes e Saúde Masculina | Escola de Fasciaterapia e Movimento", template: "%s | Escola de Fasciaterapia e Movimento" },
   description:
     "Novembro Azul 2026: informação sobre o Dia Mundial do Diabetes (14/11) e o Dia Nacional de Combate ao Câncer de Próstata (17/11), com a história de Lucy Aihara.",
   keywords: [
@@ -66,6 +66,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
+    images: [{ url: "/images/novembro-azul-hero.webp", width: 1200, height: 675, alt: "Novembro Azul — Escola de Fasciaterapia e Movimento" }],
     type: "website",
     locale: "pt_BR",
     url: siteUrl,
@@ -76,6 +77,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    images: ["/images/novembro-azul-hero.webp"],
     title: "Novembro Azul 2026 | Escola de Fasciaterapia e Movimento",
     description: "Cuidar de si é também aprender a se conhecer. Informar também é uma forma de cuidar.",
   },
@@ -94,6 +96,8 @@ export default function RootLayout({
         "@id": "https://www.escoladefasciaterapiaemovimento.com/#organization",
         name: "Escola de Fasciaterapia e Movimento",
         url: "https://www.escoladefasciaterapiaemovimento.com/",
+        description: "Conteúdos educativos sobre Fasciaterapia, movimento, diabetes e saúde, apresentados por Lucy Aihara.",
+        areaServed: { "@type": "Country", name: "Brasil" },
         founder: {
           "@type": "Person",
           name: "Lucy Aihara",
