@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Lora, Inter } from "next/font/google";
 import "./globals.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://projeto-lucy.vercel.app";
+const siteUrl = "https://www.escoladefasciaterapiaemovimento.com";
 
 const lora = Lora({
   variable: "--font-lora",
