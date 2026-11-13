@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://projeto-lucy.vercel.app";
+  const baseUrl = "https://novembroazul.escoladefasciaterapiaemovimento.com";
   const now = new Date();
 
   return [
@@ -12,10 +12,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
+      url: `${baseUrl}/fotobiomodulacao`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/saude-masculina`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/diabetes`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/depoimentos`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/conhecimento`,
       lastModified: now,
       changeFrequency: "weekly",
-      priority: 0.9,
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/conhecimento/metodo-danis-bois`,
@@ -27,7 +51,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/conhecimento/neuropatia-diabetica`,
       lastModified: now,
       changeFrequency: "monthly",
-      priority: 0.85,
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/conhecimento/fasciaterapia-e-dor`,
@@ -51,7 +75,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/conhecimento/fotobiomodulacao`,
       lastModified: now,
       changeFrequency: "monthly",
-      priority: 0.85,
+      priority: 0.8,
     },
   ];
 }

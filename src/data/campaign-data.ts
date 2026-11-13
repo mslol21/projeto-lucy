@@ -59,14 +59,12 @@ export const CAMPAIGN_INFO = {
 };
 
 export const NAV_LINKS: NavItem[] = [
+  { label: "Início", href: "/" },
   { label: "Atendimento Gratuito", href: "/#especial-novembro-azul" },
-  { label: "O Propósito", href: "/#datas" },
-  { label: "Diabetes", href: "/#diabetes" },
-  { label: "Neuropatia", href: "/#neuropatia" },
-  { label: "Saúde Masculina", href: "/#saude-masculina" },
-  { label: "O Corpo & Fascia", href: "/#corpo-atencao" },
-  { label: "Mitos e Verdades", href: "/#mitos-verdades" },
-  { label: "Centro de Conhecimento", href: "/conhecimento" },
+  { label: "Fotobiomodulação", href: "/fotobiomodulacao" },
+  { label: "Temas", href: "/#temas" },
+  { label: "Sobre Lucy", href: "/conhecimento/lucy-aihara" },
+  { label: "Depoimentos", href: "/depoimentos" },
 ];
 
 export const DIABETES_DATA = {
@@ -425,3 +423,56 @@ export const NOVEMBER_BLUE_OFFER: NovemberBlueOfferData = {
     },
   ],
 };
+
+export interface TestimonialItem {
+  id: string;
+  author: string;
+  age: number;
+  role: string;
+  city: string;
+  quote: string;
+  context: string;
+}
+
+export const TESTIMONIALS: TestimonialItem[] = [
+  {
+    id: "depoimento-marcos",
+    author: "Marcos P.",
+    age: 54,
+    role: "Gestor Administrativo",
+    city: "São Paulo - SP",
+    quote:
+      "Nós, homens, fomos educados a ignorar o cansaço e só procurar ajuda quando algo trava de vez. Conhecer o trabalho da Lucy me ensinou a escutar os sinais de tensão antes que virem dor crônica. O ambiente no consultório transmite uma paz rara.",
+    context: "Acompanhamento de percepção corporal e alívio de sobrecargas posturais",
+  },
+  {
+    id: "depoimento-carlos",
+    author: "Carlos E.",
+    age: 49,
+    role: "Professor Universitário",
+    city: "São Paulo - SP",
+    quote:
+      "A seriedade técnica da Lucy salta aos olhos. Ela não faz promessas milagrosas; explica cada passo com base anatômica e fisiológica. A experiência do toque e do cuidado sutil me ajudou a desacelerar a mente e respirar melhor.",
+    context: "Sessões presenciais de conscientização do movimento",
+  },
+  {
+    id: "depoimento-roberto",
+    author: "Roberto S.",
+    age: 62,
+    role: "Engenheiro Aposentado",
+    city: "São Paulo - SP",
+    quote:
+      "Com a idade, passei a ter mais receio de rigidez e perda de mobilidade. O atendimento com a Lucy Aihara em Higienópolis foi um divisor de águas: aprendi a respeitar meus limites e ganhei mais leveza no dia a dia.",
+    context: "Reeducação somática e mobilidade articular suave",
+  },
+  {
+    id: "depoimento-daniel",
+    author: "Daniel M.",
+    age: 43,
+    role: "Arquiteto",
+    city: "São Paulo - SP",
+    quote:
+      "A campanha do Novembro Azul abriu meus olhos para a importância do autocuidado preventivo. A postura acolhedora da Lucy me deu total segurança para experimentar e aprender a cuidar de mim com gentileza.",
+    context: "Prevenção e consciência postural",
+  },
+];

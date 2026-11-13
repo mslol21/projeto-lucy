@@ -24,7 +24,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.escoladefasciaterapiaemovimento.com"),
+  metadataBase: new URL("https://novembroazul.escoladefasciaterapiaemovimento.com"),
   title: "Novembro Azul 2026 | Escola de Fasciaterapia e Movimento",
   description:
     "Cuidar de si é também aprender a se conhecer. Campanha educativa da Escola de Fasciaterapia e Movimento sobre o Dia Mundial do Diabetes (14/11) e o Dia Nacional de Combate ao Câncer de Próstata (17/11). Informar também é uma forma de cuidar.",

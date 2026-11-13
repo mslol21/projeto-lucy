@@ -3,14 +3,27 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, X, BookOpen } from "lucide-react";
-import { NAV_LINKS, CAMPAIGN_INFO } from "@/data/campaign-data";
+import { Menu, X, MessageCircle, Sparkles } from "lucide-react";
+import { NAV_LINKS, CAMPAIGN_INFO, NOVEMBER_BLUE_OFFER } from "@/data/campaign-data";
+import { trackConversionEvent } from "@/lib/analytics";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const offer = NOVEMBER_BLUE_OFFER;
+  const whatsappUrl = `https://wa.me/${offer.whatsappNumber}?text=${encodeURIComponent(
+    offer.whatsappMessage
+  )}`;
+
+  const handleWhatsAppHeaderClick = () => {
+    trackConversionEvent("novembro_azul_fotobiomodulacao_lead", {
+      source: "header_cta",
+      channel: "whatsapp",
+      campaign: "novembro_azul_2026",
+    });
+  };
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-[#F5F2EB]/92 backdrop-blur-md border-b border-stone-200/70 shadow-[0_4px_20px_-4px_rgba(23,56,91,0.04)] transition-all">
+    <header className="sticky top-0 z-40 w-full bg-[#F5F2EB]/95 backdrop-blur-md border-b border-stone-200/80 shadow-[0_4px_20px_-4px_rgba(23,56,91,0.04)] transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo Oficial HD da Escola */}
@@ -40,34 +53,52 @@ export function Header() {
           </Link>
 
           {/* Navegação Desktop */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-3 xl:gap-5">
             <nav className="flex items-center gap-1 xl:gap-2" aria-label="Navegação principal">
               {NAV_LINKS.map((link) => {
-                const isKnowledge = link.href === "/conhecimento";
+                const isOffer = link.href === "/#especial-novembro-azul";
                 return (
                   <Link
                     key={link.href}
                     href={link.href}
                     className={`px-3 py-1.5 text-xs xl:text-sm font-medium rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#17385B] ${
-                      isKnowledge
-                        ? "bg-[#17385B] text-white hover:bg-[#1f4a75] shadow-2xs font-semibold flex items-center gap-1.5"
+                      isOffer
+                        ? "bg-[#17385B] text-white hover:bg-[#1f4a75] shadow-2xs font-semibold"
                         : "text-[#17385B]/85 hover:text-[#17385B] hover:bg-white/80"
                     }`}
                   >
-                    {isKnowledge && <BookOpen className="w-3.5 h-3.5" aria-hidden="true" />}
                     <span>{link.label}</span>
                   </Link>
                 );
               })}
             </nav>
 
-            <span className="inline-flex items-center px-3 py-1 text-xs font-semibold rounded-full bg-[#527fae]/15 text-[#17385B] border border-[#527fae]/30 shadow-2xs">
-              {CAMPAIGN_INFO.year}
-            </span>
+            {/* CTA WhatsApp do Header */}
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handleWhatsAppHeaderClick}
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#25D366] hover:bg-[#1ebd5a] text-[#073322] font-semibold text-xs shadow-2xs transition-colors"
+            >
+              <MessageCircle className="w-3.5 h-3.5 fill-current" aria-hidden="true" />
+              <span>Agendar</span>
+            </a>
           </div>
 
           {/* Botão Mobile */}
-          <div className="flex items-center lg:hidden">
+          <div className="flex items-center gap-2 lg:hidden">
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handleWhatsAppHeaderClick}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#25D366] text-[#073322] font-bold text-xs shadow-2xs"
+            >
+              <MessageCircle className="w-3.5 h-3.5 fill-current" />
+              <span>Agendar</span>
+            </a>
+
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -94,20 +125,19 @@ export function Header() {
           </div>
           <nav className="flex flex-col space-y-1" aria-label="Menu móvel">
             {NAV_LINKS.map((link) => {
-              const isKnowledge = link.href === "/conhecimento";
+              const isOffer = link.href === "/#especial-novembro-azul";
               return (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={`px-3 py-2.5 rounded-xl text-sm font-medium transition-colors flex items-center justify-between ${
-                    isKnowledge
+                    isOffer
                       ? "bg-[#17385B] text-white font-semibold"
                       : "text-[#17385B] hover:bg-white"
                   }`}
                 >
                   <span>{link.label}</span>
-                  {isKnowledge && <BookOpen className="w-4 h-4 text-[#84B7CE]" />}
                 </Link>
               );
             })}
