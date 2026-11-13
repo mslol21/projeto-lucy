@@ -167,13 +167,13 @@ export function NovemberBlueOfferSection() {
                   <span>{offer.ctaText}</span>
                 </a>
 
-                <a
-                  href="#o-que-e-fotobiomodulacao"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-4 rounded-xl bg-white/10 hover:bg-white/15 text-white font-medium text-sm border border-white/20 transition-all duration-200 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                <Link
+                  href="/atendimento"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white/10 hover:bg-white/15 text-white font-medium text-sm border border-white/20 transition-all duration-200 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 >
-                  <span>{offer.ctaSecondaryText}</span>
+                  <span>Ver valores e opções</span>
                   <ArrowRight className="w-4 h-4 text-[#84B7CE]" aria-hidden="true" />
-                </a>
+                </Link>
               </div>
 
               {/* Microtexto anti-fricção */}

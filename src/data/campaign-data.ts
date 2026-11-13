@@ -60,7 +60,7 @@ export const CAMPAIGN_INFO = {
 
 export const NAV_LINKS: NavItem[] = [
   { label: "Início", href: "/" },
-  { label: "Atendimento Gratuito", href: "/#especial-novembro-azul" },
+  { label: "Atendimento Gratuito", href: "/atendimento" },
   { label: "Fotobiomodulação", href: "/fotobiomodulacao" },
   { label: "Temas", href: "/#temas" },
   { label: "Sobre Lucy", href: "/conhecimento/lucy-aihara" },
@@ -476,3 +476,230 @@ export const TESTIMONIALS: TestimonialItem[] = [
     context: "Prevenção e consciência postural",
   },
 ];
+
+export interface CommercialPlanItem {
+  id: string;
+  badge?: string;
+  name: string;
+  price: string;
+  priceNumeric: number;
+  perSessionPrice?: string;
+  savings?: string;
+  savingsPercent?: string;
+  sessionsCount: number;
+  duration: string;
+  isFree?: boolean;
+  isFeatured?: boolean;
+  features: string[];
+  ctaText: string;
+  whatsappMessage: string;
+  conversionEvent: string;
+}
+
+export interface CommercialFaqItem {
+  id: string;
+  question: string;
+  answer: string;
+}
+
+export interface CommercialOfferData {
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  badge: string;
+  ctaText: string;
+  whatsappMessage: string;
+  steps: {
+    number: string;
+    title: string;
+    description: string;
+  }[];
+  frequencyNotice: {
+    title: string;
+    description: string;
+  };
+  practicalInfo: {
+    location: string;
+    duration: string;
+    scheduling: string;
+    freeSession: string;
+    continuity: string;
+  };
+  plans: CommercialPlanItem[];
+  faqs: CommercialFaqItem[];
+}
+
+export const COMMERCIAL_DATA: CommercialOfferData = {
+  eyebrow: "ESPECIAL NOVEMBRO AZUL 2026",
+  title: "Conheça a fotobiomodulação. Seu primeiro atendimento é por nossa conta.",
+  subtitle:
+    "Lucy Aihara convida você a experimentar a técnica de fotobiomodulação em um atendimento individualizado de 45 minutos, com aplicação incluída.",
+  badge: "PRIMEIRO ATENDIMENTO GRATUITO",
+  ctaText: "Agendar meu atendimento gratuito",
+  whatsappMessage:
+    "Olá, Lucy! Gostaria de agendar meu primeiro atendimento gratuito de fotobiomodulação.",
+  steps: [
+    {
+      number: "1",
+      title: "Entre em contato pelo WhatsApp",
+      description: "Converse com Lucy Aihara e solicite o melhor dia e horário para seu atendimento inicial.",
+    },
+    {
+      number: "2",
+      title: "Compareça ao atendimento gratuito",
+      description:
+        "Sessão inicial de 45 minutos com aplicação da fotobiomodulação, avaliação individualizada e orientação profissional.",
+    },
+    {
+      number: "3",
+      title: "Decida com total liberdade",
+      description:
+        "Caso tenha interesse e indicação profissional, conheça as opções de continuidade. Não há nenhuma obrigação de contratação.",
+    },
+  ],
+  frequencyNotice: {
+    title: "Frequência de atendimento",
+    description:
+      "Uma vez por semana ou conforme necessidade e avaliação profissional. A frequência e o número de sessões podem variar conforme o caso individual de cada paciente.",
+  },
+  practicalInfo: {
+    location: "Higienópolis / Consolação — São Paulo - SP",
+    duration: "45 minutos por sessão",
+    scheduling: "Agendamento pelo WhatsApp oficial",
+    freeSession: "Primeiro atendimento gratuito com aplicação incluída",
+    continuity: "Continuidade opcional, conforme avaliação clínica e seu interesse",
+  },
+  plans: [
+    {
+      id: "plano-gratuito",
+      name: "Primeiro atendimento",
+      badge: "Gratuito de Novembro Azul",
+      price: "R$ 0,00",
+      priceNumeric: 0,
+      sessionsCount: 1,
+      duration: "45 minutos",
+      isFree: true,
+      features: [
+        "1 sessão individualizada de 45 minutos",
+        "Aplicação de fotobiomodulação incluída",
+        "Avaliação e orientação profissional com Lucy Aihara",
+        "Agendamento prévio necessário pelo WhatsApp",
+        "Sem compromisso ou obrigação de contratação posterior",
+      ],
+      ctaText: "Quero experimentar gratuitamente",
+      whatsappMessage:
+        "Olá, Lucy! Gostaria de agendar meu primeiro atendimento gratuito de fotobiomodulação.",
+      conversionEvent: "atendimento_lead_gratuito",
+    },
+    {
+      id: "plano-individual",
+      name: "Sessão individual",
+      price: "R$ 120,00",
+      priceNumeric: 120,
+      sessionsCount: 1,
+      duration: "45 minutos",
+      features: [
+        "Quantidade: 1 sessão avulsa",
+        "Duração: 45 minutos por atendimento",
+        "Aplicação de fotobiomodulação conforme indicação",
+        "Atendimento presencial em Higienópolis / Consolação",
+        "Ideal para manutenção pontual",
+      ],
+      ctaText: "Agendar sessão individual",
+      whatsappMessage:
+        "Olá, Lucy! Gostaria de agendar uma sessão individual de fotobiomodulação no valor de R$ 120,00.",
+      conversionEvent: "atendimento_lead_individual",
+    },
+    {
+      id: "plano-pacote-4",
+      name: "Pacote de 4 sessões",
+      badge: "Economia de R$ 90,00",
+      price: "R$ 390,00",
+      priceNumeric: 390,
+      perSessionPrice: "R$ 97,50 por sessão",
+      savings: "R$ 90,00 em relação a quatro sessões avulsas",
+      savingsPercent: "18,75% de economia",
+      sessionsCount: 4,
+      duration: "45 minutos por sessão",
+      features: [
+        "Valor total: R$ 390,00 (equivalente a R$ 97,50 por sessão)",
+        "Economia de R$ 90,00 (18,75%) em relação a sessões avulsas",
+        "Duração: 45 minutos por sessão",
+        "Frequência sugerida: 1 vez por semana ou sob avaliação",
+        "Acompanhamento contínuo da resposta tecidual",
+      ],
+      ctaText: "Tenho interesse no pacote de 4 sessões",
+      whatsappMessage:
+        "Olá, Lucy! Tenho interesse no pacote de 4 sessões de fotobiomodulação por R$ 390,00.",
+      conversionEvent: "atendimento_lead_pacote_4",
+    },
+    {
+      id: "plano-pacote-8",
+      name: "Pacote de 8 sessões",
+      badge: "Maior economia: R$ 270,00",
+      price: "R$ 690,00",
+      priceNumeric: 690,
+      perSessionPrice: "R$ 86,25 por sessão",
+      savings: "R$ 270,00 em relação a oito sessões avulsas",
+      savingsPercent: "28,13% de economia",
+      sessionsCount: 8,
+      duration: "45 minutos por sessão",
+      isFeatured: true,
+      features: [
+        "Valor total: R$ 690,00 (equivalente a R$ 86,25 por sessão)",
+        "Economia de R$ 270,00 (28,13%) em relação a sessões avulsas",
+        "Duração: 45 minutos por sessão",
+        "Acompanhamento estruturado de reabilitação e autocuidado",
+        "Ajuste contínuo dos parâmetros conforme a evolução",
+      ],
+      ctaText: "Tenho interesse no pacote de 8 sessões",
+      whatsappMessage:
+        "Olá, Lucy! Tenho interesse no pacote de 8 sessões de fotobiomodulação por R$ 690,00.",
+      conversionEvent: "atendimento_lead_pacote_8",
+    },
+  ],
+  faqs: [
+    {
+      id: "faq-com-1",
+      question: "Qual é a duração de cada sessão de atendimento?",
+      answer:
+        "Cada sessão, incluindo o primeiro atendimento gratuito e os atendimentos posteriores, tem duração de 45 minutos, com aplicação de fotobiomodulação e acolhimento individualizado.",
+    },
+    {
+      id: "faq-com-2",
+      question: "O primeiro atendimento é realmente gratuito e inclui aplicação?",
+      answer:
+        "Sim. A campanha Novembro Azul 2026 oferece a primeira sessão sem custo (R$ 0,00), com aplicação da técnica de fotobiomodulação e avaliação profissional conduzida por Lucy Aihara.",
+    },
+    {
+      id: "faq-com-3",
+      question: "Existe alguma obrigação de contratar um pacote após o primeiro atendimento?",
+      answer:
+        "Não. A experiência inicial gratuita é totalmente livre de fidelidade ou compromisso de contratação. A continuidade é opcional e cabe exclusivamente à sua decisão e indicação clínica.",
+    },
+    {
+      id: "faq-com-4",
+      question: "Qual é a frequência recomendada para os atendimentos?",
+      answer:
+        "Geralmente recomenda-se uma frequência de uma vez por semana, mas isso pode variar conforme a necessidade, os objetivos individuais e a avaliação profissional de Lucy Aihara.",
+    },
+    {
+      id: "faq-com-5",
+      question: "Como funciona a economia dos pacotes de 4 e 8 sessões?",
+      answer:
+        "A sessão avulsa tem o valor de R$ 120,00. No pacote de 4 sessões (R$ 390,00), o valor equivalente por sessão passa para R$ 97,50 (economia de R$ 90,00 ou 18,75%). No pacote de 8 sessões (R$ 690,00), o valor equivalente fica em R$ 86,25 (economia de R$ 270,00 ou 28,13%).",
+    },
+    {
+      id: "faq-com-6",
+      question: "A fotobiomodulação substitui o acompanhamento médico?",
+      answer:
+        "Não. A fotobiomodulação é uma técnica fisioterapêutica coadjuvante de reabilitação e alívio tecidual. Ela não cura nem substitui condutas médicas convencionais para diabetes mellitus ou câncer de próstata.",
+    },
+    {
+      id: "faq-com-7",
+      question: "Como faço para agendar meu horário?",
+      answer:
+        "Basta clicar no botão de WhatsApp do plano desejado. Você será direcionado para uma conversa direta com Lucy Aihara com a mensagem pré-preenchida para confirmar o horário disponível no consultório.",
+    },
+  ],
+};
