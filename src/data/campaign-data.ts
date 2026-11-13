@@ -304,11 +304,13 @@ export interface OfferFaqItem {
 
 export interface NovemberBlueOfferData {
   eyebrow: string;
-  title: string;
-  subtitle: string;
-  badge: string;
+  headline: string;
+  text: string;
+  offerHeadline: string;
+  complement: string;
+  ctaText: string;
+  microtext: string;
   keyPoints: string[];
-  ctaPrimaryText: string;
   ctaSecondaryText: string;
   whatsappNumber: string;
   whatsappMessage: string;
@@ -319,18 +321,19 @@ export interface NovemberBlueOfferData {
 }
 
 export const NOVEMBER_BLUE_OFFER: NovemberBlueOfferData = {
-  eyebrow: "ESPECIAL NOVEMBRO AZUL • 2026",
-  title: "Seu primeiro atendimento de Fasciaterapia é gratuito.",
-  subtitle:
-    "Conheça o trabalho de Lucy Aihara e experimente uma abordagem acolhedora de atenção ao corpo e ao movimento, sem custo no primeiro atendimento.",
-  badge: "PRIMEIRO ATENDIMENTO GRATUITO",
+  eyebrow: "NOVEMBRO AZUL 2026 • CAMPANHA ESPECIAL",
+  headline: "Você cuida de tanta coisa. E de você?",
+  text: "Neste Novembro Azul, reserve um momento para ouvir seu corpo, conhecer a Fasciaterapia e experimentar uma abordagem acolhedora de cuidado e movimento.",
+  offerHeadline: "SEU PRIMEIRO ATENDIMENTO É GRATUITO",
+  complement: "Um convite especial de Lucy Aihara para conhecer a Fasciaterapia, presencialmente em São Paulo.",
+  ctaText: "Quero conhecer e agendar",
+  microtext: "Sem compromisso de continuidade. Agendamento sujeito à disponibilidade.",
   keyPoints: [
-    "Atendimento presencial individualizado.",
-    "Higienópolis / Consolação — São Paulo.",
-    "Agendamento prévio.",
-    "Sem obrigação de contratar outros atendimentos.",
+    "Atendimento presencial individualizado",
+    "Higienópolis / Consolação — São Paulo",
+    "Agendamento prévio via WhatsApp",
+    "Sem compromisso de continuidade",
   ],
-  ctaPrimaryText: "Agendar meu atendimento gratuito",
   ctaSecondaryText: "Como funciona a experiência?",
   whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5511996496082",
   whatsappMessage:
