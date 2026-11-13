@@ -59,12 +59,12 @@ export const CAMPAIGN_INFO = {
 };
 
 export const NAV_LINKS: NavItem[] = [
+  { label: "Atendimento Gratuito", href: "/#especial-novembro-azul" },
   { label: "O Propósito", href: "/#datas" },
   { label: "Diabetes", href: "/#diabetes" },
   { label: "Neuropatia", href: "/#neuropatia" },
   { label: "Saúde Masculina", href: "/#saude-masculina" },
   { label: "O Corpo & Fascia", href: "/#corpo-atencao" },
-  { label: "Atendimento Gratuito", href: "/#especial-novembro-azul" },
   { label: "Mitos e Verdades", href: "/#mitos-verdades" },
   { label: "Centro de Conhecimento", href: "/conhecimento" },
 ];
@@ -307,7 +307,7 @@ export interface NovemberBlueOfferData {
   title: string;
   subtitle: string;
   badge: string;
-  highlightText: string;
+  keyPoints: string[];
   ctaPrimaryText: string;
   ctaSecondaryText: string;
   whatsappNumber: string;
@@ -319,15 +319,19 @@ export interface NovemberBlueOfferData {
 }
 
 export const NOVEMBER_BLUE_OFFER: NovemberBlueOfferData = {
-  eyebrow: "Especial Novembro Azul 2026",
-  title: "Neste Novembro Azul, seu primeiro encontro com o cuidado é por nossa conta.",
+  eyebrow: "ESPECIAL NOVEMBRO AZUL • 2026",
+  title: "Seu primeiro atendimento de Fasciaterapia é gratuito.",
   subtitle:
-    "Um convite para conhecer a Fasciaterapia, experimentar uma abordagem de atenção ao corpo e descobrir novas possibilidades de percepção e movimento.",
+    "Conheça o trabalho de Lucy Aihara e experimente uma abordagem acolhedora de atenção ao corpo e ao movimento, sem custo no primeiro atendimento.",
   badge: "PRIMEIRO ATENDIMENTO GRATUITO",
-  highlightText:
-    "Uma oportunidade especial para conhecer o trabalho de Lucy Aihara, sem custo no primeiro atendimento.",
-  ctaPrimaryText: "Quero agendar meu atendimento gratuito",
-  ctaSecondaryText: "Conhecer a Fasciaterapia",
+  keyPoints: [
+    "Atendimento presencial individualizado.",
+    "Higienópolis / Consolação — São Paulo.",
+    "Agendamento prévio.",
+    "Sem obrigação de contratar outros atendimentos.",
+  ],
+  ctaPrimaryText: "Agendar meu atendimento gratuito",
+  ctaSecondaryText: "Como funciona a experiência?",
   whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5511996496082",
   whatsappMessage:
     "Olá, Lucy! Conheci a campanha especial Novembro Azul pelo site e gostaria de saber como agendar meu primeiro atendimento gratuito para conhecer a Fasciaterapia.",
