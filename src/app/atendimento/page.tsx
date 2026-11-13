@@ -25,7 +25,7 @@ import { CommercialPricingCards } from "@/components/commercial/CommercialPricin
 export const metadata: Metadata = {
   title: "Atendimento e Pacotes de Fotobiomodulação | Novembro Azul 2026",
   description:
-    "Primeiro atendimento gratuito de fotobiomodulação (30 min) com Lucy Aihara em São Paulo. Conheça as opções de sessões avulsas e pacotes com transparência.",
+    "Primeiro atendimento gratuito de fotobiomodulação (40 min) com Lucy Aihara em São Paulo. Conheça as opções de sessões avulsas e pacotes com transparência.",
   alternates: {
     canonical: "https://novembroazul.escoladefasciaterapiaemovimento.com/atendimento",
   },
@@ -141,7 +141,7 @@ export default function AtendimentoComercialPage() {
                       {com.badge}
                     </strong>
                     <span className="block text-xs text-[#C7D9D2]">
-                      Duração: 30 minutos com aplicação da técnica incluída
+                      Duração: 40 minutos com aplicação da técnica incluída
                     </span>
                   </div>
 

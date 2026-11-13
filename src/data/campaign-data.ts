@@ -533,7 +533,7 @@ export const COMMERCIAL_DATA: CommercialOfferData = {
   eyebrow: "ESPECIAL NOVEMBRO AZUL 2026",
   title: "Conheça a fotobiomodulação. Seu primeiro atendimento é por nossa conta.",
   subtitle:
-    "Lucy Aihara convida você a experimentar a técnica de fotobiomodulação em um atendimento individualizado de 30 minutos, com aplicação incluída.",
+    "Lucy Aihara convida você a experimentar a técnica de fotobiomodulação em um atendimento individualizado de 40 minutos, com aplicação incluída.",
   badge: "PRIMEIRO ATENDIMENTO GRATUITO",
   ctaText: "Agendar meu atendimento gratuito",
   whatsappMessage:
@@ -548,7 +548,7 @@ export const COMMERCIAL_DATA: CommercialOfferData = {
       number: "2",
       title: "Compareça ao atendimento gratuito",
       description:
-        "Sessão inicial de 30 minutos com aplicação da fotobiomodulação, avaliação individualizada e orientação profissional.",
+        "Sessão inicial de 40 minutos com aplicação da fotobiomodulação, avaliação individualizada e orientação profissional.",
     },
     {
       number: "3",
@@ -564,7 +564,7 @@ export const COMMERCIAL_DATA: CommercialOfferData = {
   },
   practicalInfo: {
     location: "Higienópolis / Consolação — São Paulo - SP",
-    duration: "30 minutos por sessão",
+    duration: "40 minutos por sessão",
     scheduling: "Agendamento pelo WhatsApp oficial",
     freeSession: "Primeiro atendimento gratuito com aplicação incluída",
     continuity: "Continuidade opcional, conforme avaliação clínica e seu interesse",
@@ -577,10 +577,10 @@ export const COMMERCIAL_DATA: CommercialOfferData = {
       price: "R$ 0,00",
       priceNumeric: 0,
       sessionsCount: 1,
-      duration: "30 minutos",
+      duration: "40 minutos",
       isFree: true,
       features: [
-        "1 sessão individualizada de 30 minutos",
+        "1 sessão individualizada de 40 minutos",
         "Aplicação de fotobiomodulação incluída",
         "Avaliação e orientação profissional com Lucy Aihara",
         "Agendamento prévio necessário pelo WhatsApp",
@@ -597,10 +597,10 @@ export const COMMERCIAL_DATA: CommercialOfferData = {
       price: "R$ 120,00",
       priceNumeric: 120,
       sessionsCount: 1,
-      duration: "30 minutos",
+      duration: "40 minutos",
       features: [
         "Quantidade: 1 sessão avulsa",
-        "Duração: 30 minutos por atendimento",
+        "Duração: 40 minutos por atendimento",
         "Aplicação de fotobiomodulação conforme indicação",
         "Atendimento presencial em Higienópolis / Consolação",
         "Ideal para manutenção pontual",
@@ -620,11 +620,11 @@ export const COMMERCIAL_DATA: CommercialOfferData = {
       savings: "R$ 90,00 em relação a quatro sessões avulsas",
       savingsPercent: "18,75% de economia",
       sessionsCount: 4,
-      duration: "30 minutos por sessão",
+      duration: "40 minutos por sessão",
       features: [
         "Valor total: R$ 390,00 (equivalente a R$ 97,50 por sessão)",
         "Economia de R$ 90,00 (18,75%) em relação a sessões avulsas",
-        "Duração: 30 minutos por sessão",
+        "Duração: 40 minutos por sessão",
         "Frequência sugerida: 1 vez por semana ou sob avaliação",
         "Acompanhamento contínuo da resposta tecidual",
       ],
@@ -643,12 +643,12 @@ export const COMMERCIAL_DATA: CommercialOfferData = {
       savings: "R$ 270,00 em relação a oito sessões avulsas",
       savingsPercent: "28,13% de economia",
       sessionsCount: 8,
-      duration: "30 minutos por sessão",
+      duration: "40 minutos por sessão",
       isFeatured: true,
       features: [
         "Valor total: R$ 690,00 (equivalente a R$ 86,25 por sessão)",
         "Economia de R$ 270,00 (28,13%) em relação a sessões avulsas",
-        "Duração: 30 minutos por sessão",
+        "Duração: 40 minutos por sessão",
         "Acompanhamento estruturado de reabilitação e autocuidado",
         "Ajuste contínuo dos parâmetros conforme a evolução",
       ],
@@ -663,7 +663,7 @@ export const COMMERCIAL_DATA: CommercialOfferData = {
       id: "faq-com-1",
       question: "Qual é a duração de cada sessão de atendimento?",
       answer:
-        "Cada sessão, incluindo o primeiro atendimento gratuito e os atendimentos posteriores, tem duração de 30 minutos, com aplicação de fotobiomodulação e acolhimento individualizado.",
+        "Cada sessão, incluindo o primeiro atendimento gratuito e os atendimentos posteriores, tem duração de 40 minutos, com aplicação de fotobiomodulação e acolhimento individualizado.",
     },
     {
       id: "faq-com-2",
