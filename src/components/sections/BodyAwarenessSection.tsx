@@ -59,9 +59,9 @@ export function BodyAwarenessSection() {
                 Fundadora & Docente da Escola
               </div>
 
-              <blockquote className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal leading-snug text-[#F5F2EB]">
-                &ldquo;Aprender a escutar o corpo não é uma obrigação fria; é um gesto diário de reconciliação com a própria vida.&rdquo;
-              </blockquote>
+              <p className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal leading-snug text-[#F5F2EB]">
+                Aprender a escutar o corpo pode ser um gesto de cuidado, atenção e respeito à própria história.
+              </p>
 
               <p className="text-sm sm:text-base text-[#C7D9D2] leading-relaxed">
                 Com mais de 16 anos dedicados à Fasciaterapia e à Educação Perceptiva do Movimento (Método Danis Bois), Lucy Aihara alia sólida formação acadêmica no complexo HCFMUSP à vivência sensível do autocuidado, incentivando cada pessoa a desenvolver autonomia e bem-estar.

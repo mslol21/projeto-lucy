@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, MessageCircle, Sparkles } from "lucide-react";
@@ -111,8 +111,6 @@ export function Header() {
           </div>
         </div>
       </div>
-
-      {/* Menu Mobile */}
       {mobileMenuOpen && (
         <div className="lg:hidden border-b border-stone-200 bg-[#F5F2EB] px-4 pt-3 pb-6 space-y-2 animate-in fade-in slide-in-from-top-2 duration-200">
           <div className="px-3 py-2 border-b border-stone-200/60 mb-2 flex items-center justify-between">
@@ -144,6 +142,7 @@ export function Header() {
           </nav>
         </div>
       )}
+      <div className="november-reading-progress" aria-hidden="true" />
     </header>
   );
 }

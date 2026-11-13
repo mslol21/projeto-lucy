@@ -82,3 +82,80 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #84B7CE;
 }
+
+/* Detalhes editoriais de Novembro Azul: nenhum efeito impede a leitura. */
+.november-reading-progress {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #367eaf;
+  transform: scaleX(0);
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+.november-date-accent {
+  transform: scaleX(0.12);
+  transition: transform 450ms ease;
+}
+
+.group:hover > .november-date-accent,
+.group:focus-within > .november-date-accent {
+  transform: scaleX(1);
+}
+
+@supports (animation-timeline: scroll()) {
+  .november-reading-progress {
+    animation: november-reading linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+
+@keyframes november-reading {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .november-reading-progress { animation: none !important; transform: scaleX(0); }
+  .november-date-accent { transition: none !important; }
+}
+
+/* Acolhimento editorial: linhas confortáveis e leitura com menos carga visual. */
+.reader-friendly {
+  font-kerning: normal;
+  overflow-wrap: break-word;
+}
+.reader-friendly p {
+  text-wrap: pretty;
+}
+.reader-friendly :is(#diabetes, #saude-masculina, #historia, #fascia-cuidado, #metodo) p {
+  line-height: 1.8;
+}
+.reader-friendly :is(#diabetes, #saude-masculina) p.text-xs {
+  font-size: 0.875rem;
+  line-height: 1.75;
+}
+.reader-friendly :is(#diabetes, #saude-masculina) li.text-xs,
+.reader-friendly :is(#diabetes, #saude-masculina) li p.text-xs {
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+.reader-friendly :is(#diabetes, #saude-masculina) :is(p, li) {
+  hyphens: auto;
+}
+.reader-friendly section[id] {
+  scroll-margin-top: 6rem;
+}
+@media (min-width: 1024px) {
+  .reader-friendly :is(#diabetes, #saude-masculina) > div {
+    max-width: 72rem;
+  }
+}
+@media (max-width: 639px) {
+  .reader-friendly :is(#diabetes, #saude-masculina) .rounded-3xl {
+    border-radius: 1.15rem;
+  }
+}

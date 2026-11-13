@@ -1,164 +1,65 @@
-import React from "react";
 import Image from "next/image";
-import { Calendar, ArrowRight, Activity, ShieldAlert, BookOpen } from "lucide-react";
-import { SectionHeader } from "@/components/ui/SectionHeader";
-import { Button } from "@/components/ui/Button";
-import { BrandEmblem } from "@/components/ui/BrandEmblem";
-import { CAMPAIGN_INFO } from "@/data/campaign-data";
+import { ArrowRight, CalendarDays } from "lucide-react";
+import { EditorialReveal } from "@/components/ui/EditorialReveal";
+
+const topics = [
+  {
+    day: "14", month: "NOVEMBRO", category: "Diabetes", title: "Dia Mundial do Diabetes",
+    description: "Uma oportunidade para falar sobre os tipos de diabetes, sinais que merecem atenção, acompanhamento e qualidade de vida.",
+    href: "#diabetes", label: "Ler especial sobre diabetes"
+  },
+  {
+    day: "17", month: "NOVEMBRO", category: "Saúde do homem", title: "Dia Nacional de Combate ao Câncer de Próstata",
+    description: "Informações sobre a próstata, sintomas, fatores de risco e decisões de cuidado discutidas com profissionais de saúde.",
+    href: "#saude-masculina", label: "Ler especial sobre próstata"
+  }
+];
 
 export function DatesPurposeSection() {
-  const { diabetes, menHealth } = CAMPAIGN_INFO.dates;
-
   return (
-    <section
-      id="datas"
-      className="py-20 lg:py-28 bg-[#F5F2EB] relative scroll-mt-20 border-t border-stone-200/60"
-      aria-labelledby="datas-title"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          id="datas-title"
-          eyebrow="Propósito da Campanha"
-          title="Duas Datas, Um Só Olhar de Cuidado"
-          subtitle="O mês de novembro une duas importantes frentes mundiais de conscientização. Nosso convite é transformar lembretes do calendário em hábitos contínuos de respeito ao próprio corpo."
-        />
-
-        {/* Dois Cartões com o Corte da Logo da Escola */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 mb-16">
-          {/* Cartão 1: 14 de Novembro — Diabetes */}
-          <article className="group relative bg-white/90 backdrop-blur-xs rounded-3xl rounded-tr-[56px] p-8 sm:p-10 border border-stone-200 shadow-[0_10px_30px_rgba(23,56,91,0.05)] hover:border-[#527fae] transition-all duration-300 flex flex-col justify-between overflow-hidden">
-            {/* Detalhe da curva em arco da logo no canto superior direito */}
-            <div className="absolute top-0 right-0 w-36 h-36 bg-gradient-to-bl from-[#527fae]/20 via-[#84B7CE]/10 to-transparent rounded-bl-[100px] pointer-events-none transition-transform group-hover:scale-110" />
-
-            <div className="space-y-6">
-              <div className="flex items-center justify-between">
-                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#527fae]/15 text-[#17385B] border border-[#527fae]/25">
-                  <Calendar className="w-3.5 h-3.5" aria-hidden="true" />
-                  {diabetes.day}
-                </span>
-                <div className="p-3 rounded-2xl bg-[#F5F2EB] text-[#17385B] group-hover:bg-[#17385B] group-hover:text-[#F5F2EB] transition-colors shadow-2xs">
-                  <Activity className="w-6 h-6" aria-hidden="true" />
+    <section id="datas" aria-labelledby="datas-title" className="scroll-mt-24 border-b border-[#DEE6E9] bg-white py-20 text-[#17385B] sm:py-24">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="mb-9 flex flex-wrap items-end justify-between gap-5 border-b-2 border-[#17385B] pb-5">
+          <div>
+            <p className="mb-2 text-xs font-bold uppercase tracking-[.2em] text-[#47738C]">Destaque do mês</p>
+            <h2 id="datas-title" className="font-serif text-[clamp(2.1rem,4.5vw,4rem)] leading-tight">Duas datas que merecem atenção.</h2>
+          </div>
+          <p className="max-w-sm text-sm leading-7 text-[#4D6475]">No Novembro Azul, informação e acolhimento ajudam a abrir conversas importantes sobre a saúde.</p>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          {topics.map((topic) => (
+            <EditorialReveal key={topic.day} delay={topic.day === "17" ? 0.12 : 0} className="h-full">
+            <article className="group relative flex h-full flex-col overflow-hidden border border-[#D6E1E7] bg-[#F8FAFA] transition-colors duration-300 hover:border-[#729bb5]">
+              <span aria-hidden="true" className="november-date-accent absolute inset-x-0 top-0 h-[3px] origin-left bg-[#3574A4]" />
+              <div className="flex items-start gap-5 p-6 sm:gap-7 sm:p-8">
+                <div className="flex w-[75px] shrink-0 flex-col items-center border-t-4 border-[#17385B] bg-[#E4EFF4] p-3 sm:w-24">
+                  <span className="font-serif text-5xl leading-none">{topic.day}</span>
+                  <span className="mt-2 text-[9px] font-bold tracking-[.14em]">{topic.month}</span>
+                </div>
+                <div>
+                  <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.14em] text-[#47738C]"><CalendarDays size={15} />{topic.category}</span>
+                  <h3 className="mt-3 font-serif text-2xl leading-tight sm:text-3xl">{topic.title}</h3>
+                  <p className="mt-4 text-sm leading-7 text-[#4D6475] sm:text-base">{topic.description}</p>
                 </div>
               </div>
-
-              <div>
-                <span className="text-xs font-medium text-[#527fae] uppercase tracking-wider block mb-1">
-                  {diabetes.badge}
-                </span>
-                <h3 className="font-serif text-2xl sm:text-3xl text-[#17385B] font-medium leading-tight">
-                  {diabetes.title}
-                </h3>
-              </div>
-
-              <p className="text-[#415A77] text-base leading-relaxed">
-                {diabetes.summary} Compreender o funcionamento da glicose e os sinais que o corpo emite é o alicerce para uma vida plena, com qualidade e segurança.
-              </p>
-            </div>
-
-            <div className="pt-8">
-              <Button
-                asAnchor
-                href={diabetes.href}
-                variant="outline"
-                size="md"
-                className="w-full justify-between rounded-2xl rounded-tr-[32px] group-hover:border-[#17385B] group-hover:bg-[#17385B] group-hover:text-white"
-              >
-                <span>Aprofundar sobre o diabetes</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-              </Button>
-            </div>
-          </article>
-
-          {/* Cartão 2: 17 de Novembro — Câncer de Próstata */}
-          <article className="group relative bg-white/90 backdrop-blur-xs rounded-3xl rounded-tr-[56px] p-8 sm:p-10 border border-stone-200 shadow-[0_10px_30px_rgba(23,56,91,0.05)] hover:border-[#17385B] transition-all duration-300 flex flex-col justify-between overflow-hidden">
-            {/* Detalhe da curva em arco da logo no canto superior direito */}
-            <div className="absolute top-0 right-0 w-36 h-36 bg-gradient-to-bl from-[#17385B]/15 via-[#527fae]/10 to-transparent rounded-bl-[100px] pointer-events-none transition-transform group-hover:scale-110" />
-
-            <div className="space-y-6">
-              <div className="flex items-center justify-between">
-                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#17385B]/10 text-[#17385B] border border-[#17385B]/20">
-                  <Calendar className="w-3.5 h-3.5" aria-hidden="true" />
-                  {menHealth.day}
-                </span>
-                <div className="p-3 rounded-2xl bg-[#F5F2EB] text-[#17385B] group-hover:bg-[#17385B] group-hover:text-[#F5F2EB] transition-colors shadow-2xs">
-                  <ShieldAlert className="w-6 h-6" aria-hidden="true" />
-                </div>
-              </div>
-
-              <div>
-                <span className="text-xs font-medium text-[#17385B] uppercase tracking-wider block mb-1">
-                  {menHealth.badge}
-                </span>
-                <h3 className="font-serif text-2xl sm:text-3xl text-[#17385B] font-medium leading-tight">
-                  {menHealth.title}
-                </h3>
-              </div>
-
-              <p className="text-[#415A77] text-base leading-relaxed">
-                {menHealth.summary} Quebrar a cultura do silêncio, promover o diálogo franco com o médico e tomar decisões conscientes e informadas sobre a saúde da próstata.
-              </p>
-            </div>
-
-            <div className="pt-8">
-              <Button
-                asAnchor
-                href={menHealth.href}
-                variant="outline"
-                size="md"
-                className="w-full justify-between rounded-2xl rounded-tr-[32px] group-hover:border-[#17385B] group-hover:bg-[#17385B] group-hover:text-white"
-              >
-                <span>Aprofundar sobre saúde masculina</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-              </Button>
-            </div>
-          </article>
+              <a href={topic.href} className="mt-auto flex min-h-14 items-center justify-between border-t border-[#D6E1E7] px-6 py-4 text-sm font-semibold hover:bg-[#E4EFF4] sm:px-8">
+                {topic.label} <ArrowRight size={18} aria-hidden="true" />
+              </a>
+            </article>
+            </EditorialReveal>
+          ))}
         </div>
-
-        {/* Bloco Editorial com o Material Institucional e Marca d'água da Logo */}
-        <div className="bg-white/85 backdrop-blur-md rounded-3xl rounded-tr-[64px] p-8 sm:p-10 border border-stone-200/90 shadow-[0_10px_35px_-5px_rgba(23,56,91,0.06)] relative overflow-hidden">
-          {/* Símbolo da logo sutil ao fundo */}
-          <div className="absolute -right-8 -bottom-10 opacity-5 pointer-events-none">
-            <BrandEmblem className="w-56 h-72" />
+        <aside className="mt-10 grid overflow-hidden border border-[#D6E1E7] bg-[#F6F7F5] md:grid-cols-[200px_1fr]">
+          <div className="relative min-h-[160px] bg-white">
+            <Image src="/images/escola-material-institucional.png" alt="Material institucional da Escola de Fasciaterapia e Movimento" fill sizes="200px" className="object-contain p-4" />
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
-            <div className="md:col-span-4 flex justify-center">
-              <div className="relative group max-w-[220px] rounded-2xl rounded-tr-[36px] overflow-hidden shadow-lg border border-stone-200 bg-white">
-                <Image
-                  src="/images/escola-material-institucional.png"
-                  alt="Caderno institucional educativo da Escola de Fasciaterapia e Movimento"
-                  width={240}
-                  height={320}
-                  className="w-full h-auto object-contain transition-transform group-hover:scale-103"
-                />
-              </div>
-            </div>
-
-            <div className="md:col-span-8 space-y-3.5">
-              <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#527fae] bg-[#527fae]/10 px-3 py-1 rounded-full border border-[#527fae]/20">
-                <BookOpen className="w-3.5 h-3.5 text-[#527fae]" aria-hidden="true" />
-                <span>Educação Somática & Consciência em Saúde</span>
-              </div>
-              <h3 className="font-serif text-2xl sm:text-3xl text-[#17385B] font-medium">
-                Conhecimento para o Dia a Dia
-              </h3>
-              <p className="text-[#415A77] text-sm sm:text-base leading-relaxed">
-                A Escola de Fasciaterapia e Movimento desenvolve materiais didáticos e metodologias autorais para que você compreenda as respostas do seu corpo, estimulando a autorregulação e a autonomia no cuidado preventivo.
-              </p>
-              <div className="pt-1">
-                <a
-                  href={CAMPAIGN_INFO.institution.siteUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#17385B] hover:text-[#527fae] transition-colors"
-                >
-                  <span>Conhecer publicações da Escola</span>
-                  <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
-                </a>
-              </div>
-            </div>
+          <div className="p-6 sm:p-8">
+            <p className="text-xs font-bold uppercase tracking-[.12em] text-[#47738C]">Escola de Fasciaterapia e Movimento</p>
+            <h3 className="mt-2 font-serif text-2xl">Informação que continua depois de novembro</h3>
+            <p className="mt-3 max-w-3xl text-sm leading-7 text-[#4D6475]">Além das datas de conscientização, a escola compartilha conteúdos sobre percepção corporal, movimento e cuidado individualizado. Conheça a trajetória de Lucy e as iniciativas da instituição.</p>
+            <a href="#historia" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold underline underline-offset-4">Conhecer a trajetória de Lucy <ArrowRight size={16} /></a>
           </div>
-        </div>
+        </aside>
       </div>
     </section>
   );
