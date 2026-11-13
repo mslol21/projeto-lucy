@@ -160,8 +160,16 @@ export function Footer() {
                   <ExternalLink className="w-3.5 h-3.5 opacity-70" aria-hidden="true" />
                 </a>
               </li>
-              <li className="pt-2 text-xs text-[#C7D9D2]/80 leading-relaxed border-t border-white/10">
-                Atendimento clínico e cursos em São Paulo - SP (Consolação / Higienópolis).
+              <li className="pt-2 text-xs text-[#C7D9D2]/90 leading-relaxed border-t border-white/10 space-y-1">
+                <p>
+                  <strong className="text-white font-medium">Consultório:</strong> {CAMPAIGN_INFO.institution.address.fullAddress}
+                </p>
+                <p className="text-[#84B7CE]">
+                  {CAMPAIGN_INFO.institution.address.metroReference}
+                </p>
+                <p className="text-white/90">
+                  Tel/WhatsApp: {CAMPAIGN_INFO.institution.telephone}
+                </p>
               </li>
             </ul>
 

@@ -69,8 +69,10 @@ export default function AtendimentoComercialPage() {
       telephone: "+55-11-99998-6082",
       address: {
         "@type": "PostalAddress",
+        streetAddress: "Rua Sergipe, 475, conjunto 114",
         addressLocality: "São Paulo",
         addressRegion: "SP",
+        postalCode: "01243-912",
         addressCountry: "BR",
       },
     },

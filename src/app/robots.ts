@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://www.escoladefasciaterapiaemovimento.com/sitemap.xml",
+    sitemap: "https://novembroazul.escoladefasciaterapiaemovimento.com/sitemap.xml",
   };
 }

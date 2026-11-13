@@ -8,6 +8,8 @@ import { TechniqueSummarySection } from "@/components/home/TechniqueSummarySecti
 import { CampaignThemesSection } from "@/components/home/CampaignThemesSection";
 import { LucySummarySection } from "@/components/home/LucySummarySection";
 import { TestimonialsPreviewSection } from "@/components/home/TestimonialsPreviewSection";
+import { AeoKnowledgeFaqSection } from "@/components/home/AeoKnowledgeFaqSection";
+import { LocationSection } from "@/components/home/LocationSection";
 import { FinalCtaSection } from "@/components/home/FinalCtaSection";
 
 export default function HomePage() {
@@ -30,10 +32,16 @@ export default function HomePage() {
         {/* 5. Lucy Aihara: apresentação profissional resumida */}
         <LucySummarySection />
 
-        {/* 6. Depoimentos: prévia dos relatos e link para página completa */}
+        {/* 6. GEO & AEO: Perguntas e Respostas Canônicas para Assistentes de IA e Motores de Busca */}
+        <AeoKnowledgeFaqSection />
+
+        {/* 7. SEO Local: Consultório na Consolação/Higienópolis, Rotas e Acessos */}
+        <LocationSection />
+
+        {/* 8. Depoimentos: prévia dos relatos e link para página completa */}
         <TestimonialsPreviewSection />
 
-        {/* 7. CTA final: convite para agendamento */}
+        {/* 9. CTA final: convite para agendamento */}
         <FinalCtaSection />
       </main>
       <Footer />

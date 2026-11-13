@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Lora, Inter } from "next/font/google";
 import "./globals.css";
 
-const siteUrl = "https://www.escoladefasciaterapiaemovimento.com";
+const siteUrl = "https://novembroazul.escoladefasciaterapiaemovimento.com";
 
 const lora = Lora({
   variable: "--font-lora",
@@ -26,25 +26,35 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://novembroazul.escoladefasciaterapiaemovimento.com"),
-  title: "Novembro Azul 2026 | Escola de Fasciaterapia e Movimento",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Novembro Azul 2026 | Lucy Aihara — São Paulo",
+    template: "%s | Lucy Aihara",
+  },
   description:
-    "Novembro Azul 2026: informação sobre o Dia Mundial do Diabetes (14/11) e o Dia Nacional de Combate ao Câncer de Próstata (17/11), com a história de Lucy Aihara.",
+    "Conheça a campanha Novembro Azul 2026 da Lucy Aihara, com conscientização sobre diabetes, saúde masculina e fotobiomodulação na Consolação, São Paulo.",
   keywords: [
     "Novembro Azul 2026",
-    "Escola de Fasciaterapia e Movimento",
     "Lucy Aihara",
+    "Escola de Fasciaterapia e Movimento",
+    "Fotobiomodulação São Paulo",
+    "Fasciaterapia Higienópolis Consolação",
     "Dia Mundial do Diabetes",
     "Dia Nacional de Combate ao Câncer de Próstata",
-    "Saúde Masculina",
+    "Saúde Masculina Consolação",
     "Educação Somática",
     "Percepção do Movimento",
     "Autocuidado",
     "INCA",
     "Sociedade Brasileira de Diabetes",
   ],
-  authors: [{ name: "Escola de Fasciaterapia e Movimento", url: "https://www.escoladefasciaterapiaemovimento.com/" }],
-  creator: "Escola de Fasciaterapia e Movimento",
+  authors: [
+    {
+      name: "Lucy Aihara — Escola de Fasciaterapia e Movimento",
+      url: "https://www.escoladefasciaterapiaemovimento.com/",
+    },
+  ],
+  creator: "Lucy Aihara",
   publisher: "Escola de Fasciaterapia e Movimento",
   robots: {
     index: true,
@@ -58,23 +68,31 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "/",
+    canonical: siteUrl,
   },
   openGraph: {
-    images: [{ url: "/images/novembro-azul-hero.webp", width: 1200, height: 675, alt: "Novembro Azul — Escola de Fasciaterapia e Movimento" }],
+    images: [
+      {
+        url: "/images/novembro-azul-hero.webp",
+        width: 1200,
+        height: 675,
+        alt: "Campanha Novembro Azul 2026 — Lucy Aihara",
+      },
+    ],
     type: "website",
     locale: "pt_BR",
     url: siteUrl,
-    title: "Novembro Azul 2026: duas datas para cuidar da saúde",
+    title: "Novembro Azul 2026 | Lucy Aihara — São Paulo",
     description:
-      "14 de novembro: Dia Mundial do Diabetes. 17 de novembro: Dia Nacional de Combate ao Câncer de Próstata. Conteúdos e histórias sobre saúde.",
-    siteName: "Escola de Fasciaterapia e Movimento",
+      "Conheça a campanha Novembro Azul 2026 da Lucy Aihara, com conscientização sobre diabetes, saúde masculina e fotobiomodulação na Consolação, São Paulo.",
+    siteName: "Escola de Fasciaterapia e Movimento — Lucy Aihara",
   },
   twitter: {
     card: "summary_large_image",
     images: ["/images/novembro-azul-hero.webp"],
-    title: "Novembro Azul 2026 | Escola de Fasciaterapia e Movimento",
-    description: "Cuidar de si é também aprender a se conhecer. Informar também é uma forma de cuidar.",
+    title: "Novembro Azul 2026 | Lucy Aihara — São Paulo",
+    description:
+      "Conheça a campanha Novembro Azul 2026 da Lucy Aihara, com conscientização sobre diabetes, saúde masculina e fotobiomodulação na Consolação, São Paulo.",
   },
 };
 
@@ -87,36 +105,66 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
-        "@id": "https://www.escoladefasciaterapiaemovimento.com/#organization",
-        name: "Escola de Fasciaterapia e Movimento",
-        url: "https://www.escoladefasciaterapiaemovimento.com/",
-        description: "Conteúdos educativos sobre Fasciaterapia, movimento, diabetes e saúde, apresentados por Lucy Aihara.",
+        "@type": "Physiotherapy",
+        "@id": `${siteUrl}/#localbusiness`,
+        name: "Escola de Fasciaterapia e Movimento — Lucy Aihara",
+        url: siteUrl,
+        telephone: "+55-11-99998-6082",
+        priceRange: "$$",
+        image: `${siteUrl}/images/logo-horizontal-hd.png`,
+        description:
+          "Atendimento individualizado de Fasciaterapia, educação somática e fotobiomodulação conduzido por Lucy Aihara em São Paulo.",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Rua Sergipe, 475, conjunto 114",
+          addressLocality: "São Paulo",
+          addressRegion: "SP",
+          postalCode: "01243-912",
+          addressCountry: "BR",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: -23.5489,
+          longitude: -46.6575,
+        },
         founder: {
           "@type": "Person",
           name: "Lucy Aihara",
-          jobTitle: "Fisioterapeuta e Fasciaterapeuta",
+          jobTitle: "Fisioterapeuta, Fasciaterapeuta e Educadora Física",
+          sameAs: [
+            "https://www.instagram.com/fasciaterapia.fasciavocemesmo",
+            "https://www.escoladefasciaterapiaemovimento.com/",
+          ],
         },
         sameAs: [
-          "https://www.instagram.com/fasciaterapia.fasciavocemesmo",
           "https://www.escoladefasciaterapiaemovimento.com/",
+          "https://www.instagram.com/fasciaterapia.fasciavocemesmo",
         ],
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "São Paulo",
-          addressRegion: "SP",
-          addressCountry: "BR",
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        url: siteUrl,
+        name: "Campanha Novembro Azul 2026 | Lucy Aihara",
+        description:
+          "Portal da campanha comemorativa Novembro Azul 2026 com educação em saúde, fotobiomodulação e conscientização.",
+        publisher: {
+          "@id": `${siteUrl}/#localbusiness`,
         },
+        inLanguage: "pt-BR",
       },
       {
         "@type": "WebPage",
         "@id": `${siteUrl}/#webpage`,
         url: siteUrl,
-        name: "Novembro Azul 2026: diabetes e câncer de próstata",
+        name: "Novembro Azul 2026 | Lucy Aihara — São Paulo",
         description:
-          "Cuidar de si é também aprender a se conhecer. Página informativa com dados oficiais do INCA e da Sociedade Brasileira de Diabetes.",
+          "Conheça a campanha Novembro Azul 2026 da Lucy Aihara, com conscientização sobre diabetes, saúde masculina e fotobiomodulação na Consolação, São Paulo.",
         isPartOf: {
-          "@id": "https://www.escoladefasciaterapiaemovimento.com/#organization",
+          "@id": `${siteUrl}/#website`,
+        },
+        about: {
+          "@id": `${siteUrl}/#localbusiness`,
         },
         inLanguage: "pt-BR",
       },

@@ -54,9 +54,128 @@ export const CAMPAIGN_INFO = {
     siteUrl: "https://www.escoladefasciaterapiaemovimento.com/",
     instagramUrl: "https://www.instagram.com/fasciaterapia.fasciavocemesmo",
     location: "São Paulo - SP",
-    description: "Espaço dedicado à educação somática, fáscias corporais, percepção do movimento e promoção de autonomia no autocuidado.",
+    address: {
+      street: "Rua Sergipe, 475, conjunto 114",
+      neighborhood: "Consolação / Higienópolis",
+      city: "São Paulo",
+      state: "SP",
+      postalCode: "01243-912",
+      country: "BR",
+      fullAddress: "Rua Sergipe, 475, conjunto 114 — Consolação, São Paulo, SP, CEP 01243-912",
+      googleMapsUrl:
+        "https://maps.google.com/?q=Rua+Sergipe,+475,+conjunto+114,+Consola%C3%A7%C3%A3o,+S%C3%A3o+Paulo+-+SP,+01243-912",
+      metroReference: "Próximo à estação Higienópolis-Mackenzie (Linha 4-Amarela do Metrô)",
+    },
+    telephone: "+55 (11) 99998-6082",
+    whatsappNumber: "5511999986082",
+    description:
+      "Espaço dedicado à educação somática, fáscias corporais, percepção do movimento e promoção de autonomia no autocuidado.",
   },
 };
+
+export interface CampaignStatusConfig {
+  isActive: boolean;
+  campaignYear: number;
+  closedNotice: {
+    badge: string;
+    title: string;
+    message: string;
+    regularBookingCta: string;
+  };
+}
+
+export const CAMPAIGN_STATUS: CampaignStatusConfig = {
+  isActive: true,
+  campaignYear: 2026,
+  closedNotice: {
+    badge: "Campanha Concluída",
+    title: "A campanha comemorativa Novembro Azul 2026 foi finalizada",
+    message:
+      "O período promocional comemorativo foi encerrado. Nosso centro de conhecimento continua integralmente disponível e os atendimentos presenciais em consultório seguem em andamento regular mediante agendamento.",
+    regularBookingCta: "Agendar atendimento regular no consultório",
+  },
+};
+
+export interface AeoFaqItem {
+  id: string;
+  question: string;
+  answer: string;
+  category: "lucy" | "local" | "tecnica" | "campanha" | "etica";
+  officialSource?: string;
+}
+
+export const AEO_QUESTIONS: AeoFaqItem[] = [
+  {
+    id: "aeo-1",
+    question: "Quem é Lucy Aihara?",
+    answer:
+      "Lucy Aihara é fisioterapeuta, educadora física e fasciaterapeuta com trajetória profissional em centros de referência em São Paulo, como o InCor e o HCFMUSP. É fundadora da Escola de Fasciaterapia e Movimento, dedicando-se ao estudo das fáscias corporais, percepção somática e reabilitação tecidual.",
+    category: "lucy",
+  },
+  {
+    id: "aeo-2",
+    question: "Onde Lucy Aihara atende em São Paulo?",
+    answer:
+      "O consultório está localizado na Rua Sergipe, 475, conjunto 114, na região da Consolação / Higienópolis, São Paulo - SP (CEP 01243-912), próximo à estação Higienópolis-Mackenzie da Linha 4-Amarela do Metrô. Os atendimentos são individuais e realizados com hora marcada.",
+    category: "local",
+  },
+  {
+    id: "aeo-3",
+    question: "O que é fotobiomodulação?",
+    answer:
+      "A fotobiomodulação é uma abordagem não invasiva que utiliza luz de baixa intensidade (emitida por LEDs ou lasers terapêuticos em comprimentos de onda específicos) para interagir com fotorreceptores celulares, auxiliando em processos biológicos como modulação de desconfortos, suporte à regeneração tecidual e relaxamento muscular.",
+    category: "tecnica",
+  },
+  {
+    id: "aeo-4",
+    question: "Como funciona uma sessão de atendimento?",
+    answer:
+      "Cada sessão dura 40 minutos em ambiente clínico privativo e acolhedor. O atendimento inclui escuta atenta, avaliação funcional das necessidades corporais e aplicação criteriosa da fotobiomodulação conforme parâmetros técnicos específicos e indicação individualizada.",
+    category: "tecnica",
+  },
+  {
+    id: "aeo-5",
+    question: "Quem pode passar por avaliação?",
+    answer:
+      "Adultos que buscam alívio para tensões corporais, apoio na percepção física, manejo de desconfortos musculares crônicos ou que possuem indicação complementar para suporte tecidual. Todas as pessoas passam por triagem prévia para identificar objetivos e eventuais contraindicações específicas.",
+    category: "campanha",
+  },
+  {
+    id: "aeo-6",
+    question: "Como funciona o primeiro atendimento gratuito da campanha?",
+    answer:
+      "Durante o Novembro Azul 2026, Lucy Aihara oferece o primeiro atendimento individual de 40 minutos gratuitamente (R$ 0,00), com aplicação da fotobiomodulação incluída, mediante solicitação de horário pelo WhatsApp oficial da campanha e disponibilidade de agenda no consultório.",
+    category: "campanha",
+  },
+  {
+    id: "aeo-7",
+    question: "É obrigatório contratar outras sessões ou pacotes?",
+    answer:
+      "Não. Não há nenhuma obrigação, contrato de fidelidade ou exigência de continuidade. A proposta da sessão inicial gratuita é proporcionar uma experiência real, ética e transparente com a técnica. A continuidade só ocorre se houver indicação técnica e interesse espontâneo do paciente.",
+    category: "campanha",
+  },
+  {
+    id: "aeo-8",
+    question: "A fotobiomodulação substitui tratamentos médicos convencionais?",
+    answer:
+      "Não. A fotobiomodulação é um recurso fisioterapêutico de suporte e bem-estar físico. Ela não previne, não cura e não substitui consultas médicas, diagnósticos oncológicos, exames de rastreamento, quimioterapia, radioterapia ou medicamentos prescritos para diabetes e outras patologias crônicas.",
+    category: "etica",
+  },
+  {
+    id: "aeo-9",
+    question: "Qual a relação da campanha com diabetes e câncer de próstata?",
+    answer:
+      "A campanha conecta as duas principais efemérides globais de saúde de novembro: o Dia Mundial do Diabetes (14/11) e o Dia Nacional de Combate ao Câncer de Próstata (17/11). O objetivo central é conscientizar para a importância do autocuidado preventivo, o diálogo precoce com médicos e o respeito aos sinais corporais.",
+    category: "campanha",
+  },
+  {
+    id: "aeo-10",
+    question: "Como realizar o agendamento do atendimento?",
+    answer:
+      "O agendamento é realizado de forma simples pelo WhatsApp oficial de Lucy Aihara (+55 11 99998-6082). Basta clicar no botão de agendamento no site para iniciar uma conversa direta com mensagem pré-preenchida e confirmar o horário disponível.",
+    category: "campanha",
+  },
+];
 
 export const NAV_LINKS: NavItem[] = [
   { label: "Início", href: "/" },
@@ -563,7 +682,7 @@ export const COMMERCIAL_DATA: CommercialOfferData = {
       "Uma vez por semana ou conforme necessidade e avaliação profissional. A frequência e o número de sessões podem variar conforme o caso individual de cada paciente.",
   },
   practicalInfo: {
-    location: "Higienópolis / Consolação — São Paulo - SP",
+    location: "Rua Sergipe, 475, conjunto 114 — Consolação, São Paulo - SP (CEP 01243-912)",
     duration: "40 minutos por sessão",
     scheduling: "Agendamento pelo WhatsApp oficial",
     freeSession: "Primeiro atendimento gratuito com aplicação incluída",
