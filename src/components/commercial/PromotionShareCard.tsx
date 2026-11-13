@@ -181,12 +181,12 @@ export function PromotionShareCard({ className = "" }: PromotionShareCardProps) 
         </div>
 
         {/* Botões de Ação para Redes Sociais */}
-        <div className="pt-2 flex flex-wrap items-center gap-3">
+        <div className="pt-2 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3">
           {/* Botão de Destaque: Encaminhar no WhatsApp */}
           <button
             type="button"
             onClick={handleWhatsAppShare}
-            className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1ebd5a] text-[#073322] font-semibold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1ebd5a] active:scale-[0.99] text-[#073322] font-semibold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all"
           >
             <MessageCircle className="w-4 h-4 fill-current flex-shrink-0" />
             <span>Encaminhar no WhatsApp</span>
@@ -196,7 +196,7 @@ export function PromotionShareCard({ className = "" }: PromotionShareCardProps) 
           <button
             type="button"
             onClick={handleCopyMessage}
-            className={`inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-medium text-xs sm:text-sm border transition-all ${
+            className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-medium text-xs sm:text-sm border transition-all ${
               copiedMessage
                 ? "bg-emerald-50 border-emerald-500 text-emerald-800"
                 : "bg-white hover:bg-stone-50 border-stone-300 text-[#17385B]"

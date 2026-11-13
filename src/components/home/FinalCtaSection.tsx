@@ -50,7 +50,7 @@ export function FinalCtaSection() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={handleWhatsAppClick}
-            className="inline-flex items-center justify-center gap-3 px-9 py-4 rounded-xl bg-[#25D366] hover:bg-[#1ebd5a] active:scale-[0.99] text-[#073322] font-semibold text-base shadow-xl transition-all"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 sm:px-9 py-3.5 sm:py-4 rounded-xl bg-[#25D366] hover:bg-[#1ebd5a] active:scale-[0.99] text-[#073322] font-semibold text-sm sm:text-base shadow-xl transition-all"
           >
             <MessageCircle className="w-5 h-5 fill-current" />
             <span>Quero agendar meu atendimento gratuito</span>

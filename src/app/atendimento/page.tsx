@@ -133,8 +133,8 @@ export default function AtendimentoComercialPage() {
                 </p>
 
                 {/* Destaque do Primeiro Atendimento Gratuito */}
-                <div className="p-4 sm:p-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-between gap-4">
-                  <div className="space-y-1">
+                <div className="p-4 sm:p-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <div className="space-y-1 text-left">
                     <span className="block text-[11px] uppercase tracking-wider text-[#84B7CE] font-bold">
                       Condição Promocional
                     </span>
@@ -150,9 +150,9 @@ export default function AtendimentoComercialPage() {
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#25D366] hover:bg-[#1ebd5a] text-[#073322] font-semibold text-xs sm:text-sm shadow-md transition-all flex-shrink-0"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1ebd5a] active:scale-[0.99] text-[#073322] font-semibold text-xs sm:text-sm shadow-md transition-all text-center flex-shrink-0"
                   >
-                    <MessageCircle className="w-4 h-4 fill-current" />
+                    <MessageCircle className="w-4 h-4 fill-current flex-shrink-0" />
                     <span>{com.ctaText}</span>
                   </a>
                 </div>
@@ -366,9 +366,9 @@ export default function AtendimentoComercialPage() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-[#25D366] hover:bg-[#1ebd5a] text-[#073322] font-semibold text-base shadow-xl transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-[#25D366] hover:bg-[#1ebd5a] active:scale-[0.99] text-[#073322] font-semibold text-sm sm:text-base shadow-xl transition-all"
               >
-                <MessageCircle className="w-5 h-5 fill-current" />
+                <MessageCircle className="w-5 h-5 fill-current flex-shrink-0" />
                 <span>Agendar atendimento gratuito no WhatsApp</span>
               </a>
             </div>
