@@ -354,7 +354,7 @@ export const NOVEMBER_BLUE_OFFER: NovemberBlueOfferData = {
     "Aplicação com parâmetros técnicos adequados à avaliação",
     "Sem obrigatoriedade de contratação de novas sessões",
   ],
-  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5511996496082",
+  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5511999986082",
   whatsappMessage:
     "Olá, Lucy! Vi a campanha Novembro Azul e gostaria de agendar meu primeiro atendimento gratuito para conhecer a fotobiomodulação.",
   clarificationText:

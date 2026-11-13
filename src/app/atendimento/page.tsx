@@ -66,7 +66,7 @@ export default function AtendimentoComercialPage() {
     provider: {
       "@type": "LocalBusiness",
       name: "Escola de Fasciaterapia e Movimento — Lucy Aihara",
-      telephone: "+55-11-99649-6082",
+      telephone: "+55-11-99998-6082",
       address: {
         "@type": "PostalAddress",
         addressLocality: "São Paulo",

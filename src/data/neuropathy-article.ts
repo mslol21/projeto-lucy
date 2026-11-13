@@ -77,7 +77,7 @@ export const NEUROPATHY_ARTICLE = {
         "Este relato de caso para publicação, com a colaboração dos professores doutores Mark Thomaz Ugliara Barone e Lorenza Oliveira Testa Carvalho. O trabalho também foi apresentado em formato de pôster no XXI Congresso da Sociedade Brasileira de Diabetes, em 2017.",
         "O trabalho, intitulado “Fasciatherapy, a French manual complementary therapy to reduce neuropathic symptoms: a case report”, foi apresentado em formato de pôster no XXI Congresso da Sociedade Brasileira de Diabetes, em São Paulo, em 2017.",
         "A publicação original menciona documentos relacionados à apresentação no congresso; esses anexos não foram fornecidos para incorporação nesta página.",
-        "Se você ou alguém próximo convive com neuropatia diabética ou outra condição crônica complexa, posso ajudar a entender se a Fasciaterapia faz sentido para o seu caso. Me conte um pouco da sua história por mensagem pelo WhatsApp +55 (11) 99649-6082."
+        "Se você ou alguém próximo convive com neuropatia diabética ou outra condição crônica complexa, posso ajudar a entender se a Fasciaterapia faz sentido para o seu caso. Me conte um pouco da sua história por mensagem pelo WhatsApp +55 (11) 99998-6082."
       ]
     }
   ],
