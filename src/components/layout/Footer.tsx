@@ -111,6 +111,15 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/conhecimento/fotobiomodulacao"
+                  className="text-[#C7D9D2] hover:text-white transition-colors flex items-center gap-1.5"
+                >
+                  <ArrowRight className="w-3 h-3 text-[#84B7CE]" />
+                  <span>Fotobiomodulação & Evidências</span>
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/conhecimento/lucy-aihara"
                   className="text-[#C7D9D2] hover:text-white transition-colors flex items-center gap-1.5"
                 >

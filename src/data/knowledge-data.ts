@@ -577,7 +577,110 @@ export const KNOWLEDGE_ARTICLES: KnowledgeArticle[] = [
         url: "https://www.escoladefasciaterapiaemovimento.com/"
       }
     ],
-    relatedSlugs: ["metodo-danis-bois", "fasciaterapia-e-dor", "neuropatia-diabetica", "evidencias-cientificas"]
+    relatedSlugs: ["metodo-danis-bois", "fasciaterapia-e-dor", "neuropatia-diabetica", "evidencias-cientificas", "fotobiomodulacao"]
+  },
+  {
+    slug: "fotobiomodulacao",
+    title: "Fotobiomodulação: Princípios da Terapia por Luz, Aplicações e Evidências Científicas",
+    subtitle: "Compreenda como a luz de baixa intensidade em comprimentos de onda específicos interage com os tecidos celulares e quais os limites clínicos na reabilitação.",
+    summary: "Um guia técnico e educativo sobre a fotobiomodulação (PBM), o uso terapêutico de lasers e LEDs de baixa intensidade, seus mecanismos mitocondriais de ação e os critérios de responsabilidade em saúde integrativa.",
+    category: "Ciência & Fáscia",
+    readingTime: "7 min de leitura",
+    publishedAt: "13 de Novembro de 2026",
+    updatedAt: "13 de Novembro de 2026",
+    author: {
+      name: "Escola de Fasciaterapia e Movimento",
+      role: "Equipe Editorial & Lucy Aihara",
+      institution: "Escola de Fasciaterapia e Movimento"
+    },
+    evidenceBadge: {
+      level: 2,
+      label: "Evidência Estabelecida & Pesquisa Fotobiológica",
+      description: "Amparado em consensos da World Association for photobiomoduLation Therapy (WALT) e periódicos indexados de biofotônica."
+    },
+    tableOfContents: [
+      { id: "o-que-e-pbm", title: "1. O que é a Fotobiomodulação?" },
+      { id: "mecanismo-celular", title: "2. Como a Luz Atua no Nível Celular: Os Fotorreceptores" },
+      { id: "laser-vs-led", title: "3. Diferenças entre Laser e LED: Espectros e Parâmetros" },
+      { id: "aplicacoes-fisioterapia", title: "4. Aplicações no Cuidado e Reabilitação" },
+      { id: "limites-eticos-novembro-azul", title: "5. Limites Éticos: O que a Fotobiomodulação NÃO Faz" }
+    ],
+    medicalDisclaimer: "A fotobiomodulação é um recurso físico coadjuvante utilizado na fisioterapia para auxílio na modulação inflamatória, reparo tecidual e alívio do desconforto. Ela NÃO substitui o tratamento médico convencional, terapias oncológicas ou o controle farmacológico do diabetes.",
+    sections: [
+      {
+        id: "o-que-e-pbm",
+        title: "1. O que é a Fotobiomodulação?",
+        evidenceLevel: 1,
+        content: [
+          "A fotobiomodulação (PBM, antigamente denominada terapia a laser de baixa intensidade ou LLLT — Low-Level Laser Therapy) é uma modalidade terapêutica não invasiva baseada na emissão de luz monocromática ou quase-monocromática em comprimentos de onda específicos, geralmente situados nas faixas do vermelho (620–700 nm) e do infravermelho próximo (700–1100 nm).",
+          "Diferentemente dos lasers cirúrgicos de alta potência, que geram ablação ou corte térmico, os equipamentos de fotobiomodulação operam em níveis de energia atérmicos (baixa intensidade), não causando queimaduras ou lesões celulares, mas estimulando reações fotoquímicas e fotofísicas benignas nos tecidos biológicos."
+        ]
+      },
+      {
+        id: "mecanismo-celular",
+        title: "2. Como a Luz Atua no Nível Celular: Os Fotorreceptores",
+        evidenceLevel: 2,
+        content: [
+          "O principal mecanismo aceito pela comunidade científica baseia-se na absorção de fótons por cromóforos celulares endógenos, com ênfase especial na enzima citocromo c oxidase (Complexo IV da cadeia respiratória mitocondrial).",
+          "Quando a luz no comprimento de onda correto atinge as mitocôndrias, facilita a dissociação do óxido nítrico inibitório do centro catalítico do citocromo c oxidase. Esse processo restaura o consumo de oxigênio celular, eleva a síntese de adenosina trifosfato (ATP) e modula espécies reativas de oxigênio (ROS), desencadeando cascatas de sinalização benéficas.",
+          "Entre os desdobramentos celulares documentados estão a modulação de citocinas inflamatórias, estímulo à síntese de colágeno por fibroblastos e facilitação da microcirculação vascular local."
+        ]
+      },
+      {
+        id: "laser-vs-led",
+        title: "3. Diferenças entre Laser e LED: Espectros e Parâmetros",
+        evidenceLevel: 1,
+        content: [
+          "Tanto os diodos laser quanto os diodos emissores de luz (LEDs) são utilizados com êxito na prática clínica, guardando particularidades importantes:",
+          "• Lasers de Baixa Intensidade: Possuem feixe coerente, monocromático e colimado, permitindo entrega de densidade energética focada e maior penetração em estruturas profundas (como articulações, tendões e cápsulas fasciais profundas).",
+          "• Diodos Emissores de Luz (LEDs): Apresentam feixe não coerente com largura de banda espectral estreita. São ideais para tratamento de áreas teciduais mais amplas e camadas superficiais ou intermediárias com excelente segurança biológica.",
+          "O sucesso do procedimento depende estritamente da dosimetria (densidade de energia calculada em Joules/cm²), do tempo de irradiação e da técnica de aplicação conduzida por profissional capacitado."
+        ]
+      },
+      {
+        id: "aplicacoes-fisioterapia",
+        title: "4. Aplicações no Cuidado e Reabilitação",
+        evidenceLevel: 2,
+        content: [
+          "Na fisioterapia e no consultório de Lucy Aihara, a fotobiomodulação é empregada de maneira personalizada após minuciosa avaliação clínica individual:",
+          "• Suporte no manejo de dores musculoesqueléticas agudas e crônicas.",
+          "• Auxílio na recuperação de tensões miofasciais e pontos de sobrecarga postural.",
+          "• Estímulo ao processo cicatricial e regenerativo tecidual em áreas de sofrimento circulatório local leve.",
+          "• Aprimoramento da tolerância tecidual e do bem-estar geral quando integrada à abordagem de movimento consciente e escuta corporal."
+        ]
+      },
+      {
+        id: "limites-eticos-novembro-azul",
+        title: "5. Limites Éticos: O que a Fotobiomodulação NÃO Faz",
+        evidenceLevel: 1,
+        content: [
+          "Em conformidade com o código de ética profissional e as diretrizes do Ministério da Saúde:",
+          "1. A fotobiomodulação NÃO previne, NÃO cura e NÃO substitui o tratamento médico do diabetes mellitus ou da resistência insulínica.",
+          "2. A técnica NÃO constitui terapia oncológica nem substitui o rastreamento, diagnóstico ou condutas médicas para o câncer de próstata ou qualquer neoplasia.",
+          "3. Não há promessas de resultados milagrosos ou instantâneos. O primeiro atendimento gratuito na campanha de Novembro Azul serve para que o interessado conheça a técnica, tire suas dúvidas e receba uma avaliação honesta e profissional sobre a pertinência do recurso para o seu caso específico."
+        ]
+      }
+    ],
+    references: [
+      {
+        citation: "Hamblin, M. R. (2016). Photobiomodulation or low-level laser therapy. Journal of Biophotonics, 9(11-12), 1122-1124.",
+        type: "estudo"
+      },
+      {
+        citation: "de Freitas, L. F., & Hamblin, M. R. (2016). Proposed Mechanisms of Photobiomodulation or Low-Level Light Therapy. IEEE Journal of Selected Topics in Quantum Electronics, 22(3), 348-364.",
+        type: "estudo"
+      },
+      {
+        citation: "Chung, H., Dai, T., Sharma, S. K., Huang, Y. Y., Carroll, J. D., & Hamblin, M. R. (2012). The nuts and bolts of low-level laser (light) therapy. Annals of Biomedical Engineering, 40(2), 516-533.",
+        type: "estudo"
+      },
+      {
+        citation: "World Association for photobiomoduLation Therapy (WALT). Consensus guidelines for dosages and clinical protocols.",
+        type: "diretriz",
+        url: "https://waltza.co.za"
+      }
+    ],
+    relatedSlugs: ["metodo-danis-bois", "fasciaterapia-e-dor", "neuropatia-diabetica", "evidencias-cientificas", "lucy-aihara"]
   }
 ];
 

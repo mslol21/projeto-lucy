@@ -305,13 +305,21 @@ export interface OfferFaqItem {
 export interface NovemberBlueOfferData {
   eyebrow: string;
   headline: string;
-  text: string;
+  subheadline: string;
   offerHeadline: string;
   complement: string;
   ctaText: string;
-  microtext: string;
-  keyPoints: string[];
   ctaSecondaryText: string;
+  educationTitle: string;
+  educationText: string;
+  educationLink: string;
+  microtext: string;
+  datesConnection: {
+    diabetesDate: string;
+    prostateDate: string;
+    context: string;
+  };
+  keyPoints: string[];
   whatsappNumber: string;
   whatsappMessage: string;
   clarificationText: string;
@@ -321,23 +329,36 @@ export interface NovemberBlueOfferData {
 }
 
 export const NOVEMBER_BLUE_OFFER: NovemberBlueOfferData = {
-  eyebrow: "NOVEMBRO AZUL 2026 • CAMPANHA ESPECIAL",
-  headline: "Você cuida de tanta coisa. E de você?",
-  text: "Neste Novembro Azul, reserve um momento para ouvir seu corpo, conhecer a Fasciaterapia e experimentar uma abordagem acolhedora de cuidado e movimento.",
+  eyebrow: "NOVEMBRO AZUL 2026",
+  headline: "Neste Novembro Azul, dê o primeiro passo para cuidar de você.",
+  subheadline:
+    "Conheça a fotobiomodulação, uma técnica que utiliza luz de baixa intensidade e pode ser empregada em diferentes contextos de cuidado e reabilitação, conforme avaliação profissional.",
   offerHeadline: "SEU PRIMEIRO ATENDIMENTO É GRATUITO",
-  complement: "Um convite especial de Lucy Aihara para conhecer a Fasciaterapia, presencialmente em São Paulo.",
-  ctaText: "Quero conhecer e agendar",
-  microtext: "Sem compromisso de continuidade. Agendamento sujeito à disponibilidade.",
+  complement:
+    "Lucy Aihara convida você a conhecer a fotobiomodulação em uma experiência inicial gratuita, mediante avaliação e agendamento.",
+  ctaText: "Quero agendar meu atendimento gratuito",
+  ctaSecondaryText: "Entenda a fotobiomodulação",
+  educationTitle: "O que é fotobiomodulação?",
+  educationText:
+    "A fotobiomodulação é uma técnica que utiliza luz em parâmetros específicos, geralmente emitida por laser ou LED, para produzir respostas biológicas nos tecidos. Suas aplicações dependem da indicação clínica, do equipamento e do protocolo utilizado.",
+  educationLink: "/conhecimento/fotobiomodulacao",
+  microtext:
+    "Sem compromisso de continuidade. Agendamento presencial sujeito à disponibilidade de horários.",
+  datesConnection: {
+    diabetesDate: "14 de Novembro — Dia Mundial do Diabetes",
+    prostateDate: "17 de Novembro — Dia Nacional de Combate ao Câncer de Próstata",
+    context:
+      "A campanha conecta as duas principais datas de saúde do mês, promovendo a conscientização sobre prevenção, autocuidado masculino e atenção aos limites do corpo.",
+  },
   keyPoints: [
-    "Atendimento presencial individualizado",
-    "Higienópolis / Consolação — São Paulo",
-    "Agendamento prévio via WhatsApp",
-    "Sem compromisso de continuidade",
+    "Atendimento presencial individualizado em São Paulo",
+    "Higienópolis / Consolação — próximo à estação de metrô",
+    "Aplicação com parâmetros técnicos adequados à avaliação",
+    "Sem obrigatoriedade de contratação de novas sessões",
   ],
-  ctaSecondaryText: "Como funciona a experiência?",
   whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5511996496082",
   whatsappMessage:
-    "Olá, Lucy! Conheci a campanha especial Novembro Azul pelo site e gostaria de saber como agendar meu primeiro atendimento gratuito para conhecer a Fasciaterapia.",
+    "Olá, Lucy! Vi a campanha Novembro Azul e gostaria de agendar meu primeiro atendimento gratuito para conhecer a fotobiomodulação.",
   clarificationText:
     "Atendimentos posteriores não estão incluídos na gratuidade desta campanha comemorativa.",
   steps: [
@@ -345,7 +366,7 @@ export const NOVEMBER_BLUE_OFFER: NovemberBlueOfferData = {
       number: "01",
       title: "Entre em contato",
       description:
-        "Converse pelo WhatsApp para conhecer as informações e solicitar seu horário de atendimento com Lucy Aihara.",
+        "Converse pelo WhatsApp para tirar dúvidas sobre a fotobiomodulação e solicitar seu horário de atendimento com Lucy Aihara.",
     },
     {
       number: "02",
@@ -355,52 +376,52 @@ export const NOVEMBER_BLUE_OFFER: NovemberBlueOfferData = {
     },
     {
       number: "03",
-      title: "Conheça a Fasciaterapia",
+      title: "Conheça a Fotobiomodulação",
       description:
-        "Participe do seu primeiro atendimento gratuito e experimente de forma acolhedora a abordagem somática e a escuta fascial.",
+        "Participe do seu primeiro atendimento gratuito, passe por uma avaliação profissional e experimente a aplicação da luz de baixa intensidade.",
     },
   ],
   conditions: [
     {
-      text: "Promoção comemorativa válida exclusivamente para o primeiro atendimento presencial de novos interessados.",
+      text: "Promoção comemorativa de Novembro Azul válida exclusivamente para o primeiro atendimento presencial de novos interessados.",
     },
     {
-      text: "Agendamento sujeito à disponibilidade prévia de horários na agenda do consultório (Consolação / Higienópolis, São Paulo - SP).",
+      text: "Agendamento sujeito à disponibilidade de horários na agenda do consultório (Consolação / Higienópolis, São Paulo - SP).",
     },
     {
-      text: "A participação depende da confirmação e alinhamento prévio do horário via WhatsApp.",
+      text: "A participação depende de triagem e confirmação prévia do agendamento via WhatsApp.",
     },
     {
       text: "A gratuidade da sessão experimental não implica qualquer obrigação, fidelidade ou vínculo de contratação de atendimentos posteriores.",
     },
     {
-      text: "A data de encerramento e eventuais critérios adicionais devem ser confirmados com Lucy Aihara antes da publicação oficial.",
+      text: "A fotobiomodulação é uma terapia de suporte; não constitui tratamento primário ou cura para diabetes, neuropatias severas ou neoplasias.",
     },
   ],
   faqs: [
     {
-      id: "faq-oferta-1",
-      question: "O primeiro atendimento é realmente gratuito?",
+      id: "faq-fbm-1",
+      question: "O primeiro atendimento de fotobiomodulação é realmente gratuito?",
       answer:
-        "Sim. A campanha oferece o primeiro atendimento sem custo para novos interessados, mediante agendamento e disponibilidade.",
+        "Sim. A campanha oferece uma experiência inicial sem custo para novos interessados, mediante agendamento prévio e disponibilidade de horários no consultório.",
     },
     {
-      id: "faq-oferta-2",
-      question: "Preciso contratar outros atendimentos depois?",
+      id: "faq-fbm-2",
+      question: "O que é e como funciona a fotobiomodulação?",
       answer:
-        "Não. A experiência inicial não obriga a contratação de atendimentos posteriores. Nosso propósito é permitir que você sinta e conheça a prática com total liberdade.",
+        "É uma técnica que utiliza fótons de luz de baixa intensidade (laser terapêutico ou LEDs em comprimentos de onda específicos) para interagir com fotorreceptores celulares nos tecidos, auxiliando na modulação inflamatória e no suporte à regeneração celular.",
     },
     {
-      id: "faq-oferta-3",
-      question: "Como faço para participar?",
+      id: "faq-fbm-3",
+      question: "A fotobiomodulação cura diabetes ou câncer de próstata?",
       answer:
-        "Entre em contato pelo WhatsApp e solicite informações sobre os horários disponíveis para o atendimento gratuito de Novembro Azul.",
+        "Não. A fotobiomodulação NÃO previne, não cura e não substitui o tratamento médico convencional para o diabetes mellitus ou o câncer de próstata. Ela pode ser empregada como recurso coadjuvante de reabilitação e alívio de desconfortos teciduais específicos, sempre com indicação profissional individualizada.",
     },
     {
-      id: "faq-oferta-4",
-      question: "A Fasciaterapia substitui acompanhamento médico?",
+      id: "faq-fbm-4",
+      question: "Preciso contratar outras sessões depois?",
       answer:
-        "Não. A abordagem não substitui diagnóstico, tratamento ou acompanhamento por profissionais de saúde médicos ou fisioterapia para condições clínicas específicas.",
+        "Não. A experiência inicial gratuita é totalmente livre de compromisso. O objetivo é que você conheça a técnica, o ambiente do consultório e a atuação de Lucy Aihara com total transparência.",
     },
   ],
 };

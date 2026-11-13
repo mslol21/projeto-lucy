@@ -16,6 +16,8 @@ import {
   MapPin,
   X,
   CheckCircle2,
+  SunMedium,
+  BookOpen,
 } from "lucide-react";
 import { NOVEMBER_BLUE_OFFER } from "@/data/campaign-data";
 import { trackConversionEvent } from "@/lib/analytics";
@@ -31,10 +33,11 @@ export function NovemberBlueOfferSection() {
   )}`;
 
   const handleWhatsAppClick = (source: string) => {
-    trackConversionEvent("novembro_azul_agendamento_gratuito", {
+    trackConversionEvent("novembro_azul_fotobiomodulacao_lead", {
       source,
       channel: "whatsapp",
       campaign: "novembro_azul_2026",
+      technique: "fotobiomodulacao",
     });
   };
 
@@ -47,7 +50,7 @@ export function NovemberBlueOfferSection() {
     const handleScroll = () => {
       if (stickyDismissed) return;
       const scrollY = window.scrollY;
-      setShowStickyBar(scrollY > 400);
+      setShowStickyBar(scrollY > 420);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -72,7 +75,7 @@ export function NovemberBlueOfferSection() {
     <section
       id="especial-novembro-azul"
       aria-labelledby="offer-headline"
-      className="bg-[#17385B] text-[#F5F2EB] relative overflow-hidden border-b border-[#84B7CE]/20 scroll-mt-20"
+      className="bg-gradient-to-b from-[#17385B] via-[#1b3b6f] to-[#17385B] text-[#F5F2EB] relative overflow-hidden border-b border-[#84B7CE]/20 scroll-mt-20"
     >
       {/* Script JSON-LD de FAQ para AEO/SEO */}
       <script
@@ -80,17 +83,17 @@ export function NovemberBlueOfferSection() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      {/* Iluminação suave de fundo com contraste refinado */}
+      {/* Elementos visuais sutis que remetem à difusão de luz e biofotônica */}
       <div
-        className="absolute top-0 right-0 w-[550px] h-[550px] bg-[#84B7CE]/15 rounded-full blur-3xl pointer-events-none -mr-28 -mt-28"
+        className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-gradient-to-br from-[#84B7CE]/15 via-[#2563eb]/10 to-transparent rounded-full blur-3xl pointer-events-none -mt-40 animate-pulse duration-1000 motion-reduce:animate-none"
         aria-hidden="true"
       />
       <div
-        className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#C7D9D2]/10 rounded-full blur-3xl pointer-events-none -ml-24 -mb-24"
+        className="absolute bottom-0 left-10 w-[500px] h-[500px] bg-gradient-to-tr from-[#C7D9D2]/10 via-[#38bdf8]/10 to-transparent rounded-full blur-3xl pointer-events-none -mb-32"
         aria-hidden="true"
       />
 
-      {/* BLOCO PRINCIPAL DE ALTO IMPACTO (Hero da Oferta) */}
+      {/* BLOCO PRINCIPAL DA OFERTA (Alto Impacto em Azul-Marinho e Cobalto) */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 lg:pt-20 pb-14 sm:pb-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Coluna Esquerda: Comunicação CRO de Alto Impacto */}
@@ -101,7 +104,7 @@ export function NovemberBlueOfferSection() {
               <span>{offer.eyebrow}</span>
             </div>
 
-            {/* Headline Emocional e Reflexiva */}
+            {/* Headline Principal */}
             <h2
               id="offer-headline"
               className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white font-normal tracking-tight leading-tight"
@@ -109,41 +112,45 @@ export function NovemberBlueOfferSection() {
               {offer.headline}
             </h2>
 
-            {/* Texto Conector com Saúde e Autocuidado */}
+            {/* Subheadline Técnica e Acolhedora */}
             <p className="text-base sm:text-lg text-[#C7D9D2] leading-relaxed max-w-2xl font-sans">
-              {offer.text}
+              {offer.subheadline}
             </p>
 
             {/* Card de Destaque da Oferta de Gratuidade */}
-            <div className="p-5 sm:p-6 rounded-2xl rounded-tr-[40px] bg-white/10 backdrop-blur-md border border-white/20 space-y-3 shadow-lg">
+            <div className="p-5 sm:p-6 rounded-2xl rounded-tr-[40px] bg-white/10 backdrop-blur-md border border-white/20 space-y-3 shadow-lg relative overflow-hidden">
+              {/* Feixe sutil de iluminação */}
+              <div
+                className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-bl from-amber-300/10 via-emerald-400/10 to-transparent rounded-full blur-xl pointer-events-none"
+                aria-hidden="true"
+              />
+
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-xs sm:text-sm font-bold tracking-wider uppercase">
                 <Sparkles className="w-4 h-4 text-emerald-300" aria-hidden="true" />
                 <span>{offer.offerHeadline}</span>
               </div>
 
-              <p className="text-sm sm:text-base text-white/95 leading-relaxed">
+              <p className="text-sm sm:text-base text-white/95 leading-relaxed font-sans">
                 {offer.complement}
               </p>
 
               {/* Informações rápidas em grid 2x2 */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1 border-t border-white/10 text-xs sm:text-sm text-[#C7D9D2]">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" aria-hidden="true" />
-                  <span>Atendimento presencial individual</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" aria-hidden="true" />
-                  <span>Higienópolis / Consolação — SP</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" aria-hidden="true" />
-                  <span>Agendamento prévio via WhatsApp</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" aria-hidden="true" />
-                  <span>Sem compromisso de continuidade</span>
-                </div>
+                {offer.keyPoints.map((point, idx) => (
+                  <div key={idx} className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" aria-hidden="true" />
+                    <span>{point}</span>
+                  </div>
+                ))}
               </div>
+            </div>
+
+            {/* Conexão com as Datas Oficiais do Novembro Azul */}
+            <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 flex items-start gap-2.5 text-xs text-[#84B7CE]">
+              <SunMedium className="w-4 h-4 text-[#84B7CE] flex-shrink-0 mt-0.5" aria-hidden="true" />
+              <p className="leading-relaxed">
+                Conectando a conscientização do <strong>14 de Novembro (Dia Mundial do Diabetes)</strong> e do <strong>17 de Novembro (Combate ao Câncer de Próstata)</strong> à valorização do autocuidado e da escuta dos sinais do corpo.
+              </p>
             </div>
 
             {/* CTAs de Conversão com Contraste Máximo */}
@@ -161,7 +168,7 @@ export function NovemberBlueOfferSection() {
                 </a>
 
                 <a
-                  href="#como-funciona-experiencia"
+                  href="#o-que-e-fotobiomodulacao"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-4 rounded-xl bg-white/10 hover:bg-white/15 text-white font-medium text-sm border border-white/20 transition-all duration-200 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 >
                   <span>{offer.ctaSecondaryText}</span>
@@ -169,17 +176,17 @@ export function NovemberBlueOfferSection() {
                 </a>
               </div>
 
-              {/* Microtexto ético anti-fricção */}
+              {/* Microtexto anti-fricção */}
               <p className="text-xs text-[#84B7CE] font-sans">
                 {offer.microtext}
               </p>
             </div>
           </div>
 
-          {/* Coluna Direita: Fotografia Original de Lucy Aihara (Sem alterações) */}
+          {/* Coluna Direita: Fotografia Original de Lucy Aihara (Sem modificações) */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="w-full max-w-sm bg-white/10 backdrop-blur-md rounded-3xl rounded-tr-[52px] p-5 sm:p-6 border border-white/20 shadow-xl space-y-4">
-              {/* Fotografia original de Lucy Aihara preservada integralmente */}
+              {/* Fotografia original de Lucy Aihara rigorosamente preservada */}
               <div className="relative rounded-2xl rounded-tr-[40px] overflow-hidden border-2 border-white/30 bg-[#17385B] aspect-[4/5] max-h-[340px]">
                 <Image
                   src="/images/lucy-aihara-hcfmusp.jpg"
@@ -224,11 +231,53 @@ export function NovemberBlueOfferSection() {
         </div>
       </div>
 
-      {/* SEÇÃO SECUNDÁRIA: Como funciona o agendamento & FAQ da Gratuidade */}
-      <div className="bg-[#FAF8F5] text-[#17385B] py-14 sm:py-16 border-t border-stone-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* 3 Etapas Explicativas */}
-          <div id="como-funciona-experiencia" className="scroll-mt-24 mb-12">
+      {/* ÁREA EDUCATIVA COMPLEMENTAR: O Que É Fotobiomodulação */}
+      <div
+        id="o-que-e-fotobiomodulacao"
+        className="bg-[#FAF8F5] text-[#17385B] py-14 sm:py-16 border-t border-stone-200 scroll-mt-20"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          {/* Card Conceitual Curto e Objetivo */}
+          <div className="bg-white rounded-3xl rounded-tr-[48px] border border-stone-200/90 p-6 sm:p-10 shadow-2xs">
+            <div className="max-w-3xl space-y-4">
+              <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#527fae]">
+                <SunMedium className="w-4 h-4 text-[#527fae]" aria-hidden="true" />
+                <span>Educação em Saúde e Biofotônica</span>
+              </div>
+
+              <h3 className="font-serif text-2xl sm:text-3xl text-[#17385B]">
+                {offer.educationTitle}
+              </h3>
+
+              <p className="text-base sm:text-lg text-[#415A77] leading-relaxed font-sans">
+                {offer.educationText}
+              </p>
+
+              {/* Aviso Ético Importante sobre Diabetes e Câncer */}
+              <div className="p-4 rounded-xl bg-amber-50/80 border border-amber-200/80 text-amber-950 text-xs sm:text-sm space-y-1">
+                <strong className="block font-semibold text-amber-900">
+                  Aviso Ético de Responsabilidade Médica:
+                </strong>
+                <p className="leading-relaxed text-amber-900/90">
+                  A fotobiomodulação é um recurso terapêutico de suporte. Ela <strong>não previne, não cura e não substitui</strong> o tratamento médico convencional para o diabetes mellitus ou o câncer de próstata. Não há promessas de alívio instantâneo de sintomas ou resultados garantidos.
+                </p>
+              </div>
+
+              <div className="pt-2">
+                <Link
+                  href={offer.educationLink}
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#17385B] text-white hover:bg-[#1f4a75] font-medium text-xs sm:text-sm transition-colors shadow-xs group"
+                >
+                  <BookOpen className="w-4 h-4 text-[#84B7CE]" aria-hidden="true" />
+                  <span>Acessar artigo científico completo sobre fotobiomodulação</span>
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* 3 Etapas de Agendamento */}
+          <div>
             <div className="text-center max-w-xl mx-auto mb-8 space-y-1.5">
               <span className="text-xs font-semibold uppercase tracking-wider text-[#527fae]">
                 Passo a Passo Simples
@@ -237,7 +286,7 @@ export function NovemberBlueOfferSection() {
                 Como funciona seu primeiro atendimento
               </h3>
               <p className="text-xs sm:text-sm text-[#415A77]">
-                Acolhimento, respeito ao seu tempo e transparência do primeiro contato à sessão.
+                Acolhimento, respeito ao seu tempo e transparência do primeiro contato à sessão presencial.
               </p>
             </div>
 
@@ -261,13 +310,12 @@ export function NovemberBlueOfferSection() {
 
                   <div className="pt-2 text-[11px] text-[#527fae] font-medium flex items-center gap-1.5">
                     <HeartHandshake className="w-3.5 h-3.5" aria-hidden="true" />
-                    <span>Acolhimento e escuta atenta</span>
+                    <span>Acolhimento e avaliação atenta</span>
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* Nota Ética de Transparência */}
             <div className="mt-4 p-3.5 rounded-xl bg-stone-100/90 border border-stone-200/80 text-center">
               <p className="text-xs text-[#415A77]">
                 <strong className="text-[#17385B] font-medium">Nota de Transparência:</strong> {offer.clarificationText}
@@ -275,20 +323,20 @@ export function NovemberBlueOfferSection() {
             </div>
           </div>
 
-          {/* Dúvidas Frequentes da Gratuidade & Condições da Campanha */}
+          {/* Dúvidas Frequentes & Condições da Campanha */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             {/* FAQ da Gratuidade */}
             <div className="lg:col-span-7 bg-white rounded-2xl rounded-tr-[36px] border border-stone-200/90 p-5 sm:p-6 shadow-2xs space-y-4">
               <div>
                 <span className="text-[11px] font-semibold uppercase tracking-wider text-[#527fae] block">
-                  Esclarecimentos
+                  Perguntas e Respostas
                 </span>
-                <h3 className="font-serif text-lg sm:text-xl text-[#17385B]">
-                  Perguntas Frequentes sobre a Gratuidade
-                </h3>
+                <h4 className="font-serif text-lg sm:text-xl text-[#17385B]">
+                  Dúvidas sobre o Atendimento Gratuito
+                </h4>
               </div>
 
-              <div className="space-y-2.5" role="region" aria-label="Perguntas Frequentes do Atendimento Gratuito">
+              <div className="space-y-2.5" role="region" aria-label="Perguntas Frequentes da Fotobiomodulação">
                 {offer.faqs.map((faq, index) => {
                   const isOpen = openFaqIndex === index;
                   return (
@@ -366,7 +414,7 @@ export function NovemberBlueOfferSection() {
                 1º Atendimento Gratuito
               </span>
               <span className="block text-xs text-white/90 truncate">
-                Novembro Azul • Lucy Aihara
+                Fotobiomodulação • Lucy Aihara
               </span>
             </div>
 
