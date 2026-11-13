@@ -10,7 +10,7 @@ import { CAMPAIGN_INFO } from "@/data/campaign-data";
 export function ShareSection() {
   const [copied, setCopied] = useState(false);
   const shareText = `"${CAMPAIGN_INFO.shareableQuote}" — Campanha Novembro Azul 2026 da Escola de Fasciaterapia e Movimento. Informar também é uma forma de cuidar.`;
-  const campaignUrl = typeof window !== "undefined" ? window.location.href : "https://www.escoladefasciaterapiaemovimento.com/novembro-azul-2026";
+  const campaignUrl = typeof window !== "undefined" ? window.location.href : "https://novembroazul.escoladefasciaterapiaemovimento.com";
 
   const handleCopy = async () => {
     try {

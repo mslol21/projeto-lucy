@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { COMMERCIAL_DATA, NOVEMBER_BLUE_OFFER } from "@/data/campaign-data";
 import { CommercialPricingCards } from "@/components/commercial/CommercialPricingCards";
+import { PromotionShareCard } from "@/components/commercial/PromotionShareCard";
 
 export const metadata: Metadata = {
   title: "Atendimento e Pacotes de Fotobiomodulação | Novembro Azul 2026",
@@ -337,7 +338,14 @@ export default function AtendimentoComercialPage() {
           </div>
         </section>
 
-        {/* 6. CTA FINAL DE AGENDAMENTO */}
+        {/* 6. COMPARTILHAR A PROMOÇÃO */}
+        <section aria-label="Compartilhar promoção" className="py-14 sm:py-16 bg-[#F5F2EB]/60 border-b border-stone-200">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <PromotionShareCard />
+          </div>
+        </section>
+
+        {/* 7. CTA FINAL DE AGENDAMENTO */}
         <section className="bg-gradient-to-r from-[#17385B] to-[#1b3b6f] text-white py-16 px-4 text-center">
           <div className="max-w-3xl mx-auto space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-xs font-bold uppercase tracking-wider">
