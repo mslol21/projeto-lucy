@@ -7,6 +7,7 @@ import { DiabetesSection } from "@/components/sections/DiabetesSection";
 import { NeuropathySection } from "@/components/sections/NeuropathySection";
 import { MenHealthSection } from "@/components/sections/MenHealthSection";
 import { BodyAwarenessSection } from "@/components/sections/BodyAwarenessSection";
+import { NovemberBlueOfferSection } from "@/components/sections/NovemberBlueOfferSection";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { ShareSection } from "@/components/sections/ShareSection";
 import { ReferencesSection } from "@/components/sections/ReferencesSection";
@@ -22,6 +23,7 @@ export default function HomePage() {
         <NeuropathySection />
         <MenHealthSection />
         <BodyAwarenessSection />
+        <NovemberBlueOfferSection />
         <FaqSection />
         <ShareSection />
         <ReferencesSection />

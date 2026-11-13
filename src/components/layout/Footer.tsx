@@ -181,6 +181,10 @@ export function Footer() {
               Campanha Novembro Azul 2026
             </Link>
             <span>•</span>
+            <Link href="/#especial-novembro-azul" className="hover:text-white transition-colors text-[#84B7CE] font-medium">
+              Primeiro Atendimento Gratuito
+            </Link>
+            <span>•</span>
             <Link href="/conhecimento" className="hover:text-white transition-colors">
               Centro de Conhecimento
             </Link>

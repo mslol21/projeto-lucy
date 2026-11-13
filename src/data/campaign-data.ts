@@ -64,6 +64,7 @@ export const NAV_LINKS: NavItem[] = [
   { label: "Neuropatia", href: "/#neuropatia" },
   { label: "Saúde Masculina", href: "/#saude-masculina" },
   { label: "O Corpo & Fascia", href: "/#corpo-atencao" },
+  { label: "Atendimento Gratuito", href: "/#especial-novembro-azul" },
   { label: "Mitos e Verdades", href: "/#mitos-verdades" },
   { label: "Centro de Conhecimento", href: "/conhecimento" },
 ];
@@ -284,3 +285,115 @@ export const OFFICIAL_REFERENCES: ReferenceItem[] = [
     url: "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-do-homem",
   },
 ];
+
+export interface OfferStep {
+  number: string;
+  title: string;
+  description: string;
+}
+
+export interface OfferConditionItem {
+  text: string;
+}
+
+export interface OfferFaqItem {
+  id: string;
+  question: string;
+  answer: string;
+}
+
+export interface NovemberBlueOfferData {
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  badge: string;
+  highlightText: string;
+  ctaPrimaryText: string;
+  ctaSecondaryText: string;
+  whatsappNumber: string;
+  whatsappMessage: string;
+  clarificationText: string;
+  steps: OfferStep[];
+  conditions: OfferConditionItem[];
+  faqs: OfferFaqItem[];
+}
+
+export const NOVEMBER_BLUE_OFFER: NovemberBlueOfferData = {
+  eyebrow: "Especial Novembro Azul 2026",
+  title: "Neste Novembro Azul, seu primeiro encontro com o cuidado é por nossa conta.",
+  subtitle:
+    "Um convite para conhecer a Fasciaterapia, experimentar uma abordagem de atenção ao corpo e descobrir novas possibilidades de percepção e movimento.",
+  badge: "PRIMEIRO ATENDIMENTO GRATUITO",
+  highlightText:
+    "Uma oportunidade especial para conhecer o trabalho de Lucy Aihara, sem custo no primeiro atendimento.",
+  ctaPrimaryText: "Quero agendar meu atendimento gratuito",
+  ctaSecondaryText: "Conhecer a Fasciaterapia",
+  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5511996496082",
+  whatsappMessage:
+    "Olá, Lucy! Conheci a campanha especial Novembro Azul pelo site e gostaria de saber como agendar meu primeiro atendimento gratuito para conhecer a Fasciaterapia.",
+  clarificationText:
+    "Atendimentos posteriores não estão incluídos na gratuidade desta campanha comemorativa.",
+  steps: [
+    {
+      number: "01",
+      title: "Entre em contato",
+      description:
+        "Converse pelo WhatsApp para conhecer as informações e solicitar seu horário de atendimento com Lucy Aihara.",
+    },
+    {
+      number: "02",
+      title: "Agende seu primeiro atendimento",
+      description:
+        "Escolha um horário disponível no consultório em São Paulo e receba previamente todas as orientações necessárias.",
+    },
+    {
+      number: "03",
+      title: "Conheça a Fasciaterapia",
+      description:
+        "Participe do seu primeiro atendimento gratuito e experimente de forma acolhedora a abordagem somática e a escuta fascial.",
+    },
+  ],
+  conditions: [
+    {
+      text: "Promoção comemorativa válida exclusivamente para o primeiro atendimento presencial de novos interessados.",
+    },
+    {
+      text: "Agendamento sujeito à disponibilidade prévia de horários na agenda do consultório (Consolação / Higienópolis, São Paulo - SP).",
+    },
+    {
+      text: "A participação depende da confirmação e alinhamento prévio do horário via WhatsApp.",
+    },
+    {
+      text: "A gratuidade da sessão experimental não implica qualquer obrigação, fidelidade ou vínculo de contratação de atendimentos posteriores.",
+    },
+    {
+      text: "A data de encerramento e eventuais critérios adicionais devem ser confirmados com Lucy Aihara antes da publicação oficial.",
+    },
+  ],
+  faqs: [
+    {
+      id: "faq-oferta-1",
+      question: "O primeiro atendimento é realmente gratuito?",
+      answer:
+        "Sim. A campanha oferece o primeiro atendimento sem custo para novos interessados, mediante agendamento e disponibilidade.",
+    },
+    {
+      id: "faq-oferta-2",
+      question: "Preciso contratar outros atendimentos depois?",
+      answer:
+        "Não. A experiência inicial não obriga a contratação de atendimentos posteriores. Nosso propósito é permitir que você sinta e conheça a prática com total liberdade.",
+    },
+    {
+      id: "faq-oferta-3",
+      question: "Como faço para participar?",
+      answer:
+        "Entre em contato pelo WhatsApp e solicite informações sobre os horários disponíveis para o atendimento gratuito de Novembro Azul.",
+    },
+    {
+      id: "faq-oferta-4",
+      question: "A Fasciaterapia substitui acompanhamento médico?",
+      answer:
+        "Não. A abordagem não substitui diagnóstico, tratamento ou acompanhamento por profissionais de saúde médicos ou fisioterapia para condições clínicas específicas.",
+    },
+  ],
+};

@@ -188,6 +188,28 @@ export default function KnowledgeHubPage() {
               </Link>
             </div>
           </section>
+
+          {/* Convite Especial Novembro Azul */}
+          <div className="mt-12 p-8 bg-gradient-to-r from-[#17385B] to-[#1f4a75] text-[#F5F2EB] rounded-3xl rounded-tr-[56px] shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="space-y-2 max-w-xl">
+              <span className="text-xs uppercase tracking-wider text-[#84B7CE] font-semibold">
+                Campanha Novembro Azul 2026
+              </span>
+              <h3 className="font-serif text-2xl text-white">
+                Experimente a Fasciaterapia: Primeiro Atendimento Gratuito
+              </h3>
+              <p className="text-xs sm:text-sm text-[#C7D9D2] leading-relaxed">
+                Neste mês especial de conscientização, novos interessados podem vivenciar o cuidado somático sem custo no consultório de Lucy Aihara em São Paulo.
+              </p>
+            </div>
+            <Link
+              href="/#especial-novembro-azul"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white text-[#17385B] hover:bg-stone-100 font-medium text-xs sm:text-sm transition-colors flex-shrink-0 shadow-xs"
+            >
+              <span>Conhecer a oportunidade</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </main>
 
