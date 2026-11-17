@@ -121,16 +121,16 @@ export const AEO_QUESTIONS: AeoFaqItem[] = [
   },
   {
     id: "aeo-3",
-    question: "O que é fotobiomodulação?",
+    question: "O que é o tratamento com laser terapêutico (fotobiomodulação)?",
     answer:
-      "A fotobiomodulação é uma abordagem não invasiva que utiliza luz de baixa intensidade (emitida por LEDs ou lasers terapêuticos em comprimentos de onda específicos) para interagir com fotorreceptores celulares, auxiliando em processos biológicos como modulação de desconfortos, suporte à regeneração tecidual e relaxamento muscular.",
+      "O tratamento com laser de baixa intensidade é uma modalidade de fotobiomodulação: aplica luz em parâmetros definidos por profissional habilitado e pode ser considerada como recurso complementar no manejo de alguns quadros de dor neuropática. A resposta varia entre pacientes e a técnica não substitui o controle do diabetes nem o acompanhamento médico.",
     category: "tecnica",
   },
   {
     id: "aeo-4",
     question: "Como funciona uma sessão de atendimento?",
     answer:
-      "Cada sessão dura 40 minutos em ambiente clínico privativo e acolhedor. O atendimento inclui escuta atenta, avaliação funcional das necessidades corporais e aplicação criteriosa da fotobiomodulação conforme parâmetros técnicos específicos e indicação individualizada.",
+      "A primeira Sessão Avaliativa tem duração prevista de 40 minutos: escuta clínica, avaliação da sensibilidade e mobilidade tecidual, orientação individualizada e aplicação de laser terapêutico quando indicada e segura.",
     category: "tecnica",
   },
   {
@@ -142,16 +142,16 @@ export const AEO_QUESTIONS: AeoFaqItem[] = [
   },
   {
     id: "aeo-6",
-    question: "Como funciona o primeiro atendimento gratuito da campanha?",
+    question: "Qual o valor da primeira Sessão Avaliativa com Laser na campanha?",
     answer:
-      "Durante o Novembro Azul 2026, Lucy Aihara oferece o primeiro atendimento individual de 40 minutos gratuitamente (R$ 0,00), com aplicação da fotobiomodulação incluída, mediante solicitação de horário pelo WhatsApp oficial da campanha e disponibilidade de agenda no consultório.",
+      "Em novembro de 2026, a primeira sessão avaliativa com aplicação de laser terapêutico tem valor promocional de R$ 70,00 (valor regular informado: R$ 150,00), duração prevista de 40 minutos e agendamento prévio pelo WhatsApp no consultório da Consolação. A aplicação depende da avaliação e indicação clínica.",
     category: "campanha",
   },
   {
     id: "aeo-7",
     question: "É obrigatório contratar outras sessões ou pacotes?",
     answer:
-      "Não. Não há nenhuma obrigação, contrato de fidelidade ou exigência de continuidade. A proposta da sessão inicial gratuita é proporcionar uma experiência real, ética e transparente com a técnica. A continuidade só ocorre se houver indicação técnica e interesse espontâneo do paciente.",
+      "Não. Não há nenhuma obrigação, contrato de fidelidade ou exigência de continuidade. A sessão avaliativa não obriga contratação de pacotes ou outras sessões. A continuidade só ocorre se houver indicação técnica e interesse espontâneo do paciente.",
     category: "campanha",
   },
   {
@@ -179,8 +179,8 @@ export const AEO_QUESTIONS: AeoFaqItem[] = [
 
 export const NAV_LINKS: NavItem[] = [
   { label: "Início", href: "/" },
-  { label: "Atendimento Gratuito", href: "/atendimento" },
-  { label: "Fotobiomodulação", href: "/fotobiomodulacao" },
+  { label: "Sessão Avaliativa", href: "/#especial-novembro-azul" },
+  { label: "Tratamento com Laser", href: "/#tratamento-laser" },
   { label: "Temas", href: "/#temas" },
   { label: "Sobre Lucy", href: "/conhecimento/lucy-aihara" },
   { label: "Depoimentos", href: "/depoimentos" },
@@ -446,99 +446,90 @@ export interface NovemberBlueOfferData {
 }
 
 export const NOVEMBER_BLUE_OFFER: NovemberBlueOfferData = {
-  eyebrow: "NOVEMBRO AZUL 2026",
-  headline: "Neste Novembro Azul, dê o primeiro passo para cuidar de você.",
+  eyebrow: "CONDIÇÃO ESPECIAL DE NOVEMBRO AZUL",
+  headline: "Dê o primeiro passo para cuidar da sua sensibilidade e da dor.",
   subheadline:
-    "Conheça a fotobiomodulação, uma técnica que utiliza luz de baixa intensidade e pode ser empregada em diferentes contextos de cuidado e reabilitação, conforme avaliação profissional.",
-  offerHeadline: "SEU PRIMEIRO ATENDIMENTO É GRATUITO",
+    "Choques, formigamento, sensação de areia nos pés, dormência ou hipersensibilidade merecem avaliação profissional. A sessão de entrada reúne avaliação clínica e aplicação de laser terapêutico, quando indicada.",
+  offerHeadline: "1ª SESSÃO AVALIATIVA + LASER POR R$ 70",
   complement:
-    "Lucy Aihara convida você a conhecer a fotobiomodulação em uma experiência inicial gratuita, mediante avaliação e agendamento.",
-  ctaText: "Quero agendar meu atendimento gratuito",
-  ctaSecondaryText: "Entenda a fotobiomodulação",
-  educationTitle: "O que é fotobiomodulação?",
+    "Valor regular informado: R$ 150,00. Condição de novembro: R$ 70,00 por 40 minutos de atendimento presencial mediante agendamento e avaliação de segurança clínica.",
+  ctaText: "Reservar meu horário pelo WhatsApp",
+  ctaSecondaryText: "Saiba como funciona o laser",
+  educationTitle: "O que é o Tratamento com Laser (fotobiomodulação)?",
   educationText:
-    "A fotobiomodulação é uma técnica que utiliza luz em parâmetros específicos, geralmente emitida por laser ou LED, para produzir respostas biológicas nos tecidos. Suas aplicações dependem da indicação clínica, do equipamento e do protocolo utilizado.",
+    "O laser terapêutico utiliza luz de baixa intensidade em comprimentos de onda específicos para interagir com os tecidos. Pode ser considerado, após avaliação, como recurso complementar no manejo de determinados desconfortos e dores neuropáticas. A resposta é individual e a evidência e os protocolos variam conforme a condição.",
   educationLink: "/conhecimento/fotobiomodulacao",
   microtext:
-    "Sem compromisso de continuidade. Agendamento presencial sujeito à disponibilidade de horários.",
+    "Condição válida em novembro de 2026, para novos atendimentos e conforme disponibilidade de agenda. Sem obrigação de contratar pacotes.",
   datesConnection: {
     diabetesDate: "14 de Novembro — Dia Mundial do Diabetes",
-    prostateDate: "17 de Novembro — Dia Nacional de Combate ao Câncer de Próstata",
+    prostateDate: "17 de Novembro — Saúde Integral do Homem",
     context:
-      "A campanha conecta as duas principais datas de saúde do mês, promovendo a conscientização sobre prevenção, autocuidado masculino e atenção aos limites do corpo.",
+      "A campanha conecta a conscientização sobre diabetes, neuropatia e cuidado integral da saúde masculina, sem substituir avaliações ou tratamentos médicos.",
   },
   keyPoints: [
-    "Atendimento presencial individualizado em São Paulo",
-    "Higienópolis / Consolação — próximo à estação de metrô",
-    "Aplicação com parâmetros técnicos adequados à avaliação",
-    "Sem obrigatoriedade de contratação de novas sessões",
+    "Avaliação de sensibilidade e mobilidade tecidual",
+    "Aplicação localizada de laser, se clinicamente indicada",
+    "Orientação individualizada sobre próximos cuidados",
+    "Recibo para solicitação de reembolso conforme convênio",
   ],
   whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5511999986082",
   whatsappMessage:
-    "Olá, Lucy! Vi a campanha Novembro Azul e gostaria de agendar meu primeiro atendimento gratuito para conhecer a fotobiomodulação.",
+    "Olá, Lucy! Vi a campanha Novembro Azul no site e gostaria de agendar minha 1ª Sessão Avaliativa com Laser (valor especial de R$ 70) no consultório da Consolação.",
   clarificationText:
-    "Atendimentos posteriores não estão incluídos na gratuidade desta campanha comemorativa.",
+    "Não há obrigação de contratar outras sessões. A aplicação de laser depende da indicação e das condições clínicas avaliadas. O reembolso depende das regras do plano de saúde.",
   steps: [
     {
       number: "01",
-      title: "Entre em contato",
+      title: "Contato direto pelo WhatsApp",
       description:
-        "Converse pelo WhatsApp para tirar dúvidas sobre a fotobiomodulação e solicitar seu horário de atendimento com Lucy Aihara.",
+        "Conte brevemente onde sente dor, dormência ou formigamento para consultar os horários disponíveis.",
     },
     {
       number: "02",
-      title: "Agende seu primeiro atendimento",
+      title: "Confirmação na Consolação",
       description:
-        "Escolha um horário disponível no consultório em São Paulo e receba previamente todas as orientações necessárias.",
+        "Receba o horário e as orientações para ir ao consultório na Rua Sergipe, perto da estação Higienópolis-Mackenzie.",
     },
     {
       number: "03",
-      title: "Conheça a Fotobiomodulação",
+      title: "Avaliação + laser (40 minutos)",
       description:
-        "Participe do seu primeiro atendimento gratuito, passe por uma avaliação profissional e experimente a aplicação da luz de baixa intensidade.",
+        "Lucy avalia seu quadro, explica as possibilidades e realiza a aplicação terapêutica somente quando apropriada.",
     },
   ],
   conditions: [
-    {
-      text: "Promoção comemorativa de Novembro Azul válida exclusivamente para o primeiro atendimento presencial de novos interessados.",
-    },
-    {
-      text: "Agendamento sujeito à disponibilidade de horários na agenda do consultório (Consolação / Higienópolis, São Paulo - SP).",
-    },
-    {
-      text: "A participação depende de triagem e confirmação prévia do agendamento via WhatsApp.",
-    },
-    {
-      text: "A gratuidade da sessão experimental não implica qualquer obrigação, fidelidade ou vínculo de contratação de atendimentos posteriores.",
-    },
-    {
-      text: "A fotobiomodulação é uma terapia de suporte; não constitui tratamento primário ou cura para diabetes, neuropatias severas ou neoplasias.",
-    },
+    { text: "Valor especial de R$ 70,00 para a primeira sessão avaliativa de 40 minutos em novembro de 2026, sujeito à disponibilidade de agenda." },
+    { text: "Valor regular informado para essa sessão: R$ 150,00. Oferta apenas com confirmação prévia pelo WhatsApp." },
+    { text: "A aplicação de laser depende de avaliação individualizada e indicação segura; não há promessa de cura ou alívio garantido." },
+    { text: "Recibo com descrição fiel do serviço realizado (Fisioterapia / Eletroterapia, quando pertinente) para eventual pedido de reembolso; cada operadora define sua cobertura e documentação." },
+    { text: "Pacientes com câncer atual ou prévio, especialmente em tratamento, devem informar o histórico e consultar a equipe médica antes de uma eventual aplicação." },
   ],
   faqs: [
     {
       id: "faq-fbm-1",
-      question: "O primeiro atendimento de fotobiomodulação é realmente gratuito?",
-      answer:
-        "Sim. A campanha oferece uma experiência inicial sem custo para novos interessados, mediante agendamento prévio e disponibilidade de horários no consultório.",
+      question: "Qual o preço da primeira Sessão Avaliativa com Laser?",
+      answer: "Na campanha de novembro de 2026, a primeira sessão avaliativa custa R$ 70,00 (valor regular informado de R$ 150,00), com duração prevista de 40 minutos e avaliação prévia da indicação do laser.",
     },
     {
       id: "faq-fbm-2",
-      question: "O que é e como funciona a fotobiomodulação?",
-      answer:
-        "É uma técnica que utiliza fótons de luz de baixa intensidade (laser terapêutico ou LEDs em comprimentos de onda específicos) para interagir com fotorreceptores celulares nos tecidos, auxiliando na modulação inflamatória e no suporte à regeneração celular.",
+      question: "O laser terapêutico pode ajudar na dor neuropática?",
+      answer: "A fotobiomodulação por laser de baixa intensidade é estudada como recurso complementar para alguns quadros de dor e neuropatia. Os resultados variam, e a avaliação clínica é indispensável. Não substitui medicação nem o tratamento do diabetes.",
     },
     {
       id: "faq-fbm-3",
-      question: "A fotobiomodulação cura diabetes ou câncer de próstata?",
-      answer:
-        "Não. A fotobiomodulação NÃO previne, não cura e não substitui o tratamento médico convencional para o diabetes mellitus ou o câncer de próstata. Ela pode ser empregada como recurso coadjuvante de reabilitação e alívio de desconfortos teciduais específicos, sempre com indicação profissional individualizada.",
+      question: "É possível solicitar reembolso pelo convênio?",
+      answer: "É fornecido recibo referente ao atendimento efetivamente realizado, com identificação adequada da fisioterapia ou eletroterapia quando aplicável. O pedido pode ser apresentado à operadora, mas o reembolso não é garantido e depende das regras do contrato.",
     },
     {
       id: "faq-fbm-4",
-      question: "Preciso contratar outras sessões depois?",
-      answer:
-        "Não. A experiência inicial gratuita é totalmente livre de compromisso. O objetivo é que você conheça a técnica, o ambiente do consultório e a atuação de Lucy Aihara com total transparência.",
+      question: "Preciso contratar pacotes depois da sessão?",
+      answer: "Não. Não há fidelidade nem obrigação de contratar outras sessões; qualquer continuidade é decidida após avaliação clínica, de acordo com seu interesse.",
+    },
+    {
+      id: "faq-fbm-5",
+      question: "E se eu tiver histórico de câncer?",
+      answer: "Informe o diagnóstico e os tratamentos atuais ou anteriores. A segurança da aplicação deve ser avaliada individualmente e, durante tratamento oncológico ou diante de dúvidas, é necessária articulação com o médico responsável antes do procedimento.",
     },
   ],
 };
