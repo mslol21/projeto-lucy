@@ -8,25 +8,25 @@ export function CampaignThemesSection() {
       badge: "14 de Novembro",
       title: "Dia Mundial do Diabetes",
       description:
-        "Sinais de alerta, controle da glicemia e a importância de cuidar da sensibilidade dos pés para prevenir a neuropatia periférica.",
+        "Como o controle glicêmico, a atenção à sensibilidade dos pés e o acompanhamento profissional ajudam a reduzir o risco de complicações da neuropatia diabética.",
       href: "/diabetes",
       icon: Activity,
       color: "bg-[#84B7CE]/15 text-[#17385B] border-[#84B7CE]/30",
     },
     {
       badge: "17 de Novembro",
-      title: "Saúde Masculina e Próstata",
+      title: "Saúde Integral do Homem",
       description:
-        "Quebrando preconceitos no cuidado masculino: fatores de risco, sintomas e a decisão compartilhada com base nas diretrizes do INCA.",
+        "A importância da avaliação médica individualizada, do diagnóstico oportuno de sintomas e da decisão compartilhada sobre exames, conforme orientações do INCA.",
       href: "/saude-masculina",
       icon: Shield,
       color: "bg-[#17385B]/10 text-[#17385B] border-[#17385B]/20",
     },
     {
       badge: "Fáscia e Movimento",
-      title: "O Corpo Merece Atenção",
+      title: "Fasciaterapia e Movimento",
       description:
-        "Como o estresse e a dor crônica afetam a rede fascial e de que modo a percepção corporal e o movimento suave auxiliam no alívio de tensões.",
+        "Como o toque manual sutil, o movimento e a percepção corporal podem integrar o cuidado de pessoas com tensões e dores crônicas.",
       href: "/conhecimento/fasciaterapia-e-dor",
       icon: Heart,
       color: "bg-[#C7D9D2]/30 text-[#17385B] border-[#C7D9D2]/40",
