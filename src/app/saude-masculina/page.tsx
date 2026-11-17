@@ -72,7 +72,7 @@ export default function SaudeMasculinaPage() {
               Dê o primeiro passo para cuidar do seu corpo
             </h3>
             <p className="text-xs sm:text-sm text-[#C7D9D2] max-w-lg mx-auto leading-relaxed">
-              Conheça a fotobiomodulação em uma experiência inicial gratuita no consultório de Lucy Aihara em São Paulo.
+              Conheça a avaliação fisioterapêutica com possibilidade de aplicação de laser terapêutico por R$ 70 na campanha Novembro Azul, no consultório de Lucy Aihara em São Paulo.
             </p>
             <div className="pt-2">
               <a
@@ -82,7 +82,7 @@ export default function SaudeMasculinaPage() {
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#25D366] text-[#073322] font-semibold text-sm shadow hover:bg-[#1ebd5a] transition-all"
               >
                 <MessageCircle className="w-4 h-4 fill-current" />
-                <span>Agendar primeiro atendimento gratuito</span>
+                <span>Agendar Sessão Avaliativa de R$ 70</span>
               </a>
             </div>
           </div>
