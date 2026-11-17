@@ -205,10 +205,10 @@ export default function KnowledgeHubPage() {
                 Campanha Novembro Azul 2026
               </span>
               <h3 className="font-serif text-2xl text-white">
-                Experimente a Fasciaterapia: Primeiro Atendimento Gratuito
+                Conheça o Tratamento com Laser: Sessão Avaliativa por R$ 70
               </h3>
               <p className="text-xs sm:text-sm text-[#C7D9D2] leading-relaxed">
-                Neste mês especial de conscientização, novos interessados podem vivenciar o cuidado somático sem custo no consultório de Lucy Aihara em São Paulo.
+                Neste mês especial de conscientização, novos interessados podem vivenciar o cuidado somático por R$ 70 no consultório de Lucy Aihara em São Paulo.
               </p>
             </div>
             <Link
