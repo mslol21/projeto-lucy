@@ -25,9 +25,9 @@ export function PromotionShareCard({ className = "" }: PromotionShareCardProps) 
   const shareText =
     "💙 *Novembro Azul 2026 • Escola de Fasciaterapia e Movimento*\n\n" +
     "Olá! Gostaria de compartilhar com você um convite especial da fisioterapeuta Lucy Aihara:\n\n" +
-    "Neste mês de conscientização, o *primeiro atendimento de fotobiomodulação é 100% gratuito* (sessão individualizada de 40 minutos com aplicação incluída), presencialmente em São Paulo (Higienópolis / Consolação).\n\n" +
+    "Neste mês de conscientização, o *primeiro atendimento avaliativo com laser custa R$ 70 (valor regular informado: R$ 150)* (sessão individualizada de 40 minutos com aplicação incluída), presencialmente em São Paulo (Higienópolis / Consolação).\n\n" +
     "A fotobiomodulação utiliza luz terapêutica de baixa intensidade e atua no suporte ao relaxamento, regeneração tecidual e autocuidado.\n\n" +
-    "👉 *Conheça a técnica e reserve seu horário gratuito pelo link:*\n" +
+    "👉 *Conheça a técnica e reserve seu horário avaliativo de R$ 70 pelo link:*\n" +
     promotionUrl;
 
   const whatsappShareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(
@@ -37,7 +37,7 @@ export function PromotionShareCard({ className = "" }: PromotionShareCardProps) 
   const telegramShareUrl = `https://t.me/share/url?url=${encodeURIComponent(
     promotionUrl
   )}&text=${encodeURIComponent(
-    "Especial Novembro Azul: 1º atendimento gratuito de fotobiomodulação (40 min) com Lucy Aihara."
+    "Especial Novembro Azul: 1ª sessão avaliativa com laser por R$ 70 (40 min) com Lucy Aihara."
   )}`;
 
   const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
@@ -95,9 +95,9 @@ export function PromotionShareCard({ className = "" }: PromotionShareCardProps) 
     if (typeof navigator !== "undefined" && navigator.share) {
       try {
         await navigator.share({
-          title: "1º Atendimento Gratuito de Fotobiomodulação | Novembro Azul 2026",
+          title: "1ª Sessão Avaliativa com Laser por R$ 70 | Novembro Azul 2026",
           text:
-            "Primeiro atendimento gratuito de fotobiomodulação (40 min) com Lucy Aihara em São Paulo.",
+            "Primeira sessão avaliativa com laser por R$ 70 (40 min) com Lucy Aihara em São Paulo.",
           url: promotionUrl,
         });
       } catch {
