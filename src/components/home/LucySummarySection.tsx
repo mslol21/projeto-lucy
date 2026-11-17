@@ -24,7 +24,7 @@ export function LucySummarySection() {
           {/* Texto Resumido à Direita */}
           <div className="md:col-span-7 space-y-5">
             <span className="text-xs font-semibold uppercase tracking-wider text-[#527fae]">
-              Fundadora e Terapeuta Responsável
+              Fundadora e Fisioterapeuta Responsável
             </span>
 
             <h2 id="lucy-title" className="font-serif text-3xl sm:text-4xl text-[#17385B] font-normal leading-tight">
@@ -32,11 +32,11 @@ export function LucySummarySection() {
             </h2>
 
             <p className="text-base text-[#415A77] leading-relaxed">
-              Fisioterapeuta e Educadora Física com consolidada vivência clínica no Instituto Central do Hospital das Clínicas da FMUSP (IC-HCFMUSP) e no Instituto do Coração (InCor).
+              Fisioterapeuta e Educadora Física com vivência clínica no Instituto Central do Hospital das Clínicas da FMUSP (IC-HCFMUSP) e no Instituto do Coração (InCor), além de pós-graduação em Fisioterapia Pélvica.
             </p>
 
             <p className="text-sm text-[#415A77] leading-relaxed">
-              Fundadora da <strong>Escola de Fasciaterapia e Movimento</strong>, dedica sua prática à reeducação somática, à biofotônica e ao acolhimento de pessoas que buscam alívio de tensões, reabilitação e qualidade de vida através de uma relação afetuosa com o próprio corpo.
+              Convivendo com o <strong>Diabetes Mellitus Tipo 1 desde 1980</strong>, Lucy combina sua vivência pessoal com experiência profissional. Como fundadora da <strong>Escola de Fasciaterapia e Movimento</strong>, propõe cuidado individualizado com Fasciaterapia (Método Danis Bois), percepção corporal e recursos fisioterapêuticos como o laser terapêutico, quando indicados.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs text-[#17385B]">
