@@ -24,14 +24,14 @@ import { NOVEMBER_BLUE_OFFER } from "@/data/campaign-data";
 export const metadata: Metadata = {
   title: "Fotobiomodulação: O que é, Como Funciona e Evidências | Novembro Azul 2026",
   description:
-    "Compreenda a fotobiomodulação: técnica com luz de baixa intensidade (laser e LED) para estímulo biológico celular, suas aplicações em reabilitação e o primeiro atendimento gratuito de Novembro Azul com Lucy Aihara.",
+    "Compreenda a fotobiomodulação: técnica com luz de baixa intensidade (laser e LED) para estímulo biológico celular, suas aplicações em reabilitação e a Sessão Avaliativa com Laser por R$ 70 no Novembro Azul com Lucy Aihara.",
   alternates: {
     canonical: "https://novembroazul.escoladefasciaterapiaemovimento.com/fotobiomodulacao",
   },
   openGraph: {
     title: "Fotobiomodulação: Guia Técnico e Cuidado por Luz | Novembro Azul 2026",
     description:
-      "Técnica que utiliza luz em parâmetros específicos para respostas biológicas teciduais. Agende seu primeiro atendimento gratuito em São Paulo.",
+      "Técnica que utiliza luz em parâmetros específicos para respostas biológicas teciduais. Agende seu primeira sessão avaliativa por R$ 70 em São Paulo.",
     url: "https://novembroazul.escoladefasciaterapiaemovimento.com/fotobiomodulacao",
     type: "article",
   },
@@ -279,11 +279,11 @@ export default function FotobiomodulacaoDedicatedPage() {
           <section className="bg-gradient-to-r from-[#17385B] to-[#1b3b6f] text-white p-8 sm:p-12 rounded-3xl rounded-tr-[60px] shadow-lg text-center space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-xs font-bold uppercase tracking-wider">
               <Sparkles className="w-4 h-4 text-emerald-300" />
-              <span>Novembro Azul 2026 • Atendimento Gratuito</span>
+              <span>Novembro Azul 2026 • Sessão Avaliativa R$ 70</span>
             </div>
 
             <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-white max-w-2xl mx-auto leading-tight">
-              Experimente a fotobiomodulação em seu primeiro atendimento presencial gratuito
+              Experimente a fotobiomodulação em seu primeiro atendimento avaliativo de R$ 70
             </h3>
 
             <p className="text-sm sm:text-base text-[#C7D9D2] max-w-xl mx-auto leading-relaxed">
@@ -298,7 +298,7 @@ export default function FotobiomodulacaoDedicatedPage() {
                 className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-[#25D366] hover:bg-[#1ebd5a] text-[#073322] font-semibold text-base shadow-md hover:shadow-lg transition-all"
               >
                 <MessageCircle className="w-5 h-5 fill-current" />
-                <span>Quero agendar meu atendimento gratuito</span>
+                <span>Quero agendar minha sessão de R$ 70</span>
               </a>
 
               <Link
