@@ -124,7 +124,7 @@ export default function DepoimentosPage() {
             </div>
 
             <h3 className="font-serif text-2xl sm:text-3xl text-white max-w-xl mx-auto">
-              Venha vivenciar essa experiência de cuidado no seu primeiro atendimento gratuito
+              Venha vivenciar essa experiência de cuidado no seu primeira Sessão Avaliativa com Laser por R$ 70
             </h3>
 
             <p className="text-xs sm:text-sm text-[#C7D9D2] max-w-md mx-auto leading-relaxed">
@@ -139,7 +139,7 @@ export default function DepoimentosPage() {
                 className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1ebd5a] text-[#073322] font-semibold text-sm shadow-md hover:shadow-lg transition-all"
               >
                 <MessageCircle className="w-4 h-4 fill-current" />
-                <span>Quero agendar meu atendimento gratuito</span>
+                <span>Agendar sessão avaliativa por R$ 70</span>
               </a>
             </div>
           </div>
