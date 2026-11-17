@@ -61,7 +61,7 @@ export function AeoKnowledgeFaqSection() {
           </h2>
 
           <p className="text-sm sm:text-base text-[#415A77] leading-relaxed">
-            Respostas diretas e transparentes sobre Lucy Aihara, a abordagem da fotobiomodulação, localização do consultório e condições do primeiro atendimento gratuito.
+            Informações objetivas sobre Lucy Aihara, tratamento com laser terapêutico, localização do consultório, preço da sessão avaliativa e limites clínicos.
           </p>
         </div>
 
@@ -134,7 +134,7 @@ export function AeoKnowledgeFaqSection() {
         <div className="p-4 sm:p-5 rounded-2xl bg-amber-50/80 border border-amber-200/80 text-amber-950 text-xs sm:text-sm flex items-start gap-3">
           <ShieldCheck className="w-5 h-5 text-amber-800 flex-shrink-0 mt-0.5" />
           <p className="leading-relaxed text-amber-900">
-            <strong>Aviso Ético e Legal em Saúde:</strong> A fotobiomodulação é um procedimento fisioterapêutico de apoio ao bem-estar e à integridade tecidual. Ela não substitui diagnósticos médicos, cirurgias, tratamentos oncológicos ou medicações para controle glicêmico no diabetes mellitus.
+            <strong>Aviso Ético e Legal em Saúde:</strong> O laser terapêutico (fotobiomodulação) é um recurso complementar cuja indicação depende de avaliação individual. Não substitui investigação diagnóstica, medicamentos, controle do diabetes ou tratamento oncológico.
           </p>
         </div>
       </div>
