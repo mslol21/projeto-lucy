@@ -13,6 +13,7 @@ import { TestimonialsPreviewSection } from "@/components/home/TestimonialsPrevie
 import { AeoKnowledgeFaqSection } from "@/components/home/AeoKnowledgeFaqSection";
 import { LocationSection } from "@/components/home/LocationSection";
 import { MobileBookingBar } from "@/components/home/MobileBookingBar";
+import { CampaignWhatsAppLink } from "@/components/home/CampaignWhatsAppLink";
 import { NOVEMBER_BLUE_OFFER, CAMPAIGN_INFO } from "@/data/campaign-data";
 
 const BENEFITS = [
@@ -30,7 +31,6 @@ const STEPS = [
 
 export default function HomePage() {
   const offer = NOVEMBER_BLUE_OFFER;
-  const whatsappUrl = "https://wa.me/" + offer.whatsappNumber + "?text=" + encodeURIComponent(offer.whatsappMessage);
   const structuredOffer = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -86,10 +86,10 @@ export default function HomePage() {
                 Atendimento presencial na Consolação / Higienópolis, em São Paulo.
               </p>
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-14 items-center justify-center gap-2 rounded-xl bg-[#176B51] px-6 py-3 text-center text-sm font-bold text-white shadow-lg shadow-emerald-950/10 transition-colors hover:bg-[#11523F] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#17385B] sm:text-base">
+                <CampaignWhatsAppLink source="hero" className="inline-flex min-h-14 items-center justify-center gap-2 rounded-xl bg-[#176B51] px-6 py-3 text-center text-sm font-bold text-white shadow-lg shadow-emerald-950/10 transition-colors hover:bg-[#11523F] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#17385B] sm:text-base">
                   <MessageCircle className="h-5 w-5 shrink-0" aria-hidden="true" />
                   Quero agendar minha 1ª sessão (R$ 70)
-                </a>
+                </CampaignWhatsAppLink>
                 <Link href="/#especial-novembro-azul" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[#91B3C4] px-5 py-3 text-sm font-semibold text-[#17385B] hover:bg-white">
                   Ver o que está incluso <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
@@ -137,9 +137,9 @@ export default function HomePage() {
                   <span className="block font-serif text-6xl font-semibold tracking-tight text-[#17385B]">R$ 70<span className="text-2xl">,00</span></span>
                 </div>
                 <span className="flex items-center gap-2 text-sm font-medium text-[#34526D]"><Clock3 className="h-4 w-4" aria-hidden="true" /> 40 minutos de atendimento</span>
-                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-xl bg-[#176B51] px-4 py-3 text-center text-sm font-bold text-white hover:bg-[#11523F]">
+                <CampaignWhatsAppLink source="card_oferta" className="inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-xl bg-[#176B51] px-4 py-3 text-center text-sm font-bold text-white hover:bg-[#11523F]">
                   <MessageCircle className="h-5 w-5" aria-hidden="true" /> Reservar meu horário
-                </a>
+                </CampaignWhatsAppLink>
                 <p className="text-xs leading-5 text-[#576D79]">Sem obrigação de contratar pacotes. Oferta em novembro de 2026 sujeita a horários disponíveis. *Aplicação conforme indicação e avaliação de segurança.</p>
               </div>
               <div className="space-y-6 border-t border-[#DFE9ED] bg-[#F6FAFB] p-6 sm:p-9 lg:col-span-8 lg:border-l lg:border-t-0 lg:p-10">
@@ -227,7 +227,7 @@ export default function HomePage() {
             </div>
             <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
               <p className="text-sm text-[#4A6374]"><MapPin className="mr-1 inline h-4 w-4" aria-hidden="true" /> Rua Sergipe, 475, conj. 114 — Consolação / Higienópolis, São Paulo.</p>
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center gap-2 rounded-xl bg-[#17385B] px-5 py-3 text-sm font-bold text-white hover:bg-[#265576]"><MessageCircle className="h-4 w-4" aria-hidden="true" /> Agendar pelo WhatsApp</a>
+              <CampaignWhatsAppLink source="passo_a_passo" className="inline-flex min-h-12 items-center gap-2 rounded-xl bg-[#17385B] px-5 py-3 text-sm font-bold text-white hover:bg-[#265576]"><MessageCircle className="h-4 w-4" aria-hidden="true" /> Agendar pelo WhatsApp</CampaignWhatsAppLink>
             </div>
           </div>
         </section>
@@ -244,7 +244,7 @@ export default function HomePage() {
             <span className="text-xs font-bold uppercase tracking-[.17em] text-[#B2DAE9]">Sua saúde merece atenção</span>
             <h2 id="final-title" className="font-serif text-3xl font-semibold leading-tight sm:text-4xl">Não normalize a queimação ou o formigamento no dia a dia.</h2>
             <p className="mx-auto max-w-2xl text-base leading-7 text-[#DDEAF0]">Agende sua primeira Sessão Avaliativa com Laser por <strong className="text-white">R$ 70,00</strong> (valor regular informado: R$ 150,00) e conheça uma avaliação fisioterapêutica individualizada, sem compromisso de continuidade.</p>
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-14 items-center justify-center gap-2 rounded-xl bg-[#176B51] px-7 py-3 text-sm font-bold text-white hover:bg-[#11523F] sm:text-base"><MessageCircle className="h-5 w-5" aria-hidden="true" /> Agendar minha sessão no WhatsApp</a>
+            <CampaignWhatsAppLink source="final" className="inline-flex min-h-14 items-center justify-center gap-2 rounded-xl bg-[#176B51] px-7 py-3 text-sm font-bold text-white hover:bg-[#11523F] sm:text-base"><MessageCircle className="h-5 w-5" aria-hidden="true" /> Agendar minha sessão no WhatsApp</CampaignWhatsAppLink>
             <p className="text-xs leading-5 text-[#C1D5DF]">Condição de novembro de 2026, mediante confirmação de agenda. Aplicação clínica conforme avaliação e segurança individual.</p>
           </div>
         </section>
