@@ -15,7 +15,7 @@ export function Header() {
   )}`;
 
   const handleWhatsAppHeaderClick = () => {
-    trackConversionEvent("novembro_azul_fotobiomodulacao_lead", {
+    trackConversionEvent("novembro_azul_laser_avaliativa_lead", {
       source: "header_cta",
       channel: "whatsapp",
       campaign: "novembro_azul_2026",
@@ -53,7 +53,7 @@ export function Header() {
           </Link>
 
           {/* Navegação Desktop */}
-          <div className="hidden lg:flex items-center gap-3 xl:gap-5">
+          <div className="hidden xl:flex items-center gap-3 xl:gap-5">
             <nav className="flex items-center gap-1 xl:gap-2" aria-label="Navegação principal">
               {NAV_LINKS.map((link) => {
                 const isOffer = link.href === "/#especial-novembro-azul";
@@ -82,12 +82,12 @@ export function Header() {
               className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#25D366] hover:bg-[#1ebd5a] text-[#073322] font-semibold text-xs shadow-2xs transition-colors"
             >
               <MessageCircle className="w-3.5 h-3.5 fill-current" aria-hidden="true" />
-              <span>Agendar</span>
+              <span>Agendar no WhatsApp</span>
             </a>
           </div>
 
           {/* Botão Mobile */}
-          <div className="flex items-center gap-2 lg:hidden">
+          <div className="flex items-center gap-2 xl:hidden">
             <a
               href={whatsappUrl}
               target="_blank"
@@ -96,7 +96,7 @@ export function Header() {
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#25D366] text-[#073322] font-bold text-xs shadow-2xs"
             >
               <MessageCircle className="w-3.5 h-3.5 fill-current" />
-              <span>Agendar</span>
+              <span>Agendar no WhatsApp</span>
             </a>
 
             <button
@@ -112,7 +112,7 @@ export function Header() {
         </div>
       </div>
       {mobileMenuOpen && (
-        <div className="lg:hidden border-b border-stone-200 bg-[#F5F2EB] px-4 pt-3 pb-6 space-y-2 animate-in fade-in slide-in-from-top-2 duration-200">
+        <div className="xl:hidden border-b border-stone-200 bg-[#F5F2EB] px-4 pt-3 pb-6 space-y-2 animate-in fade-in slide-in-from-top-2 duration-200">
           <div className="px-3 py-2 border-b border-stone-200/60 mb-2 flex items-center justify-between">
             <span className="text-xs font-semibold tracking-wider text-[#415A77] uppercase">
               Menu de Navegação
