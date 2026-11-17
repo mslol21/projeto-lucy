@@ -175,6 +175,18 @@ export const AEO_QUESTIONS: AeoFaqItem[] = [
       "O agendamento é realizado de forma simples pelo WhatsApp oficial de Lucy Aihara (+55 11 99998-6082). Basta clicar no botão de agendamento no site para iniciar uma conversa direta com mensagem pré-preenchida e confirmar o horário disponível.",
     category: "campanha",
   },
+  {
+    id: "aeo-11",
+    question: "A Sessão Avaliativa com Laser oferece recibo para reembolso do convênio?",
+    answer: "É emitido recibo referente ao serviço realmente prestado, com descrição de fisioterapia e eletroterapia quando pertinente. O paciente pode solicitar reembolso, mas a aprovação e o valor dependem da cobertura e das regras da operadora.",
+    category: "campanha",
+  },
+  {
+    id: "aeo-12",
+    question: "Pessoas com histórico de câncer podem fazer laser terapêutico?",
+    answer: "A indicação depende de avaliação individual. Pacientes em tratamento oncológico devem consultar o médico responsável antes de qualquer aplicação e informar seu histórico à fisioterapeuta.",
+    category: "etica",
+  },
 ];
 
 export const NAV_LINKS: NavItem[] = [
@@ -641,13 +653,13 @@ export interface CommercialOfferData {
 
 export const COMMERCIAL_DATA: CommercialOfferData = {
   eyebrow: "ESPECIAL NOVEMBRO AZUL 2026",
-  title: "Conheça a fotobiomodulação. Seu primeiro atendimento é por nossa conta.",
+  title: "Sua primeira Sessão Avaliativa com Laser por R$ 70.",
   subtitle:
-    "Lucy Aihara convida você a experimentar a técnica de fotobiomodulação em um atendimento individualizado de 40 minutos, com aplicação incluída.",
-  badge: "PRIMEIRO ATENDIMENTO GRATUITO",
-  ctaText: "Agendar meu atendimento gratuito",
+    "Atendimento presencial de 40 minutos com avaliação individualizada, orientação e aplicação de laser terapêutico quando clinicamente indicada.",
+  badge: "CONDIÇÃO DE NOVEMBRO: R$ 70",
+  ctaText: "Agendar Sessão Avaliativa por R$ 70",
   whatsappMessage:
-    "Olá, Lucy! Gostaria de agendar meu primeiro atendimento gratuito de fotobiomodulação.",
+    "Olá, Lucy! Vi a campanha Novembro Azul no site e gostaria de agendar minha 1ª Sessão Avaliativa com Laser (valor especial de R$ 70) no consultório da Consolação.",
   steps: [
     {
       number: "1",
@@ -656,9 +668,9 @@ export const COMMERCIAL_DATA: CommercialOfferData = {
     },
     {
       number: "2",
-      title: "Compareça ao atendimento gratuito",
+      title: "Compareça à sessão avaliativa",
       description:
-        "Sessão inicial de 40 minutos com aplicação da fotobiomodulação, avaliação individualizada e orientação profissional.",
+        "Sessão de 40 minutos com avaliação e orientações profissionais; laser somente quando indicado e seguro.",
     },
     {
       number: "3",
@@ -676,30 +688,30 @@ export const COMMERCIAL_DATA: CommercialOfferData = {
     location: "Rua Sergipe, 475, conjunto 114 — Consolação, São Paulo - SP (CEP 01243-912)",
     duration: "40 minutos por sessão",
     scheduling: "Agendamento pelo WhatsApp oficial",
-    freeSession: "Primeiro atendimento gratuito com aplicação incluída",
+    freeSession: "Sessão avaliativa de entrada por R$ 70; laser conforme indicação",
     continuity: "Continuidade opcional, conforme avaliação clínica e seu interesse",
   },
   plans: [
     {
-      id: "plano-gratuito",
+      id: "plano-avaliativo-novembro",
       name: "Primeiro atendimento",
-      badge: "Gratuito de Novembro Azul",
-      price: "R$ 0,00",
-      priceNumeric: 0,
+      badge: "Especial Novembro Azul: de R$ 150 por R$ 70",
+      price: "R$ 70,00",
+      priceNumeric: 70,
       sessionsCount: 1,
       duration: "40 minutos",
-      isFree: true,
+      isFree: false,
       features: [
         "1 sessão individualizada de 40 minutos",
-        "Aplicação de fotobiomodulação incluída",
+        "Aplicação de laser terapêutico quando clinicamente indicada",
         "Avaliação e orientação profissional com Lucy Aihara",
         "Agendamento prévio necessário pelo WhatsApp",
         "Sem compromisso ou obrigação de contratação posterior",
       ],
-      ctaText: "Quero experimentar gratuitamente",
+      ctaText: "Agendar avaliação por R$ 70",
       whatsappMessage:
-        "Olá, Lucy! Gostaria de agendar meu primeiro atendimento gratuito de fotobiomodulação.",
-      conversionEvent: "atendimento_lead_gratuito",
+        "Olá, Lucy! Vi a campanha Novembro Azul no site e gostaria de agendar minha 1ª Sessão Avaliativa com Laser (valor especial de R$ 70) no consultório da Consolação.",
+      conversionEvent: "atendimento_lead_avaliativa_70",
     },
     {
       id: "plano-individual",
@@ -773,19 +785,19 @@ export const COMMERCIAL_DATA: CommercialOfferData = {
       id: "faq-com-1",
       question: "Qual é a duração de cada sessão de atendimento?",
       answer:
-        "Cada sessão, incluindo o primeiro atendimento gratuito e os atendimentos posteriores, tem duração de 40 minutos, com aplicação de fotobiomodulação e acolhimento individualizado.",
+        "A primeira Sessão Avaliativa tem duração prevista de 40 minutos. A aplicação de laser depende de indicação clínica individualizada.",
     },
     {
       id: "faq-com-2",
-      question: "O primeiro atendimento é realmente gratuito e inclui aplicação?",
+      question: "Qual é o valor promocional da primeira avaliação com laser?",
       answer:
-        "Sim. A campanha Novembro Azul 2026 oferece a primeira sessão sem custo (R$ 0,00), com aplicação da técnica de fotobiomodulação e avaliação profissional conduzida por Lucy Aihara.",
+        "A primeira Sessão Avaliativa de novembro custa R$ 70,00 (valor regular informado de R$ 150,00). Inclui avaliação e orientações, com aplicação de laser quando clinicamente indicada.",
     },
     {
       id: "faq-com-3",
       question: "Existe alguma obrigação de contratar um pacote após o primeiro atendimento?",
       answer:
-        "Não. A experiência inicial gratuita é totalmente livre de fidelidade ou compromisso de contratação. A continuidade é opcional e cabe exclusivamente à sua decisão e indicação clínica.",
+        "Não. A avaliação inicial não exige fidelidade nem contratação de pacotes. Qualquer continuidade depende de indicação clínica e escolha da pessoa atendida.",
     },
     {
       id: "faq-com-4",
