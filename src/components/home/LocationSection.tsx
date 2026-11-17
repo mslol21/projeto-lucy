@@ -18,9 +18,7 @@ import { trackConversionEvent } from "@/lib/analytics";
 export function LocationSection() {
   const inst = CAMPAIGN_INFO.institution;
   const offer = NOVEMBER_BLUE_OFFER;
-  const whatsappUrl = `https://wa.me/${offer.whatsappNumber}?text=${encodeURIComponent(
-    "Olá, Lucy! Gostaria de informações sobre o consultório na Consolação e agendamento de horário."
-  )}`;
+  const whatsappUrl = `https://wa.me/${offer.whatsappNumber}?text=${encodeURIComponent(offer.whatsappMessage)}`;
 
   const handleDirectionsClick = () => {
     trackConversionEvent("click_directions", {
@@ -144,7 +142,7 @@ export function LocationSection() {
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1ebd5a] active:scale-[0.99] text-[#073322] font-semibold text-xs sm:text-sm shadow-md transition-all"
               >
                 <MessageCircle className="w-4 h-4 fill-current" />
-                <span>Solicitar horário no WhatsApp</span>
+                <span>Agendar Sessão Avaliativa R$ 70</span>
               </a>
             </div>
           </div>
