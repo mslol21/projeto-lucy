@@ -15,7 +15,7 @@ export function Header() {
   )}`;
 
   const handleWhatsAppHeaderClick = () => {
-    trackConversionEvent("novembro_azul_laser_avaliativa_lead", {
+    trackConversionEvent("novembro_azul_fotobiomodulacao_lead", {
       source: "header_cta",
       channel: "whatsapp",
       campaign: "novembro_azul_2026",
