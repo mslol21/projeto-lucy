@@ -28,20 +28,20 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Novembro Azul 2026 | Lucy Aihara — São Paulo",
+    default: "Tratamento com Laser e Sessão Avaliativa R$ 70 | Lucy Aihara",
     template: "%s | Lucy Aihara",
   },
   description:
-    "Conheça a campanha Novembro Azul 2026 da Lucy Aihara, com conscientização sobre diabetes, saúde masculina e fotobiomodulação na Consolação, São Paulo.",
+    "Sessão Avaliativa de Entrada com Laser Terapêutico por R$ 70 (40 min) em novembro de 2026. Lucy Aihara, fisioterapeuta, Consolação / Higienópolis, São Paulo. Aplicação conforme avaliação clínica.",
   keywords: [
     "Novembro Azul 2026",
     "Lucy Aihara",
     "Escola de Fasciaterapia e Movimento",
-    "Fotobiomodulação São Paulo",
+    "Tratamento com Laser São Paulo",
     "Fasciaterapia Higienópolis Consolação",
     "Dia Mundial do Diabetes",
     "Dia Nacional de Combate ao Câncer de Próstata",
-    "Saúde Masculina Consolação",
+    "Dor neuropática Consolação",
     "Educação Somática",
     "Percepção do Movimento",
     "Autocuidado",
@@ -82,17 +82,17 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     url: siteUrl,
-    title: "Novembro Azul 2026 | Lucy Aihara — São Paulo",
+    title: "Tratamento com Laser e Sessão Avaliativa R$ 70 | Lucy Aihara",
     description:
-      "Conheça a campanha Novembro Azul 2026 da Lucy Aihara, com conscientização sobre diabetes, saúde masculina e fotobiomodulação na Consolação, São Paulo.",
+      "Sessão Avaliativa de Entrada com Laser Terapêutico por R$ 70 (40 min) em novembro de 2026. Lucy Aihara, fisioterapeuta, Consolação / Higienópolis, São Paulo. Aplicação conforme avaliação clínica.",
     siteName: "Escola de Fasciaterapia e Movimento — Lucy Aihara",
   },
   twitter: {
     card: "summary_large_image",
     images: ["/images/novembro-azul-hero.webp"],
-    title: "Novembro Azul 2026 | Lucy Aihara — São Paulo",
+    title: "Tratamento com Laser e Sessão Avaliativa R$ 70 | Lucy Aihara",
     description:
-      "Conheça a campanha Novembro Azul 2026 da Lucy Aihara, com conscientização sobre diabetes, saúde masculina e fotobiomodulação na Consolação, São Paulo.",
+      "Sessão Avaliativa de Entrada com Laser Terapêutico por R$ 70 (40 min) em novembro de 2026. Lucy Aihara, fisioterapeuta, Consolação / Higienópolis, São Paulo. Aplicação conforme avaliação clínica.",
   },
 };
 
@@ -113,7 +113,7 @@ export default function RootLayout({
         priceRange: "$$",
         image: `${siteUrl}/images/logo-horizontal-hd.png`,
         description:
-          "Atendimento individualizado de Fasciaterapia, educação somática e fotobiomodulação conduzido por Lucy Aihara em São Paulo.",
+          "Atendimento individualizado de fisioterapia, Fasciaterapia e tratamento com laser terapêutico quando indicado, com Lucy Aihara em São Paulo.",
         address: {
           "@type": "PostalAddress",
           streetAddress: "Rua Sergipe, 475, conjunto 114",
@@ -147,7 +147,7 @@ export default function RootLayout({
         url: siteUrl,
         name: "Campanha Novembro Azul 2026 | Lucy Aihara",
         description:
-          "Portal da campanha comemorativa Novembro Azul 2026 com educação em saúde, fotobiomodulação e conscientização.",
+          "Campanha Novembro Azul 2026: sessão avaliativa de entrada por R$ 70, educação em saúde e tratamento com laser terapêutico conforme indicação.",
         publisher: {
           "@id": `${siteUrl}/#localbusiness`,
         },
@@ -157,9 +157,9 @@ export default function RootLayout({
         "@type": "WebPage",
         "@id": `${siteUrl}/#webpage`,
         url: siteUrl,
-        name: "Novembro Azul 2026 | Lucy Aihara — São Paulo",
+        name: "Tratamento com Laser e Sessão Avaliativa R$ 70 | Lucy Aihara",
         description:
-          "Conheça a campanha Novembro Azul 2026 da Lucy Aihara, com conscientização sobre diabetes, saúde masculina e fotobiomodulação na Consolação, São Paulo.",
+          "Sessão Avaliativa de Entrada com Laser Terapêutico por R$ 70 (40 min) em novembro de 2026. Lucy Aihara, fisioterapeuta, Consolação / Higienópolis, São Paulo. Aplicação conforme avaliação clínica.",
         isPartOf: {
           "@id": `${siteUrl}/#website`,
         },
