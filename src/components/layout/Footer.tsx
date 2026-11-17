@@ -182,7 +182,7 @@ export function Footer() {
                 </span>
               </div>
               <p className="leading-relaxed">
-                Este portal tem caráter puramente educativo e não substitui a consulta médica individualizada ou fisioterapia para doenças crônicas.
+                O tratamento com laser terapêutico (fotobiomodulação) e a Fasciaterapia são recursos fisioterapêuticos complementares e de reabilitação. Não substituem consultas médicas, medicações prescritas ou tratamentos oncológicos. O reembolso depende das regras do convênio.
               </p>
             </div>
           </div>
@@ -199,7 +199,7 @@ export function Footer() {
             </Link>
             <span>•</span>
             <Link href="/#especial-novembro-azul" className="hover:text-white transition-colors text-[#84B7CE] font-medium">
-              Primeiro Atendimento Gratuito
+              Sessão Avaliativa R$ 70
             </Link>
             <span>•</span>
             <Link href="/conhecimento" className="hover:text-white transition-colors">
