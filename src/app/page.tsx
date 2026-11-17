@@ -12,6 +12,7 @@ import { LucySummarySection } from "@/components/home/LucySummarySection";
 import { TestimonialsPreviewSection } from "@/components/home/TestimonialsPreviewSection";
 import { AeoKnowledgeFaqSection } from "@/components/home/AeoKnowledgeFaqSection";
 import { LocationSection } from "@/components/home/LocationSection";
+import { MobileBookingBar } from "@/components/home/MobileBookingBar";
 import { NOVEMBER_BLUE_OFFER, CAMPAIGN_INFO } from "@/data/campaign-data";
 
 const BENEFITS = [
@@ -76,7 +77,7 @@ export default function HomePage() {
               </span>
               <h1 id="hero-title" className="max-w-3xl font-serif text-[2.15rem] font-semibold leading-[1.13] tracking-tight text-[#17385B] sm:text-5xl lg:text-[3.5rem]">
                 Queimação, formigamento ou dor neuropática?
-                <span className="mt-2 block text-[#316A8B]">Conheça o cuidado com Tratamento com Laser.</span>
+                <span className="mt-2 block text-[#316A8B]">Conheça o Tratamento com Laser como opção de cuidado.</span>
               </h1>
               <p className="max-w-[60ch] text-base leading-7 text-[#37536A] sm:text-lg">
                 Do <strong>Dia Mundial do Diabetes (14/11)</strong> à conscientização sobre a
@@ -249,6 +250,7 @@ export default function HomePage() {
         </section>
       </main>
       <Footer />
+      <MobileBookingBar />
     </div>
   );
 }
