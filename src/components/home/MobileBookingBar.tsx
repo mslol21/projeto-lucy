@@ -34,7 +34,7 @@ export function MobileBookingBar() {
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => trackConversionEvent("novembro_azul_laser_avaliativa_lead", { source: "sticky_mobile", channel: "whatsapp", campaign: "novembro_azul_2026" })}
+            onClick={() => trackConversionEvent("novembro_azul_fotobiomodulacao_lead", { source: "sticky_mobile", channel: "whatsapp", campaign: "novembro_azul_2026" })}
             className="inline-flex min-h-11 items-center justify-center gap-1.5 rounded-xl bg-[#176B51] px-3 text-xs font-bold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
             <MessageCircle className="h-4 w-4" aria-hidden="true" />
