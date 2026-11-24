@@ -28,25 +28,23 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Novembro Azul 2026 | Lucy Aihara — São Paulo",
+    default: "Lucy Aihara | Fisioterapia, Fasciaterapia e Movimento em São Paulo",
     template: "%s | Lucy Aihara",
   },
   description:
-    "Conheça a campanha Novembro Azul 2026 da Lucy Aihara, com conscientização sobre diabetes, saúde masculina e fotobiomodulação na Consolação, São Paulo.",
+    "Plataforma institucional de Lucy Aihara (Fisioterapeuta InCor/HCFMUSP) e Escola de Fasciaterapia e Movimento na Consolação / Higienópolis, São Paulo. Atendimentos individuais, cursos e campanhas de saúde.",
   keywords: [
-    "Novembro Azul 2026",
     "Lucy Aihara",
+    "Fasciaterapia São Paulo",
+    "Método Danis Bois",
+    "Fisioterapia Higienópolis Consolação",
     "Escola de Fasciaterapia e Movimento",
     "Fotobiomodulação São Paulo",
-    "Fasciaterapia Higienópolis Consolação",
-    "Dia Mundial do Diabetes",
-    "Dia Nacional de Combate ao Câncer de Próstata",
-    "Saúde Masculina Consolação",
+    "Novembro Azul 2026",
+    "Dor Crônica",
     "Educação Somática",
     "Percepção do Movimento",
     "Autocuidado",
-    "INCA",
-    "Sociedade Brasileira de Diabetes",
   ],
   authors: [
     {

@@ -3,97 +3,111 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, X, MessageCircle, Sparkles } from "lucide-react";
-import { NAV_LINKS, CAMPAIGN_INFO, NOVEMBER_BLUE_OFFER } from "@/data/campaign-data";
+import { Menu, X, MessageCircle, Sparkles, ChevronDown } from "lucide-react";
+import { getWhatsAppLink } from "@/data/institutional-data";
 import { trackConversionEvent } from "@/lib/analytics";
+
+interface NavLinkItem {
+  label: string;
+  href: string;
+  highlight?: boolean;
+}
+
+const INSTITUTIONAL_NAV_LINKS: NavLinkItem[] = [
+  { label: "Início", href: "/" },
+  { label: "Sobre Lucy", href: "/sobre" },
+  { label: "Tratamentos", href: "/tratamentos" },
+  { label: "Escola", href: "/escola" },
+  { label: "Campanhas", href: "/campanhas" },
+  { label: "Conhecimento", href: "/conhecimento" },
+  { label: "Depoimentos", href: "/depoimentos" },
+  { label: "Contato", href: "/contato" },
+];
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const offer = NOVEMBER_BLUE_OFFER;
-  const whatsappUrl = `https://wa.me/${offer.whatsappNumber}?text=${encodeURIComponent(
-    offer.whatsappMessage
-  )}`;
+  const whatsappUrl = getWhatsAppLink("clinicEvaluation");
 
   const handleWhatsAppHeaderClick = () => {
-    trackConversionEvent("novembro_azul_fotobiomodulacao_lead", {
-      source: "header_cta",
+    trackConversionEvent("click_whatsapp", {
+      source: "header_institutional_cta",
       channel: "whatsapp",
-      campaign: "novembro_azul_2026",
     });
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-[#F5F2EB]/95 backdrop-blur-md border-b border-stone-200/80 shadow-[0_4px_20px_-4px_rgba(23,56,91,0.04)] transition-all">
+    <header className="sticky top-0 z-40 w-full bg-[#FAF8F5]/95 backdrop-blur-md border-b border-[#E8E2D9] shadow-xs transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logo Oficial HD da Escola */}
+          {/* Logo Oficial da Escola & Lucy Aihara */}
           <Link
             href="/"
-            className="flex items-center gap-3.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#17385B] rounded-lg p-1.5"
-            aria-label="Escola de Fasciaterapia e Movimento — Lucy Aihara"
+            className="flex items-center gap-3.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#183B2B] rounded-lg p-1.5"
+            aria-label="Lucy Aihara — Escola de Fasciaterapia e Movimento"
           >
-            <div className="relative h-12 flex items-center">
+            <div className="relative h-11 flex items-center">
               <Image
                 src="/images/logo-horizontal-hd.png"
                 alt="Logotipo oficial da Escola de Fasciaterapia e Movimento"
-                width={220}
-                height={64}
+                width={200}
+                height={56}
                 priority
-                className="h-11 sm:h-12 w-auto object-contain transition-transform group-hover:scale-[1.02]"
+                className="h-10 sm:h-11 w-auto object-contain transition-transform group-hover:scale-[1.02]"
               />
             </div>
-            <div className="hidden xl:flex flex-col border-l border-stone-300 pl-3">
-              <span className="text-[11px] font-semibold text-[#17385B] uppercase tracking-wider">
+            <div className="hidden xl:flex flex-col border-l border-[#D5CDC2] pl-3">
+              <span className="text-[11px] font-semibold text-[#183B2B] uppercase tracking-wider">
                 Lucy Aihara
               </span>
-              <span className="text-[10px] text-[#415A77] tracking-tight">
-                Novembro Azul 2026
+              <span className="text-[10px] text-[#556370] tracking-tight">
+                Fisioterapia & Fasciaterapia
               </span>
             </div>
           </Link>
 
           {/* Navegação Desktop */}
-          <div className="hidden lg:flex items-center gap-3 xl:gap-5">
-            <nav className="flex items-center gap-1 xl:gap-2" aria-label="Navegação principal">
-              {NAV_LINKS.map((link) => {
-                const isOffer = link.href === "/#especial-novembro-azul";
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className={`px-3 py-1.5 text-xs xl:text-sm font-medium rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#17385B] ${
-                      isOffer
-                        ? "bg-[#17385B] text-white hover:bg-[#1f4a75] shadow-2xs font-semibold"
-                        : "text-[#17385B]/85 hover:text-[#17385B] hover:bg-white/80"
-                    }`}
-                  >
-                    <span>{link.label}</span>
-                  </Link>
-                );
-              })}
+          <div className="hidden lg:flex items-center gap-2 xl:gap-3">
+            <nav className="flex items-center gap-1 xl:gap-1.5" aria-label="Navegação institucional">
+              {INSTITUTIONAL_NAV_LINKS.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="px-2.5 xl:px-3 py-1.5 text-xs xl:text-sm font-medium text-[#1A2421]/85 hover:text-[#183B2B] hover:bg-white rounded-lg transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#183B2B]"
+                >
+                  {link.label}
+                </Link>
+              ))}
             </nav>
 
-            {/* CTA WhatsApp do Header */}
+            {/* Destaque para Campanha Ativa */}
+            <Link
+              href="/novembro-azul"
+              className="hidden 2xl:inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-[#17385B] text-white hover:bg-[#1f4a75] transition-colors"
+            >
+              <span>Novembro Azul</span>
+            </Link>
+
+            {/* CTA WhatsApp de Agendamento */}
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleWhatsAppHeaderClick}
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#25D366] hover:bg-[#1ebd5a] text-[#073322] font-semibold text-xs shadow-2xs transition-colors"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#25D366] hover:bg-[#1ebd5a] active:scale-95 text-[#073322] font-semibold text-xs shadow-xs transition-all"
             >
               <MessageCircle className="w-3.5 h-3.5 fill-current" aria-hidden="true" />
               <span>Agendar</span>
             </a>
           </div>
 
-          {/* Botão Mobile */}
+          {/* Botões Mobile */}
           <div className="flex items-center gap-2 lg:hidden">
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleWhatsAppHeaderClick}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#25D366] text-[#073322] font-bold text-xs shadow-2xs"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#25D366] text-[#073322] font-bold text-xs shadow-xs"
             >
               <MessageCircle className="w-3.5 h-3.5 fill-current" />
               <span>Agendar</span>
@@ -102,7 +116,7 @@ export function Header() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl text-[#17385B] hover:bg-stone-200/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#17385B]"
+              className="p-2 rounded-lg text-[#1A2421] hover:bg-[#E8E2D9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#183B2B]"
               aria-expanded={mobileMenuOpen}
               aria-label={mobileMenuOpen ? "Fechar menu de navegação" : "Abrir menu de navegação"}
             >
@@ -111,38 +125,58 @@ export function Header() {
           </div>
         </div>
       </div>
+
+      {/* Menu Mobile Recolhível */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-b border-stone-200 bg-[#F5F2EB] px-4 pt-3 pb-6 space-y-2 animate-in fade-in slide-in-from-top-2 duration-200">
-          <div className="px-3 py-2 border-b border-stone-200/60 mb-2 flex items-center justify-between">
-            <span className="text-xs font-semibold tracking-wider text-[#415A77] uppercase">
-              Menu de Navegação
+        <div className="lg:hidden border-b border-[#E8E2D9] bg-[#FAF8F5] px-4 pt-3 pb-6 space-y-2 animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="px-3 py-2 border-b border-[#E8E2D9] mb-2 flex items-center justify-between">
+            <span className="text-xs font-semibold tracking-wider text-[#556370] uppercase">
+              Plataforma Institucional
             </span>
-            <span className="text-[10px] font-bold text-[#17385B] bg-[#527fae]/20 px-2 py-0.5 rounded-full">
-              2026
+            <span className="text-[10px] font-bold text-[#183B2B] bg-[#183B2B]/10 px-2 py-0.5 rounded-full">
+              Consolação • SP
             </span>
           </div>
-          <nav className="flex flex-col space-y-1" aria-label="Menu móvel">
-            {NAV_LINKS.map((link) => {
-              const isOffer = link.href === "/#especial-novembro-azul";
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`px-3 py-2.5 rounded-xl text-sm font-medium transition-colors flex items-center justify-between ${
-                    isOffer
-                      ? "bg-[#17385B] text-white font-semibold"
-                      : "text-[#17385B] hover:bg-white"
-                  }`}
-                >
-                  <span>{link.label}</span>
-                </Link>
-              );
-            })}
-          </nav>
+
+          <div className="grid grid-cols-1 gap-1">
+            {INSTITUTIONAL_NAV_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="px-3 py-2 text-sm font-medium text-[#1A2421] hover:bg-white rounded-lg transition-colors flex items-center justify-between"
+              >
+                <span>{link.label}</span>
+              </Link>
+            ))}
+
+            <Link
+              href="/novembro-azul"
+              onClick={() => setMobileMenuOpen(false)}
+              className="mt-2 px-3 py-2.5 text-xs font-semibold bg-[#17385B] text-white rounded-lg transition-colors flex items-center justify-between"
+            >
+              <span>Especial Novembro Azul (Campanha)</span>
+              <span className="text-[10px] bg-white/20 px-1.5 py-0.5 rounded text-white">40 min</span>
+            </Link>
+
+            <div className="pt-3 border-t border-[#E8E2D9] mt-2">
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  handleWhatsAppHeaderClick();
+                  setMobileMenuOpen(false);
+                }}
+                className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#25D366] text-[#073322] font-semibold text-sm shadow-xs"
+              >
+                <MessageCircle className="w-4 h-4 fill-current" />
+                <span>Agendar Avaliação via WhatsApp</span>
+              </a>
+            </div>
+          </div>
         </div>
       )}
-      <div className="november-reading-progress" aria-hidden="true" />
     </header>
   );
 }
