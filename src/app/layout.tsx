@@ -95,6 +95,9 @@ export const metadata: Metadata = {
     description:
       "Conheça a campanha Novembro Azul 2026 da Lucy Aihara, com conscientização sobre diabetes, saúde masculina e fotobiomodulação na Consolação, São Paulo.",
   },
+  verification: {
+    google: "googlece9bcb892fccd291",
+  },
 };
 
 export default function RootLayout({
