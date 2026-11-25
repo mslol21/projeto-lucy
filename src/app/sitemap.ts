@@ -5,7 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   return [
-    // 1. Frente Institucional Principal
+    // 1. Institucional Principal — Lucy Aihara (Fisioterapia, Dor e Movimento)
     {
       url: `${baseUrl}/`,
       lastModified: now,
@@ -21,14 +21,120 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/tratamentos`,
       lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/contato`,
+      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/politica-de-privacidade`,
+      lastModified: now,
+      changeFrequency: "yearly",
+      priority: 0.5,
+    },
+
+    // 2. Condições Clínicas Atendidas na Fisioterapia da Dor
+    {
+      url: `${baseUrl}/tratamentos/dor`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/tratamentos/dor-lombar`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/tratamentos/dor-cervical`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/tratamentos/dor-cronica`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/tratamentos/dores-musculares-articulares`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/tratamentos/reabilitacao-ortopedica`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/tratamentos/recuperacao-funcional`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/tratamentos/fisioterapia-pelvica`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/tratamentos/neuropatia`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/tratamentos/fasciaterapia`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.9,
+    },
+
+    // 3. Técnicas e Abordagens Terapêuticas
+    {
+      url: `${baseUrl}/tecnicas/fasciaterapia`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/tecnicas/fisioterapia-ortopedica`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/tecnicas/terapias-manuais`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/tecnicas/fotobiomodulacao`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/tecnicas/fisioterapia-pelvica`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/tecnicas/educacao-perceptiva`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/fotobiomodulacao`,
@@ -40,22 +146,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/atendimento`,
       lastModified: now,
       changeFrequency: "weekly",
-      priority: 0.95,
-    },
-    {
-      url: `${baseUrl}/contato`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/politica-de-privacidade`,
-      lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.5,
+      priority: 0.9,
     },
 
-    // 2. Frente Educacional: Escola de Fasciaterapia e Movimento
+    // 4. Escola de Fasciaterapia e Movimento (Polo Educacional)
     {
       url: `${baseUrl}/escola`,
       lastModified: now,
@@ -69,7 +163,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
 
-    // 3. Frente de Campanhas de Conscientização
+    // 5. Campanhas de Saúde e Conscientização (Novembro Azul isolado)
     {
       url: `${baseUrl}/campanhas`,
       lastModified: now,
@@ -119,7 +213,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
 
-    // 4. Depoimentos e Central de Conhecimento
+    // 6. Depoimentos e Central de Conhecimento
     {
       url: `${baseUrl}/depoimentos`,
       lastModified: now,

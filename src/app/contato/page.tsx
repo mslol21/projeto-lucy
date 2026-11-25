@@ -13,26 +13,27 @@ import {
   ShieldCheck,
   Building2,
   Sparkles,
+  ExternalLink,
 } from "lucide-react";
-import { CLINIC_LOCATION, CONTACT_CHANNELS, getWhatsAppLink } from "@/data/institutional-data";
+import { CLINIC_LOCATION, CONTACT_CHANNELS, LUCY_PROFILE, getWhatsAppLink } from "@/data/institutional-data";
 
 export const metadata: Metadata = {
-  title: "Contato e Localização do Consultório | Lucy Aihara — São Paulo",
+  title: "Contato e Agendamentos | Lucy Aihara — Fisioterapia na Consolação, SP",
   description:
-    "Entre em contato com Lucy Aihara e a Escola de Fasciaterapia e Movimento. Consultório na Rua Sergipe, 475, conj 114, Consolação / Higienópolis, São Paulo. Agende pelo WhatsApp.",
+    "Agende sua avaliação fisioterapêutica com Lucy Mie Aihara na Consolação / Higienópolis. Telefones: (11) 99998-6082 e (11) 99649-6082. Atendimento de seg a sex das 8h às 12h e 14h às 18h.",
   alternates: {
     canonical: "/contato",
   },
   openGraph: {
-    title: "Contato e Localização | Lucy Aihara — Consolação, São Paulo",
+    title: "Contato e Agendamentos | Lucy Aihara — Consolação, São Paulo",
     description:
-      "Agende seu atendimento de Fasciaterapia ou tire dúvidas sobre formações profissionais. Consultório na Rua Sergipe, próximo ao Metrô Mackenzie.",
+      "Consultório na Rua Sergipe, 475, conjunto 114. Fácil acesso pelo Metrô Higienópolis-Mackenzie. Atendimento com hora marcada.",
     url: "/contato",
   },
 };
 
 export default function ContatoPage() {
-  const clinicWhatsApp = getWhatsAppLink("clinicEvaluation");
+  const clinicWhatsApp = getWhatsAppLink("painTreatment");
   const schoolWhatsApp = getWhatsAppLink("schoolCourses");
   const photobioWhatsApp = getWhatsAppLink("photobiomodulation");
 
@@ -51,14 +52,14 @@ export default function ContatoPage() {
         <section className="py-14 sm:py-20 bg-gradient-to-b from-[#FAF8F5] via-[#F4EFEA] to-[#FAF8F5] border-b border-[#E8E2D9]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
             <span className="inline-block text-xs font-semibold uppercase tracking-wider px-3.5 py-1.5 rounded-full bg-[#183B2B]/10 text-[#183B2B] border border-[#183B2B]/15">
-              Canais Oficiais de Atendimento
+              {LUCY_PROFILE.siteTitle}
             </span>
             <h1 className="font-serif text-3xl sm:text-5xl text-[#1A2421] font-normal tracking-tight">
-              Fale Conosco e Agende sua Visita
+              Agendamentos e Canais de Contato
             </h1>
             <p className="text-base sm:text-lg text-[#556370] leading-relaxed max-w-2xl mx-auto font-sans">
-              Estamos à disposição para esclarecer dúvidas sobre os atendimentos individuais em
-              consultório e as formações profissionais da Escola.
+              Entre em contato para agendar sua consulta de fisioterapia para dor na Consolação
+              ou tirar dúvidas sobre as formações da Escola de Fasciaterapia e Movimento.
             </p>
           </div>
         </section>
@@ -71,17 +72,17 @@ export default function ContatoPage() {
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Card 1: Consulta Individual */}
+              {/* Card 1: Fisioterapia da Dor */}
               <div className="p-7 rounded-3xl bg-[#FAF8F5] border border-[#E2DBD0] flex flex-col justify-between space-y-6">
                 <div className="space-y-3">
                   <div className="w-12 h-12 rounded-xl bg-white border border-[#E2DBD0] flex items-center justify-center text-[#183B2B]">
                     <Sparkles className="w-6 h-6 text-[#183B2B]" />
                   </div>
                   <h3 className="font-serif text-xl text-[#1A2421]">
-                    Atendimento Clínico
+                    Fisioterapia & Dor
                   </h3>
                   <p className="text-xs sm:text-sm text-[#556370] leading-relaxed">
-                    Agende sua avaliação de Fasciaterapia e cuidado postural individualizado com Lucy Aihara.
+                    Avaliação fisioterapêutica individual para dor lombar, cervical, dor crônica e recuperação funcional.
                   </p>
                 </div>
                 <a
@@ -95,7 +96,7 @@ export default function ContatoPage() {
                 </a>
               </div>
 
-              {/* Card 2: Formações e Cursos */}
+              {/* Card 2: Formações da Escola */}
               <div className="p-7 rounded-3xl bg-[#FAF8F5] border border-[#E2DBD0] flex flex-col justify-between space-y-6">
                 <div className="space-y-3">
                   <div className="w-12 h-12 rounded-xl bg-white border border-[#E2DBD0] flex items-center justify-center text-[#183B2B]">
@@ -105,7 +106,7 @@ export default function ContatoPage() {
                     Cursos da Escola
                   </h3>
                   <p className="text-xs sm:text-sm text-[#556370] leading-relaxed">
-                    Informações sobre a formação no Método Danis Bois, cronograma de workshops e inscrições.
+                    Informações sobre a formação profissional no Método Danis Bois, workshops imersivos e inscrições.
                   </p>
                 </div>
                 <a
@@ -115,7 +116,7 @@ export default function ContatoPage() {
                   className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-[#183B2B] hover:bg-[#122c20] text-white font-medium text-xs sm:text-sm transition-colors text-center"
                 >
                   <MessageCircle className="w-4 h-4 text-[#C5A880]" />
-                  <span>Secretaria da Escola</span>
+                  <span>Secretaria Acadêmica</span>
                 </a>
               </div>
 
@@ -129,7 +130,7 @@ export default function ContatoPage() {
                     Fotobiomodulação
                   </h3>
                   <p className="text-xs sm:text-sm text-[#556370] leading-relaxed">
-                    Dúvidas sobre sessões de luz aplicada, pacotes de continuidade ou primeiro atendimento.
+                    Sessões complementares de bioestimulação por luz celular, pacotes e primeiro atendimento.
                   </p>
                 </div>
                 <a
@@ -146,7 +147,7 @@ export default function ContatoPage() {
           </div>
         </section>
 
-        {/* Localização e Mapa Integrado */}
+        {/* Localização, Telefones Oficiais e Mapa */}
         <section className="py-16 sm:py-24 bg-[#FAF8F5] border-b border-[#E8E2D9]">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -157,7 +158,7 @@ export default function ContatoPage() {
                     Consultório Presencial
                   </span>
                   <h2 className="font-serif text-2xl sm:text-3xl text-[#1A2421] mt-1">
-                    Higienópolis & Consolação
+                    Consolação & Higienópolis
                   </h2>
                 </div>
 
@@ -171,9 +172,26 @@ export default function ContatoPage() {
                   </div>
 
                   <div className="flex items-start gap-3">
+                    <Clock className="w-5 h-5 text-[#C5A880] flex-shrink-0 mt-0.5" />
+                    <div>
+                      <strong className="text-[#1A2421] block">Horário de Funcionamento:</strong>
+                      <span>{CLINIC_LOCATION.officeHours.display}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <Phone className="w-5 h-5 text-[#C5A880] flex-shrink-0 mt-0.5" />
+                    <div>
+                      <strong className="text-[#1A2421] block">Telefones Oficiais:</strong>
+                      <p>Principal: <a href={`tel:+${CONTACT_CHANNELS.phoneMainRaw}`} className="font-semibold text-[#183B2B] hover:underline">{CONTACT_CHANNELS.phoneMainDisplay}</a></p>
+                      <p>Secundário: <a href={`tel:+${CONTACT_CHANNELS.phoneSecondaryRaw}`} className="font-semibold text-[#183B2B] hover:underline">{CONTACT_CHANNELS.phoneSecondaryDisplay}</a></p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
                     <Train className="w-5 h-5 text-[#C5A880] flex-shrink-0 mt-0.5" />
                     <div>
-                      <strong className="text-[#1A2421] block">Acesso por Metrô:</strong>
+                      <strong className="text-[#1A2421] block">Acesso por Transporte:</strong>
                       <span>{CLINIC_LOCATION.metroReference}</span>
                     </div>
                   </div>
@@ -185,22 +203,6 @@ export default function ContatoPage() {
                       <span>{CLINIC_LOCATION.landmarks}</span>
                     </div>
                   </div>
-
-                  <div className="flex items-start gap-3">
-                    <Clock className="w-5 h-5 text-[#C5A880] flex-shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="text-[#1A2421] block">Horário de Funcionamento:</strong>
-                      <span>Segunda a Sexta-feira: 08h às 19h (hora marcada)</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <Phone className="w-5 h-5 text-[#C5A880] flex-shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="text-[#1A2421] block">Telefone e WhatsApp:</strong>
-                      <span>{CONTACT_CHANNELS.whatsappDisplay}</span>
-                    </div>
-                  </div>
                 </div>
 
                 <div className="pt-2">
@@ -210,8 +212,8 @@ export default function ContatoPage() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-xs font-semibold text-[#183B2B] hover:text-[#25523D]"
                   >
-                    <span>Abrir no Google Maps</span>
-                    <Navigation className="w-3.5 h-3.5" />
+                    <span>Abrir rota no Google Maps</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 </div>
               </div>

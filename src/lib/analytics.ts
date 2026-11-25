@@ -1,5 +1,7 @@
 /**
  * Utilitário seguro para eventos de rastreamento (Google Analytics 4 / Google Tag Manager)
+ * Lucy Mie Aihara | Fisioterapia, Dor e Movimento
+ *
  * Em total conformidade com a LGPD e privacidade em saúde:
  * Não armazena nem envia sintomas, diagnósticos, telefones, e-mails ou dados sensíveis.
  */
@@ -24,6 +26,7 @@ const SENSITIVE_KEYS = new Set([
   "diagnostico",
   "cpf",
   "medical_history",
+  "queixa",
 ]);
 
 function sanitizeParams(params: Record<string, unknown>): Record<string, unknown> {
@@ -44,7 +47,6 @@ export function trackConversionEvent(
 
   try {
     const cleanParams = sanitizeParams({
-      campaign_id: "novembro_azul_2026",
       origin_path: window.location.pathname,
       ...params,
     });
@@ -62,50 +64,39 @@ export function trackConversionEvent(
       });
     }
 
-    // Log em desenvolvimento para auditoria de eventos
-    if (process.env.NODE_ENV !== "production") {
-      console.log(`[Analytics Event] ${eventName}:`, cleanParams);
+    // 3. Fallback Meta Pixel (fbq) para eventos padrão
+    if (typeof (window as unknown as { fbq?: (...args: unknown[]) => void }).fbq === "function") {
+      (window as unknown as { fbq: (...args: unknown[]) => void }).fbq("trackCustom", eventName, cleanParams);
     }
-  } catch (error) {
-    console.warn(`[Analytics] Falha não impeditiva ao registrar evento ${eventName}:`, error);
+  } catch {
+    // Falha silenciosa para nunca quebrar a navegação do usuário
   }
 }
 
-// Helpers tipados para eventos padronizados
-export function trackClickWhatsApp(buttonLocation: string, planId?: string) {
-  trackConversionEvent("click_whatsapp", {
-    button_location: buttonLocation,
-    action_type: "whatsapp_contact",
-    plan_id: planId || "geral",
+// Eventos específicos padronizados
+export function trackWhatsAppClick(source: string, context?: string) {
+  trackConversionEvent("whatsapp_click", { source, context });
+}
+
+export function trackAppointmentClick(source: string, service?: string) {
+  trackConversionEvent("appointment_click", { source, service });
+}
+
+export function trackPhoneClick(phoneType: "main" | "secondary", source: string) {
+  trackConversionEvent("phone_click", { phone_type: phoneType, source });
+}
+
+export function trackDirectionsClick(source: string) {
+  trackConversionEvent("directions_click", {
+    source,
+    destination: "Rua Sergipe, 475, conjunto 114, Consolação, São Paulo - SP",
   });
 }
 
-export function trackClickAgendar(buttonLocation: string, planId?: string) {
-  trackConversionEvent("click_agendar", {
-    button_location: buttonLocation,
-    action_type: "schedule_request",
-    plan_id: planId || "geral",
-  });
+export function trackSchoolContactClick(source: string, course?: string) {
+  trackConversionEvent("school_contact_click", { source, course });
 }
 
-export function trackClickDirections(location: string = "Rua Sergipe, 475") {
-  trackConversionEvent("click_directions", {
-    destination: location,
-    action_type: "maps_navigation",
-  });
-}
-
-export function trackClickSiteInstitucional(targetUrl: string) {
-  trackConversionEvent("click_site_institucional", {
-    target_url: targetUrl,
-    action_type: "external_institutional_link",
-  });
-}
-
-export function trackFaqExpand(faqId: string, question: string) {
-  trackConversionEvent("faq_expand", {
-    faq_id: faqId,
-    question_summary: question.substring(0, 80),
-    action_type: "content_engagement",
-  });
+export function trackCampaignContactClick(campaignId: string, source: string) {
+  trackConversionEvent("campaign_contact_click", { campaign_id: campaignId, source });
 }

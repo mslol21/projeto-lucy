@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { InstitutionalHero } from "@/components/institutional/InstitutionalHero";
+import { ConditionsSection } from "@/components/institutional/ConditionsSection";
 import { TherapeuticAreasSection } from "@/components/institutional/TherapeuticAreasSection";
 import { LucyTrajectorySection } from "@/components/institutional/LucyTrajectorySection";
+import { EvaluationStepsSection } from "@/components/institutional/EvaluationStepsSection";
 import { CareDifferentialsSection } from "@/components/institutional/CareDifferentialsSection";
 import { SchoolPreviewSection } from "@/components/institutional/SchoolPreviewSection";
 import { CampaignsHighlightSection } from "@/components/institutional/CampaignsHighlightSection";
@@ -15,23 +17,23 @@ import { TestimonialsPreviewSection } from "@/components/home/TestimonialsPrevie
 import { LUCY_PROFILE, CLINIC_LOCATION, CONTACT_CHANNELS } from "@/data/institutional-data";
 
 export const metadata: Metadata = {
-  title: "Lucy Aihara | Fisioterapia, Fasciaterapia e Movimento em São Paulo",
+  title: "Lucy Aihara — Fisioterapia, Dor e Movimento | Consolação, São Paulo",
   description:
-    "Consultório de Fisioterapia e Fasciaterapia de Lucy Aihara em São Paulo (Consolação/Higienópolis). Atendimento individualizado com experiência no InCor e HCFMUSP. Fundadora da Escola de Fasciaterapia e Movimento.",
+    "Fisioterapia especializada no cuidado da dor, reabilitação ortopédica e recuperação do movimento na Consolação e Higienópolis. Mais de 20 anos de experiência clínica com Lucy Mie Aihara (InCor / HCFMUSP).",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Lucy Aihara | Fisioterapia, Fasciaterapia e Movimento em São Paulo",
+    title: "Lucy Aihara — Fisioterapia, Dor e Movimento na Consolação",
     description:
-      "Cuidado individualizado, ciência da fáscia e escuta sensível do corpo na Consolação/Higienópolis, São Paulo. Agende sua avaliação com Lucy Aihara.",
+      "Cuidado com a dor. Liberdade para o movimento. Atendimento fisioterapêutico individualizado de 50 minutos na Rua Sergipe, 475, Consolação / Higienópolis, São Paulo.",
     url: "/",
     images: [
       {
         url: "/images/lucy-aihara-hcfmusp.jpg",
         width: 1200,
         height: 675,
-        alt: "Lucy Aihara — Fisioterapeuta e Fasciaterapeuta",
+        alt: "Lucy Mie Aihara — Fisioterapeuta Especialista em Dor e Movimento",
       },
     ],
   },
@@ -43,11 +45,19 @@ export default function HomePage() {
     "@graph": [
       {
         "@type": "Person",
-        "@id": "https://novembroazul.escoladefasciaterapiaemovimento.com/#lucy-aihara",
+        "@id": "https://novembroazul.escoladefasciaterapiaemovimento.com/#lucy-mie-aihara",
         name: LUCY_PROFILE.name,
+        alternateName: LUCY_PROFILE.professionalName,
         jobTitle: LUCY_PROFILE.professionalTitle,
         description: LUCY_PROFILE.shortBio,
         image: "https://novembroazul.escoladefasciaterapiaemovimento.com/images/lucy-aihara-hcfmusp.jpg",
+        sameAs: [
+          CONTACT_CHANNELS.social.instagram,
+          CONTACT_CHANNELS.social.facebook,
+          CONTACT_CHANNELS.social.linkedin,
+          CONTACT_CHANNELS.social.youtube,
+          CONTACT_CHANNELS.social.officialWix,
+        ],
         worksFor: {
           "@type": "MedicalBusiness",
           name: CLINIC_LOCATION.clinicName,
@@ -55,16 +65,18 @@ export default function HomePage() {
         alumniOf: [
           {
             "@type": "EducationalOrganization",
-            name: "Faculdade de Medicina da USP (HCFMUSP / InCor)",
+            name: "Faculdade de Medicina da Universidade de São Paulo (HCFMUSP / InCor)",
           },
         ],
         knowsAbout: [
-          "Fasciaterapia",
-          "Método Danis Bois",
-          "Fisioterapia",
+          "Fisioterapia para Dor",
+          "Dor Lombar e Cervical",
+          "Dor Crônica",
+          "Fasciaterapia Método Danis Bois",
+          "Reabilitação Ortopédica",
+          "Recuperação Funcional",
           "Educação Somática",
           "Fotobiomodulação",
-          "Dor Crônica",
         ],
       },
       {
@@ -72,11 +84,11 @@ export default function HomePage() {
         "@id": "https://novembroazul.escoladefasciaterapiaemovimento.com/#consultorio",
         name: CLINIC_LOCATION.clinicName,
         image: "https://novembroazul.escoladefasciaterapiaemovimento.com/images/placa-acrilica-consultorio.jpg",
-        telephone: "+55-11-99998-6082",
+        telephone: ["+55-11-99998-6082", "+55-11-99649-6082"],
         url: "https://novembroazul.escoladefasciaterapiaemovimento.com",
         address: {
           "@type": "PostalAddress",
-          streetAddress: CLINIC_LOCATION.street + ", " + CLINIC_LOCATION.suite,
+          streetAddress: `${CLINIC_LOCATION.street}, ${CLINIC_LOCATION.suite}`,
           addressLocality: CLINIC_LOCATION.city,
           addressRegion: CLINIC_LOCATION.state,
           postalCode: CLINIC_LOCATION.postalCode,
@@ -87,13 +99,28 @@ export default function HomePage() {
           latitude: CLINIC_LOCATION.coordinates.lat,
           longitude: CLINIC_LOCATION.coordinates.lng,
         },
+        areaServed: [
+          "Consolação",
+          "Higienópolis",
+          "Santa Cecília",
+          "Vila Buarque",
+          "Bela Vista",
+          "Avenida Paulista",
+          "São Paulo",
+        ],
         priceRange: "$$",
         openingHoursSpecification: [
           {
             "@type": "OpeningHoursSpecification",
             dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
             opens: "08:00",
-            closes: "19:00",
+            closes: "12:00",
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            opens: "14:00",
+            closes: "18:00",
           },
         ],
       },
@@ -109,37 +136,43 @@ export default function HomePage() {
       <Header />
 
       <main className="flex-1">
-        {/* 1. Hero Institucional Premium */}
+        {/* 1. Hero Institucional: H1, Headline, Foto Real e CTA */}
         <InstitutionalHero />
 
-        {/* 2. Áreas de Atuação e Abordagens Clínicas */}
+        {/* 2. Seção de Condições Atendidas na Fisioterapia da Dor */}
+        <ConditionsSection />
+
+        {/* 3. Seção de Técnicas e Abordagens Terapêuticas */}
         <TherapeuticAreasSection />
 
-        {/* 3. Trajetória Profissional (InCor, HCFMUSP, Método Danis Bois) */}
+        {/* 4. Formação e Trajetória (+20 anos, InCor, HCFMUSP, Método Danis Bois) */}
         <LucyTrajectorySection />
 
-        {/* 4. Diferenciais do Atendimento Individualizado */}
+        {/* 5. Como Funciona a Avaliação Fisioterapêutica Individual (50 min) */}
+        <EvaluationStepsSection />
+
+        {/* 6. Diferenciais Profissionais (1 a 1, tempo de escuta, consultório privativo) */}
         <CareDifferentialsSection />
 
-        {/* 5. Escola de Fasciaterapia e Movimento */}
-        <SchoolPreviewSection />
-
-        {/* 6. Campanhas de Saúde e Conscientização */}
-        <CampaignsHighlightSection />
-
-        {/* 7. Depoimentos Autorizados */}
+        {/* 7. Depoimentos Autorizados de Pacientes */}
         <TestimonialsPreviewSection />
 
-        {/* 8. Artigos em Destaque da Central de Conhecimento */}
+        {/* 8. Central de Conhecimento Científico */}
         <KnowledgeArticlesSection />
 
-        {/* 9. Perguntas Frequentes Institucionais (AEO) */}
+        {/* 9. Apresentação da Escola de Fasciaterapia e Movimento */}
+        <SchoolPreviewSection />
+
+        {/* 10. Campanhas de Saúde e Conscientização (Novembro Azul isolado) */}
+        <CampaignsHighlightSection />
+
+        {/* 11. FAQ Institucional com AEO / Respostas Canônicas */}
         <InstitutionalFaqSection />
 
-        {/* 10. Localização e Acessos (Consolação / Higienópolis) */}
+        {/* 12. Localização, Horários Oficiais e Acessos */}
         <LocationSection />
 
-        {/* 11. CTA Final para Agendamento via WhatsApp */}
+        {/* 13. CTA Final para Agendamento via WhatsApp */}
         <InstitutionalFinalCta />
       </main>
 
