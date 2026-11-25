@@ -19,7 +19,7 @@ export default function PoliticaPrivacidadePage() {
     <div className="flex flex-col min-h-screen bg-[#FAF8F5] text-[#1A2421]">
       <Header />
 
-      <div className="bg-white/80 border-b border-[#E8E2D9]">
+      <div className="bg-white/80 border-b border-[#EADBC8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
           <Breadcrumbs items={[{ label: "Política de Privacidade" }]} />
         </div>
@@ -27,11 +27,11 @@ export default function PoliticaPrivacidadePage() {
 
       <main className="flex-1 py-14 sm:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-4 mb-10 pb-6 border-b border-[#E8E2D9]">
-            <span className="inline-block text-xs font-semibold uppercase tracking-wider px-3.5 py-1.5 rounded-full bg-[#183B2B]/10 text-[#183B2B] border border-[#183B2B]/15">
+          <div className="space-y-4 mb-10 pb-6 border-b border-[#EADBC8]">
+            <span className="inline-block text-xs font-semibold uppercase tracking-wider px-3.5 py-1.5 rounded-full bg-[#C0D8FF]/30 text-[#065176] border border-[#5C88C5]/30">
               Transparência & Conformidade Legal
             </span>
-            <h1 className="font-serif text-3xl sm:text-4xl text-[#1A2421] font-normal">
+            <h1 className="font-serif text-3xl sm:text-4xl text-[#065176] font-normal">
               Política de Privacidade e Proteção de Dados
             </h1>
             <p className="text-xs sm:text-sm text-[#718096]">

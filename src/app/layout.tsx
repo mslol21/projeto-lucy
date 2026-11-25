@@ -20,7 +20,7 @@ const inter = Inter({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#17385B",
+  themeColor: "#065176",
   width: "device-width",
   initialScale: 1,
 };
@@ -28,23 +28,26 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Lucy Aihara | Fisioterapia, Fasciaterapia e Movimento em São Paulo",
+    default: "Lucy Aihara — Fisioterapia, Dor e Movimento | Consolação, São Paulo",
     template: "%s | Lucy Aihara",
   },
   description:
-    "Plataforma institucional de Lucy Aihara (Fisioterapeuta InCor/HCFMUSP) e Escola de Fasciaterapia e Movimento na Consolação / Higienópolis, São Paulo. Atendimentos individuais, cursos e campanhas de saúde.",
+    "Fisioterapia especializada no cuidado da dor e recuperação do movimento na Consolação e Higienópolis, São Paulo. Mais de 20 anos de experiência clínica com Lucy Mie Aihara (InCor / HCFMUSP).",
   keywords: [
     "Lucy Aihara",
+    "Lucy Mie Aihara",
+    "Fisioterapia Consolação",
+    "Fisioterapia Higienópolis",
+    "Fisioterapia para Dor",
+    "Cuidado da Dor São Paulo",
+    "Dor Lombar",
+    "Dor Cervical",
+    "Dor Crônica",
     "Fasciaterapia São Paulo",
     "Método Danis Bois",
-    "Fisioterapia Higienópolis Consolação",
+    "Reabilitação Ortopédica",
+    "Recuperação Funcional",
     "Escola de Fasciaterapia e Movimento",
-    "Fotobiomodulação São Paulo",
-    "Novembro Azul 2026",
-    "Dor Crônica",
-    "Educação Somática",
-    "Percepção do Movimento",
-    "Autocuidado",
   ],
   authors: [
     {

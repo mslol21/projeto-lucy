@@ -40,108 +40,108 @@ function SocialIcon({ name, className = "w-4 h-4" }: { name: "instagram" | "face
 
 export function Footer() {
   return (
-    <footer className="bg-[#1A2421] text-[#FAF8F5] pt-16 pb-12 border-t border-[#25523D]">
+    <footer className="bg-[#065176] text-white pt-16 pb-12 border-t-4 border-[#845924]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-white/10 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-white/15 items-start">
           {/* Coluna 1: Lucy Mie Aihara & Consultório */}
           <div className="md:col-span-4 space-y-4">
-            <div className="inline-block bg-white p-3 rounded-2xl shadow-md border border-white/80">
+            <div className="inline-block bg-white p-3 rounded-2xl shadow-sm border border-white/90">
               <Image
                 src="/images/logo-horizontal-hd.png"
-                alt="Logo da Escola de Fasciaterapia e Movimento"
+                alt="Logo oficial da Escola de Fasciaterapia e Movimento — Lucy Aihara"
                 width={200}
                 height={58}
                 className="h-10 w-auto object-contain"
               />
             </div>
             <div>
-              <span className="inline-block text-[11px] font-semibold tracking-wider uppercase text-[#C5A880] bg-white/5 px-3 py-1 rounded-full border border-white/10">
+              <span className="inline-block text-[11px] font-semibold tracking-wider uppercase text-[#EFC89C] bg-white/10 px-3 py-1 rounded-full border border-white/15">
                 Fisioterapia, Dor e Movimento
               </span>
             </div>
             <h3 className="font-serif text-2xl font-normal text-white tracking-tight">
               {LUCY_PROFILE.name}
             </h3>
-            <p className="text-[#C7D9D2] text-xs sm:text-sm leading-relaxed">
+            <p className="text-[#C0D8FF] text-xs sm:text-sm leading-relaxed">
               {LUCY_PROFILE.shortBio}
             </p>
 
-            <div className="pt-2 text-xs text-[#A2B8AE] space-y-2">
+            <div className="pt-2 text-xs text-white/80 space-y-2">
               <p className="flex items-start gap-2">
-                <MapPin className="w-3.5 h-3.5 text-[#C5A880] flex-shrink-0 mt-0.5" />
+                <MapPin className="w-3.5 h-3.5 text-[#EFC89C] flex-shrink-0 mt-0.5" />
                 <span>{CLINIC_LOCATION.fullAddress}</span>
               </p>
               <p className="flex items-center gap-2">
-                <Clock className="w-3.5 h-3.5 text-[#C5A880] flex-shrink-0" />
+                <Clock className="w-3.5 h-3.5 text-[#EFC89C] flex-shrink-0" />
                 <span>{CLINIC_LOCATION.officeHours.display}</span>
               </p>
               <div className="space-y-1 pt-1">
                 <p className="flex items-center gap-2">
-                  <Phone className="w-3.5 h-3.5 text-[#C5A880] flex-shrink-0" />
+                  <Phone className="w-3.5 h-3.5 text-[#EFC89C] flex-shrink-0" />
                   <span>Principal: {CONTACT_CHANNELS.phoneMainDisplay}</span>
                 </p>
                 <p className="flex items-center gap-2">
-                  <Phone className="w-3.5 h-3.5 text-[#C5A880] flex-shrink-0" />
+                  <Phone className="w-3.5 h-3.5 text-[#EFC89C] flex-shrink-0" />
                   <span>Secundário: {CONTACT_CHANNELS.phoneSecondaryDisplay}</span>
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Coluna 2: Condições Atendidas & Tratamentos */}
+          {/* Coluna 2: Condições Atendidas na Fisioterapia da Dor */}
           <div className="md:col-span-4 space-y-4">
-            <div className="flex items-center gap-2 text-[#C5A880]">
+            <div className="flex items-center gap-2 text-[#EFC89C]">
               <BookOpen className="w-4 h-4" />
               <h4 className="text-xs font-semibold tracking-wider uppercase">
                 Tratamentos & Condições
               </h4>
             </div>
-            <ul className="space-y-2 text-xs sm:text-sm text-[#C7D9D2]">
+            <ul className="space-y-2 text-xs sm:text-sm text-[#C0D8FF]">
               <li>
                 <Link href="/tratamentos/dor" className="hover:text-white transition-colors flex items-center gap-1.5">
-                  <ArrowRight className="w-3 h-3 text-[#C5A880]" />
+                  <ArrowRight className="w-3 h-3 text-[#EFC89C]" />
                   <span>Fisioterapia para Dor</span>
                 </Link>
               </li>
               <li>
                 <Link href="/tratamentos/dor-lombar" className="hover:text-white transition-colors flex items-center gap-1.5">
-                  <ArrowRight className="w-3 h-3 text-[#C5A880]" />
+                  <ArrowRight className="w-3 h-3 text-[#EFC89C]" />
                   <span>Dor Lombar (Lombalgia)</span>
                 </Link>
               </li>
               <li>
                 <Link href="/tratamentos/dor-cervical" className="hover:text-white transition-colors flex items-center gap-1.5">
-                  <ArrowRight className="w-3 h-3 text-[#C5A880]" />
+                  <ArrowRight className="w-3 h-3 text-[#EFC89C]" />
                   <span>Dor Cervical e Tensão no Pescoço</span>
                 </Link>
               </li>
               <li>
                 <Link href="/tratamentos/dor-cronica" className="hover:text-white transition-colors flex items-center gap-1.5">
-                  <ArrowRight className="w-3 h-3 text-[#C5A880]" />
+                  <ArrowRight className="w-3 h-3 text-[#EFC89C]" />
                   <span>Dor Crônica e Sensibilização</span>
                 </Link>
               </li>
               <li>
                 <Link href="/tratamentos/reabilitacao-ortopedica" className="hover:text-white transition-colors flex items-center gap-1.5">
-                  <ArrowRight className="w-3 h-3 text-[#C5A880]" />
+                  <ArrowRight className="w-3 h-3 text-[#EFC89C]" />
                   <span>Reabilitação Ortopédica</span>
                 </Link>
               </li>
               <li>
                 <Link href="/tratamentos/fisioterapia-pelvica" className="hover:text-white transition-colors flex items-center gap-1.5">
-                  <ArrowRight className="w-3 h-3 text-[#C5A880]" />
+                  <ArrowRight className="w-3 h-3 text-[#EFC89C]" />
                   <span>Fisioterapia Pélvica</span>
                 </Link>
               </li>
               <li>
-                <Link href="/tratamentos/fasciaterapia" className="hover:text-white transition-colors flex items-center gap-1.5">
-                  <ArrowRight className="w-3 h-3 text-[#C5A880]" />
+                <Link href="/tecnicas/fasciaterapia" className="hover:text-white transition-colors flex items-center gap-1.5">
+                  <ArrowRight className="w-3 h-3 text-[#EFC89C]" />
                   <span>Fasciaterapia (Método Danis Bois)</span>
                 </Link>
               </li>
               <li>
                 <Link href="/fotobiomodulacao" className="hover:text-white transition-colors flex items-center gap-1.5">
-                  <ArrowRight className="w-3 h-3 text-[#C5A880]" />
+                  <ArrowRight className="w-3 h-3 text-[#EFC89C]" />
                   <span>Fotobiomodulação Aplicada</span>
                 </Link>
               </li>
@@ -150,66 +150,66 @@ export function Footer() {
 
           {/* Coluna 3: Institucional, Escola & Redes Oficiais */}
           <div className="md:col-span-4 space-y-4">
-            <div className="flex items-center gap-2 text-[#C5A880]">
+            <div className="flex items-center gap-2 text-[#EFC89C]">
               <HeartHandshake className="w-4 h-4" />
               <h4 className="text-xs font-semibold tracking-wider uppercase">
-                Institucional & Conexões
+                Institucional & Redes
               </h4>
             </div>
-            <ul className="space-y-2 text-xs sm:text-sm text-[#C7D9D2]">
+            <ul className="space-y-2 text-xs sm:text-sm text-[#C0D8FF]">
               <li>
                 <Link href="/sobre" className="hover:text-white transition-colors flex items-center gap-1.5">
-                  <ArrowRight className="w-3 h-3 text-[#C5A880]" />
+                  <ArrowRight className="w-3 h-3 text-[#EFC89C]" />
                   <span>Sobre Lucy Mie Aihara</span>
                 </Link>
               </li>
               <li>
                 <Link href="/escola" className="hover:text-white transition-colors flex items-center gap-1.5">
-                  <ArrowRight className="w-3 h-3 text-[#C5A880]" />
+                  <ArrowRight className="w-3 h-3 text-[#EFC89C]" />
                   <span>Escola de Fasciaterapia e Movimento</span>
                 </Link>
               </li>
               <li>
                 <Link href="/escola/cursos" className="hover:text-white transition-colors flex items-center gap-1.5">
-                  <ArrowRight className="w-3 h-3 text-[#C5A880]" />
+                  <ArrowRight className="w-3 h-3 text-[#EFC89C]" />
                   <span>Formações e Cursos Profissionais</span>
                 </Link>
               </li>
               <li>
                 <Link href="/campanhas" className="hover:text-white transition-colors flex items-center gap-1.5">
-                  <ArrowRight className="w-3 h-3 text-[#C5A880]" />
+                  <ArrowRight className="w-3 h-3 text-[#EFC89C]" />
                   <span>Campanhas de Saúde & Prevenção</span>
                 </Link>
               </li>
               <li>
                 <Link href="/novembro-azul" className="hover:text-white transition-colors flex items-center gap-1.5">
-                  <ArrowRight className="w-3 h-3 text-[#C5A880]" />
-                  <span>Especial Novembro Azul 2026</span>
+                  <ArrowRight className="w-3 h-3 text-[#EFC89C]" />
+                  <span>Especial Novembro Azul 2026 (Campanha)</span>
                 </Link>
               </li>
               <li>
                 <Link href="/conhecimento" className="hover:text-white transition-colors flex items-center gap-1.5">
-                  <ArrowRight className="w-3 h-3 text-[#C5A880]" />
+                  <ArrowRight className="w-3 h-3 text-[#EFC89C]" />
                   <span>Central de Conhecimento Científico</span>
                 </Link>
               </li>
               <li>
                 <Link href="/contato" className="hover:text-white transition-colors flex items-center gap-1.5">
-                  <ArrowRight className="w-3 h-3 text-[#C5A880]" />
-                  <span>Contato e Agendamentos</span>
+                  <ArrowRight className="w-3 h-3 text-[#EFC89C]" />
+                  <span>Contato e Localização</span>
                 </Link>
               </li>
               <li>
                 <Link href="/politica-de-privacidade" className="hover:text-white transition-colors flex items-center gap-1.5">
-                  <ArrowRight className="w-3 h-3 text-[#C5A880]" />
+                  <ArrowRight className="w-3 h-3 text-[#EFC89C]" />
                   <span>Política de Privacidade (LGPD)</span>
                 </Link>
               </li>
             </ul>
 
-            {/* Redes Sociais Oficiais Confirmadas */}
-            <div className="pt-4 border-t border-white/10 space-y-2">
-              <span className="text-[11px] uppercase font-semibold text-[#C5A880] tracking-wider block">
+            {/* Redes Sociais Oficiais */}
+            <div className="pt-4 border-t border-white/15 space-y-2">
+              <span className="text-[11px] uppercase font-semibold text-[#EFC89C] tracking-wider block">
                 Redes Sociais Oficiais
               </span>
               <div className="flex flex-wrap items-center gap-2">
@@ -217,7 +217,7 @@ export function Footer() {
                   href={CONTACT_CHANNELS.social.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-[#C7D9D2] hover:text-[#C5A880] transition-colors border border-white/10"
+                  className="p-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-[#C0D8FF] hover:text-white transition-colors border border-white/10"
                   aria-label="Instagram Oficial de Lucy Aihara"
                 >
                   <SocialIcon name="instagram" className="w-4 h-4" />
@@ -226,7 +226,7 @@ export function Footer() {
                   href={CONTACT_CHANNELS.social.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-[#C7D9D2] hover:text-[#C5A880] transition-colors border border-white/10"
+                  className="p-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-[#C0D8FF] hover:text-white transition-colors border border-white/10"
                   aria-label="Facebook Oficial de Lucy Aihara"
                 >
                   <SocialIcon name="facebook" className="w-4 h-4" />
@@ -235,7 +235,7 @@ export function Footer() {
                   href={CONTACT_CHANNELS.social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-[#C7D9D2] hover:text-[#C5A880] transition-colors border border-white/10"
+                  className="p-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-[#C0D8FF] hover:text-white transition-colors border border-white/10"
                   aria-label="LinkedIn Oficial de Lucy Aihara"
                 >
                   <SocialIcon name="linkedin" className="w-4 h-4" />
@@ -244,7 +244,7 @@ export function Footer() {
                   href={CONTACT_CHANNELS.social.youtube}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-[#C7D9D2] hover:text-[#C5A880] transition-colors border border-white/10"
+                  className="p-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-[#C0D8FF] hover:text-white transition-colors border border-white/10"
                   aria-label="YouTube Oficial de Lucy Aihara"
                 >
                   <SocialIcon name="youtube" className="w-4 h-4" />
@@ -255,12 +255,12 @@ export function Footer() {
         </div>
 
         {/* Linha Inferior com Aviso Ético em Saúde */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#A2B8AE]">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/70">
           <p>
             © {new Date().getFullYear()} {LUCY_PROFILE.name} • {LUCY_PROFILE.siteTitle}. Todos os direitos reservados.
           </p>
-          <p className="text-[11px] text-center md:text-right max-w-xl">
-            Aviso legal: O conteúdo disponibilizado possui finalidade informativa e educativa. Os procedimentos fisioterapêuticos e somáticos atuam como suporte e recuperação funcional complementar, sem substituir o acompanhamento médico individualizado.
+          <p className="text-[11px] text-center md:text-right max-w-xl text-[#C0D8FF]/80">
+            Aviso legal: O conteúdo disponibilizado possui finalidade informativa e educativa. As condutas fisioterapêuticas atuam como suporte e recuperação funcional complementar, sem substituir o acompanhamento médico individualizado.
           </p>
         </div>
       </div>

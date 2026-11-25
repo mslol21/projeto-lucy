@@ -48,7 +48,7 @@ export default function SobrePage() {
       <Header />
 
       {/* Breadcrumbs */}
-      <div className="bg-white/80 border-b border-[#E8E2D9]">
+      <div className="bg-white/80 border-b border-[#EADBC8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
           <Breadcrumbs items={[{ label: "Sobre Lucy Aihara" }]} />
         </div>
@@ -56,24 +56,24 @@ export default function SobrePage() {
 
       <main className="flex-1">
         {/* Hero da Página Sobre */}
-        <section className="py-14 sm:py-20 bg-gradient-to-b from-[#FAF8F5] via-[#F4EFEA] to-[#FAF8F5] border-b border-[#E8E2D9]">
+        <section className="py-14 sm:py-20 bg-gradient-to-b from-[#FAF7F2] via-[#FFFFFF] to-[#FAF7F2] border-b border-[#EADBC8]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-7 space-y-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#183B2B]/10 text-[#183B2B] text-xs font-semibold tracking-wider uppercase border border-[#183B2B]/15">
-                  <Award className="w-3.5 h-3.5 text-[#C5A880]" />
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C0D8FF]/30 text-[#065176] text-xs font-semibold tracking-wider uppercase border border-[#5C88C5]/30">
+                  <Award className="w-3.5 h-3.5 text-[#065176]" />
                   <span>Trajetória & Filosofia Clínica</span>
                 </div>
 
-                <h1 className="font-serif text-3xl sm:text-5xl text-[#1A2421] font-normal tracking-tight leading-tight">
+                <h1 className="font-serif text-3xl sm:text-5xl text-[#065176] font-normal tracking-tight leading-tight">
                   Lucy Aihara
                 </h1>
 
-                <p className="text-lg sm:text-xl text-[#183B2B] font-serif italic">
+                <p className="text-lg sm:text-xl text-[#845924] font-serif italic">
                   {LUCY_PROFILE.professionalTitle}
                 </p>
 
-                <p className="text-base text-[#4A5568] leading-relaxed font-sans">
+                <p className="text-base text-neutral-600 leading-relaxed font-sans">
                   {LUCY_PROFILE.shortBio}
                 </p>
 
@@ -82,24 +82,24 @@ export default function SobrePage() {
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#183B2B] hover:bg-[#122c20] text-white font-medium text-xs sm:text-sm shadow-xs transition-colors"
+                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#065176] hover:bg-[#054362] text-white font-medium text-xs sm:text-sm shadow-xs transition-colors"
                   >
-                    <MessageCircle className="w-4 h-4 text-[#C5A880]" />
+                    <MessageCircle className="w-4 h-4 text-[#EFC89C]" />
                     <span>Agendar Consulta de Avaliação</span>
                   </a>
 
                   <Link
                     href="/tratamentos"
-                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-stone-50 border border-[#D5CDC2] text-[#1A2421] font-medium text-xs sm:text-sm transition-colors"
+                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-neutral-50 border border-[#EADBC8] text-[#065176] font-medium text-xs sm:text-sm transition-colors"
                   >
                     <span>Conhecer Abordagens</span>
-                    <ArrowRight className="w-4 h-4 text-[#4A6B5D]" />
+                    <ArrowRight className="w-4 h-4 text-[#5C88C5]" />
                   </Link>
                 </div>
               </div>
 
               <div className="lg:col-span-5 flex justify-center">
-                <div className="relative w-full max-w-sm rounded-3xl overflow-hidden border border-[#E2DBD0] shadow-lg bg-white">
+                <div className="relative w-full max-w-sm rounded-3xl overflow-hidden border border-[#EADBC8] shadow-lg bg-white">
                   <Image
                     src="/images/lucy-aihara-hcfmusp.jpg"
                     alt="Lucy Aihara no Hospital das Clínicas da FMUSP"
@@ -108,7 +108,7 @@ export default function SobrePage() {
                     priority
                     className="w-full h-auto object-cover"
                   />
-                  <div className="p-4 bg-[#183B2B] text-white text-xs text-center">
+                  <div className="p-4 bg-[#065176] text-white text-xs text-center font-medium">
                     Lucy Aihara • Registro profissional e sólida formação acadêmica
                   </div>
                 </div>
@@ -118,13 +118,13 @@ export default function SobrePage() {
         </section>
 
         {/* Biografia Detalhada e Centros de Referência */}
-        <section className="py-16 sm:py-24 bg-white border-b border-[#E8E2D9]">
+        <section className="py-16 sm:py-24 bg-white border-b border-[#EADBC8]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             <div>
-              <h2 className="font-serif text-2xl sm:text-3xl text-[#1A2421] font-normal mb-6">
+              <h2 className="font-serif text-2xl sm:text-3xl text-[#065176] font-normal mb-6">
                 A união entre o rigor biomecânico e a percepção somática
               </h2>
-              <div className="space-y-4 text-base text-[#4A5568] leading-relaxed">
+              <div className="space-y-4 text-base text-neutral-600 leading-relaxed">
                 {LUCY_PROFILE.fullBio.map((paragraph, idx) => (
                   <p key={idx}>{paragraph}</p>
                 ))}
@@ -132,31 +132,31 @@ export default function SobrePage() {
             </div>
 
             {/* Credenciais e Marcos Formativos */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-[#F0EBE1]">
-              <div className="p-6 rounded-2xl bg-[#FAF8F5] border border-[#E2DBD0] space-y-3">
-                <h3 className="font-serif text-lg text-[#1A2421] flex items-center gap-2">
-                  <Building2 className="w-5 h-5 text-[#C5A880]" />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-[#EADBC8]/60">
+              <div className="p-6 rounded-2xl bg-[#FAF7F2] border border-[#EADBC8] space-y-3">
+                <h3 className="font-serif text-lg text-[#065176] flex items-center gap-2">
+                  <Building2 className="w-5 h-5 text-[#845924]" />
                   <span>Experiência Hospitalar</span>
                 </h3>
-                <ul className="space-y-2 text-sm text-[#556370]">
+                <ul className="space-y-2 text-sm text-neutral-600">
                   {LUCY_PROFILE.credentials.hospitalExperience.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#4A6B5D] mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-[#5C88C5] mt-0.5 flex-shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="p-6 rounded-2xl bg-[#FAF8F5] border border-[#E2DBD0] space-y-3">
-                <h3 className="font-serif text-lg text-[#1A2421] flex items-center gap-2">
-                  <GraduationCap className="w-5 h-5 text-[#C5A880]" />
+              <div className="p-6 rounded-2xl bg-[#FAF7F2] border border-[#EADBC8] space-y-3">
+                <h3 className="font-serif text-lg text-[#065176] flex items-center gap-2">
+                  <GraduationCap className="w-5 h-5 text-[#845924]" />
                   <span>Especializações e Métodos</span>
                 </h3>
-                <ul className="space-y-2 text-sm text-[#556370]">
+                <ul className="space-y-2 text-sm text-neutral-600">
                   {LUCY_PROFILE.credentials.specializations.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#4A6B5D] mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-[#5C88C5] mt-0.5 flex-shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -166,10 +166,10 @@ export default function SobrePage() {
 
             {/* Pilares da Abordagem de Cuidado */}
             <div className="pt-8">
-              <h2 className="font-serif text-2xl sm:text-3xl text-[#1A2421] font-normal mb-4">
+              <h2 className="font-serif text-2xl sm:text-3xl text-[#065176] font-normal mb-4">
                 Como Lucy Aihara conduz cada atendimento
               </h2>
-              <p className="text-base text-[#556370] mb-8">
+              <p className="text-base text-neutral-600 mb-8">
                 {LUCY_PROFILE.approach.description}
               </p>
 
@@ -177,12 +177,12 @@ export default function SobrePage() {
                 {LUCY_PROFILE.approach.pillars.map((pillar, idx) => (
                   <div
                     key={idx}
-                    className="p-5 rounded-2xl bg-[#FAF8F5] border border-[#E2DBD0] space-y-2"
+                    className="p-5 rounded-2xl bg-[#FAF7F2] border border-[#EADBC8] space-y-2"
                   >
-                    <h3 className="font-serif text-base text-[#183B2B] font-semibold">
+                    <h3 className="font-serif text-base text-[#065176] font-semibold">
                       {pillar.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-[#556370] leading-relaxed">
+                    <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
                       {pillar.description}
                     </p>
                   </div>
@@ -193,12 +193,12 @@ export default function SobrePage() {
         </section>
 
         {/* Localização e Atendimento */}
-        <section className="py-14 sm:py-20 bg-[#FAF8F5]">
+        <section className="py-14 sm:py-20 bg-[#FAF7F2]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-            <h2 className="font-serif text-2xl sm:text-3xl text-[#1A2421] font-normal">
+            <h2 className="font-serif text-2xl sm:text-3xl text-[#065176] font-normal">
               Atendimento em Consultório Individual
             </h2>
-            <p className="text-base text-[#556370] max-w-2xl mx-auto">
+            <p className="text-base text-neutral-600 max-w-2xl mx-auto">
               {CLINIC_LOCATION.fullAddress} • {CLINIC_LOCATION.metroReference}
             </p>
             <div className="pt-2">
@@ -206,7 +206,7 @@ export default function SobrePage() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#25D366] hover:bg-[#1ebd5a] text-[#073322] font-semibold text-sm sm:text-base shadow-sm transition-transform active:scale-95"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#25D366] hover:bg-[#1ebd5a] text-[#065176] font-bold text-sm sm:text-base shadow-sm transition-transform active:scale-95"
               >
                 <MessageCircle className="w-5 h-5 fill-current" />
                 <span>Agendar Avaliação pelo WhatsApp</span>

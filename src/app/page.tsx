@@ -157,14 +157,14 @@ export default function HomePage() {
         {/* 7. Depoimentos Autorizados de Pacientes */}
         <TestimonialsPreviewSection />
 
-        {/* 8. Central de Conhecimento Científico */}
-        <KnowledgeArticlesSection />
-
-        {/* 9. Apresentação da Escola de Fasciaterapia e Movimento */}
+        {/* 8. Apresentação da Escola de Fasciaterapia e Movimento */}
         <SchoolPreviewSection />
 
-        {/* 10. Campanhas de Saúde e Conscientização (Novembro Azul isolado) */}
+        {/* 9. Campanhas de Saúde e Conscientização (Novembro Azul isolado) */}
         <CampaignsHighlightSection />
+
+        {/* 10. Central de Conhecimento Científico */}
+        <KnowledgeArticlesSection />
 
         {/* 11. FAQ Institucional com AEO / Respostas Canônicas */}
         <InstitutionalFaqSection />
@@ -172,10 +172,11 @@ export default function HomePage() {
         {/* 12. Localização, Horários Oficiais e Acessos */}
         <LocationSection />
 
-        {/* 13. CTA Final para Agendamento via WhatsApp */}
+        {/* CTA de Fechamento Integrado à Localização e Agendamento */}
         <InstitutionalFinalCta />
       </main>
 
+      {/* 13. Footer Institucional Completo */}
       <Footer />
     </div>
   );

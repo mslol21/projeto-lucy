@@ -147,8 +147,8 @@ export const LUCY_PROFILE: InstitutionalProfile = {
   professionalName: "Lucy Aihara",
   professionalTitle: "Fisioterapeuta e Educadora Física • Especialista no Cuidado da Dor e Movimento",
   siteTitle: "Lucy Aihara — Fisioterapia, Dor e Movimento",
-  headlineH1: "Fisioterapia para o cuidado da dor e recuperação do movimento na Consolação",
-  headlineEditorial: "Cuidado com a dor. Liberdade para o movimento.",
+  headlineH1: "Fisioterapia para o cuidado da dor e recuperação do movimento na Consolação, São Paulo.",
+  headlineEditorial: "Cuidado com a dor. Novas possibilidades de movimento.",
   experienceYears: "Mais de 20 anos de experiência clínica",
   shortBio:
     "Com mais de duas décadas de prática dedicada e formação multidisciplinar em Fisioterapia e Educação Física, Lucy Mie Aihara combina experiência em hospitais de excelência (InCor e HCFMUSP) à sensibilidade da Fasciaterapia e reabilitação funcional para cuidar de pacientes com dores agudas e crônicas.",

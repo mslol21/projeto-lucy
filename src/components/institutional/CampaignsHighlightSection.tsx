@@ -1,21 +1,21 @@
 import Link from "next/link";
-import { ArrowRight, HeartHandshake, Sparkles, CheckCircle2 } from "lucide-react";
+import { ArrowRight, HeartHandshake, CheckCircle2 } from "lucide-react";
 import { CAMPAIGNS_HUB } from "@/data/institutional-data";
 
 export function CampaignsHighlightSection() {
   return (
-    <section className="py-16 sm:py-24 bg-[#F4EFEA] border-b border-[#E8E2D9]">
+    <section className="py-16 sm:py-24 bg-[#FFFFFF] border-b border-[#EADBC8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-4">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#183B2B]/10 text-[#183B2B] text-xs font-semibold tracking-wider uppercase mb-3 border border-[#183B2B]/15">
-              <HeartHandshake className="w-3.5 h-3.5 text-[#4A6B5D]" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C0D8FF]/30 text-[#065176] text-xs font-semibold tracking-wider uppercase mb-3 border border-[#5C88C5]/30">
+              <HeartHandshake className="w-3.5 h-3.5 text-[#065176]" />
               <span>Campanhas de Saúde & Conscientização</span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl text-[#1A2421] font-normal tracking-tight">
+            <h2 className="font-serif text-3xl sm:text-4xl text-[#065176] font-normal tracking-tight">
               Informação de qualidade também é uma forma de cuidar.
             </h2>
-            <p className="mt-3.5 text-base sm:text-lg text-[#556370] leading-relaxed">
+            <p className="mt-3.5 text-base sm:text-lg text-neutral-600 leading-relaxed">
               Iniciativas dedicadas a aproximar a comunidade de temas essenciais como prevenção,
               cuidado somático no diabetes e valorização da saúde integral.
             </p>
@@ -23,7 +23,7 @@ export function CampaignsHighlightSection() {
 
           <Link
             href="/campanhas"
-            className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#183B2B] hover:text-[#25523D] transition-colors"
+            className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#065176] hover:text-[#5C88C5] transition-colors"
           >
             <span>Ver todas as campanhas</span>
             <ArrowRight className="w-4 h-4" />
@@ -37,8 +37,8 @@ export function CampaignsHighlightSection() {
               key={camp.id}
               className={`flex flex-col justify-between rounded-2xl border p-7 sm:p-8 transition-all ${
                 camp.id === "novembro-azul-2026"
-                  ? "bg-gradient-to-br from-[#17385B] to-[#1E4A78] text-white border-[#84B7CE]/30 shadow-md"
-                  : "bg-white text-[#1A2421] border-[#E2DBD0] shadow-xs"
+                  ? "bg-gradient-to-br from-[#065176] to-[#103E58] text-white border-[#5C88C5]/30 shadow-md"
+                  : "bg-white text-neutral-900 border-[#EADBC8] shadow-xs"
               }`}
             >
               <div>
@@ -46,8 +46,8 @@ export function CampaignsHighlightSection() {
                   <span
                     className={`text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full ${
                       camp.id === "novembro-azul-2026"
-                        ? "bg-[#84B7CE]/20 text-[#84B7CE] border border-[#84B7CE]/40"
-                        : "bg-[#FAF8F5] text-[#183B2B] border border-[#E8E2D9]"
+                        ? "bg-[#C0D8FF]/20 text-[#C0D8FF] border border-[#C0D8FF]/40"
+                        : "bg-[#FAF7F2] text-[#065176] border border-[#EADBC8]"
                     }`}
                   >
                     {camp.badge} • {camp.period}
@@ -56,7 +56,7 @@ export function CampaignsHighlightSection() {
 
                 <h3
                   className={`font-serif text-2xl sm:text-3xl font-normal leading-snug ${
-                    camp.id === "novembro-azul-2026" ? "text-white" : "text-[#1A2421]"
+                    camp.id === "novembro-azul-2026" ? "text-white" : "text-[#065176]"
                   }`}
                 >
                   {camp.title}
@@ -64,7 +64,7 @@ export function CampaignsHighlightSection() {
 
                 <p
                   className={`mt-2 text-xs sm:text-sm font-medium ${
-                    camp.id === "novembro-azul-2026" ? "text-[#C7D9D2]" : "text-[#183B2B]"
+                    camp.id === "novembro-azul-2026" ? "text-[#EFC89C]" : "text-[#845924]"
                   }`}
                 >
                   {camp.subtitle}
@@ -72,7 +72,7 @@ export function CampaignsHighlightSection() {
 
                 <p
                   className={`mt-4 text-xs sm:text-sm leading-relaxed ${
-                    camp.id === "novembro-azul-2026" ? "text-blue-100" : "text-[#556370]"
+                    camp.id === "novembro-azul-2026" ? "text-blue-100" : "text-neutral-600"
                   }`}
                 >
                   {camp.summary}
@@ -84,12 +84,12 @@ export function CampaignsHighlightSection() {
                     <div
                       key={idx}
                       className={`flex items-start gap-2 text-xs ${
-                        camp.id === "novembro-azul-2026" ? "text-[#C7D9D2]" : "text-[#556370]"
+                        camp.id === "novembro-azul-2026" ? "text-[#C0D8FF]" : "text-neutral-600"
                       }`}
                     >
                       <CheckCircle2
                         className={`w-3.5 h-3.5 mt-0.5 flex-shrink-0 ${
-                          camp.id === "novembro-azul-2026" ? "text-[#84B7CE]" : "text-[#4A6B5D]"
+                          camp.id === "novembro-azul-2026" ? "text-[#EFC89C]" : "text-[#5C88C5]"
                         }`}
                       />
                       <span>{item}</span>
@@ -103,8 +103,8 @@ export function CampaignsHighlightSection() {
                   href={camp.href}
                   className={`inline-flex items-center justify-center gap-2 w-full py-3.5 px-5 rounded-xl font-semibold text-xs sm:text-sm transition-all text-center ${
                     camp.id === "novembro-azul-2026"
-                      ? "bg-[#25D366] hover:bg-[#1ebd5a] text-[#073322] shadow-sm"
-                      : "bg-[#183B2B] hover:bg-[#122c20] text-white"
+                      ? "bg-[#5C88C5] hover:bg-[#4b77b2] text-white shadow-sm"
+                      : "bg-[#065176] hover:bg-[#054362] text-white"
                   }`}
                 >
                   <span>Acessar Espaço da Campanha</span>

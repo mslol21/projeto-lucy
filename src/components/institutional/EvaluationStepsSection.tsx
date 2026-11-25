@@ -32,17 +32,17 @@ export function EvaluationStepsSection() {
   ];
 
   return (
-    <section className="py-16 sm:py-24 bg-[#F4EFEA] border-b border-[#E8E2D9]">
+    <section className="py-16 sm:py-24 bg-[#FAF7F2] border-b border-[#EADBC8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#183B2B]/10 text-[#183B2B] text-xs font-semibold tracking-wider uppercase mb-3 border border-[#183B2B]/15">
-            <Clock className="w-3.5 h-3.5 text-[#4A6B5D]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C0D8FF]/30 text-[#065176] text-xs font-semibold tracking-wider uppercase mb-3 border border-[#5C88C5]/30">
+            <Clock className="w-3.5 h-3.5 text-[#065176]" />
             <span>Primeira Consulta</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl text-[#1A2421] font-normal tracking-tight">
+          <h2 className="font-serif text-3xl sm:text-4xl text-[#065176] font-normal tracking-tight">
             Como funciona a sua avaliação fisioterapêutica?
           </h2>
-          <p className="mt-3.5 text-base sm:text-lg text-[#556370] leading-relaxed">
+          <p className="mt-3.5 text-base sm:text-lg text-neutral-600 leading-relaxed">
             Sessão individual de 50 minutos centrada no paciente, sem pressa e com escuta integral.
           </p>
         </div>
@@ -51,16 +51,16 @@ export function EvaluationStepsSection() {
           {steps.map((item, idx) => (
             <div
               key={idx}
-              className="p-6 sm:p-7 rounded-2xl bg-white border border-[#E2DBD0] shadow-xs flex flex-col justify-between"
+              className="p-6 sm:p-7 rounded-2xl bg-white border border-[#EADBC8] shadow-xs flex flex-col justify-between"
             >
               <div>
-                <span className="font-serif text-3xl text-[#C5A880] font-normal block mb-3">
+                <span className="font-serif text-3xl text-[#845924] font-normal block mb-3">
                   {item.step}
                 </span>
-                <h3 className="font-serif text-lg text-[#1A2421] font-semibold mb-2">
+                <h3 className="font-serif text-lg text-[#065176] font-semibold mb-2">
                   {item.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-[#556370] leading-relaxed">
+                <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
                   {item.description}
                 </p>
               </div>
@@ -68,12 +68,12 @@ export function EvaluationStepsSection() {
           ))}
         </div>
 
-        <div className="mt-12 p-6 rounded-2xl bg-white border border-[#E2DBD0] flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xs">
+        <div className="mt-12 p-6 rounded-2xl bg-white border border-[#EADBC8] flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xs">
           <div className="space-y-1 text-center sm:text-left">
-            <h4 className="font-serif text-lg text-[#1A2421]">
+            <h4 className="font-serif text-lg text-[#065176]">
               Pronto para iniciar o cuidado da sua dor?
             </h4>
-            <p className="text-xs sm:text-sm text-[#718096]">
+            <p className="text-xs sm:text-sm text-neutral-600">
               Atendimentos de segunda a sexta, das 8h às 12h e das 14h às 18h, na Rua Sergipe, 475.
             </p>
           </div>
@@ -81,7 +81,7 @@ export function EvaluationStepsSection() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1ebd5a] text-[#073322] font-semibold text-xs sm:text-sm shadow-xs transition-transform active:scale-95 flex-shrink-0"
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1ebd5a] text-[#065176] font-bold text-xs sm:text-sm shadow-xs transition-transform active:scale-95 flex-shrink-0"
           >
             <MessageCircle className="w-4 h-4 fill-current" />
             <span>Solicitar Horário no WhatsApp</span>

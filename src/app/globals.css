@@ -1,24 +1,43 @@
 @import "tailwindcss";
 
 @theme {
-  --color-deep-blue: #17385B;
-  --color-deep-blue-hover: #10263f;
-  --color-soft-blue: #84B7CE;
-  --color-soft-blue-light: #d6e8f1;
-  --color-ivory: #F5F2EB;
-  --color-ivory-light: #fbf9f5;
-  --color-sage: #C7D9D2;
-  --color-sage-light: #e6eee9;
-  --color-sage-dark: #587970;
-  
-  --font-serif: var(--font-lora), Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-sans: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* PALETA OFICIAL — MANUAL DA MARCA LUCY AIHARA */
+  --color-brand-blue-main: #5C88C5;      /* Azul principal */
+  --color-brand-blue-light: #C0D8FF;     /* Azul claro */
+  --color-brand-brown: #845924;          /* Marrom */
+  --color-brand-sand: #EFC89C;           /* Areia */
+  --color-brand-blue-deep: #065176;      /* Azul profundo */
+  --color-brand-white: #FFFFFF;
+  --color-brand-black: #1A1A1A;
+
+  /* Aliases para compatibilidade e semântica */
+  --color-primary: #5C88C5;
+  --color-primary-deep: #065176;
+  --color-accent-brown: #845924;
+  --color-accent-sand: #EFC89C;
+  --color-accent-light: #C0D8FF;
+
+  /* Tipografia Oficial: Cartis Beautyful (Display/Títulos) e Franklin Gothic Book (Texto/Apoio) */
+  --font-cartis: var(--font-cartis-beautyful), var(--font-lora), Georgia, serif;
+  --font-franklin: var(--font-franklin-gothic), var(--font-inter), "Franklin Gothic Book", "Franklin Gothic", Arial, sans-serif;
+  --font-serif: var(--font-cartis);
+  --font-sans: var(--font-franklin);
 }
 
 :root {
-  --bg-primary: #F5F2EB;
-  --text-primary: #17385B;
-  --text-muted: #415A77;
+  --color-brand-blue-main: #5C88C5;
+  --color-brand-blue-light: #C0D8FF;
+  --color-brand-brown: #845924;
+  --color-brand-sand: #EFC89C;
+  --color-brand-blue-deep: #065176;
+  
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #FAF7F2;
+  --bg-sand-soft: #FBF6EF;
+  --text-primary: #1A1A1A;
+  --text-deep: #065176;
+  --text-muted: #4A5B6D;
+  --border-subtle: #EADBC8;
 }
 
 html {
@@ -42,8 +61,8 @@ html {
 }
 
 body {
-  background-color: #F5F2EB;
-  color: #17385B;
+  background-color: #FFFFFF;
+  color: #1A1A1A;
   font-family: var(--font-sans);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
@@ -51,111 +70,43 @@ body {
   line-height: 1.6;
 }
 
-/* Foco acessível */
+/* Foco acessível WCAG 2.2 AA */
 :focus-visible {
-  outline: 3px solid #17385B;
+  outline: 3px solid #065176;
   outline-offset: 3px;
 }
 
-/* Utilitário para títulos Lora */
+/* Tipografia de Destaque */
 .font-display {
   font-family: var(--font-serif);
 }
 
-/* Seleção de texto suave */
+/* Seleção de texto oficial */
 ::selection {
-  background-color: #84B7CE;
-  color: #17385B;
+  background-color: #C0D8FF;
+  color: #065176;
 }
 
-/* Scrollbar sutil */
+/* Scrollbar com a paleta oficial */
 ::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #F5F2EB;
+  background: #FAF7F2;
 }
 ::-webkit-scrollbar-thumb {
-  background: #C7D9D2;
+  background: #5C88C5;
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #84B7CE;
+  background: #065176;
 }
 
-/* Detalhes editoriais de Novembro Azul: nenhum efeito impede a leitura. */
-.november-reading-progress {
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: #367eaf;
-  transform: scaleX(0);
-  transform-origin: left center;
-  pointer-events: none;
+/* Curvas orgânicas e padrões sutis do manual */
+.brand-organic-curve {
+  border-radius: 28px 12px 28px 12px;
 }
 
-.november-date-accent {
-  transform: scaleX(0.12);
-  transition: transform 450ms ease;
-}
-
-.group:hover > .november-date-accent,
-.group:focus-within > .november-date-accent {
-  transform: scaleX(1);
-}
-
-@supports (animation-timeline: scroll()) {
-  .november-reading-progress {
-    animation: november-reading linear both;
-    animation-timeline: scroll(root block);
-  }
-}
-
-@keyframes november-reading {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .november-reading-progress { animation: none !important; transform: scaleX(0); }
-  .november-date-accent { transition: none !important; }
-}
-
-/* Acolhimento editorial: linhas confortáveis e leitura com menos carga visual. */
-.reader-friendly {
-  font-kerning: normal;
-  overflow-wrap: break-word;
-}
-.reader-friendly p {
-  text-wrap: pretty;
-}
-.reader-friendly :is(#diabetes, #saude-masculina, #historia, #fascia-cuidado, #metodo) p {
-  line-height: 1.8;
-}
-.reader-friendly :is(#diabetes, #saude-masculina) p.text-xs {
-  font-size: 0.875rem;
-  line-height: 1.75;
-}
-.reader-friendly :is(#diabetes, #saude-masculina) li.text-xs,
-.reader-friendly :is(#diabetes, #saude-masculina) li p.text-xs {
-  font-size: 0.875rem;
-  line-height: 1.7;
-}
-.reader-friendly :is(#diabetes, #saude-masculina) :is(p, li) {
-  hyphens: auto;
-}
-.reader-friendly section[id] {
-  scroll-margin-top: 6rem;
-}
-@media (min-width: 1024px) {
-  .reader-friendly :is(#diabetes, #saude-masculina) > div {
-    max-width: 72rem;
-  }
-}
-@media (max-width: 639px) {
-  .reader-friendly :is(#diabetes, #saude-masculina) .rounded-3xl {
-    border-radius: 1.15rem;
-  }
+.brand-hero-frame {
+  border-radius: 36px 16px 36px 16px;
 }
