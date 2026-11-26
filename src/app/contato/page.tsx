@@ -20,7 +20,7 @@ import { CLINIC_LOCATION, CONTACT_CHANNELS, LUCY_PROFILE, getWhatsAppLink } from
 export const metadata: Metadata = {
   title: "Contato e Agendamentos | Lucy Aihara — Fisioterapia na Consolação, SP",
   description:
-    "Agende sua avaliação fisioterapêutica com Lucy Mie Aihara na Consolação / Higienópolis. Telefones: (11) 99998-6082 e (11) 99649-6082. Atendimento de seg a sex das 8h às 12h e 14h às 18h.",
+    "Agende sua avaliação fisioterapêutica com Lucy Mie Aihara na Consolação / Higienópolis. Telefones: (11) 99649-6082 e (11) 99998-6082. Atendimento de seg a sex das 8h às 12h e 14h às 18h.",
   alternates: {
     canonical: "/contato",
   },

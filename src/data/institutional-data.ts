@@ -253,12 +253,12 @@ export const CLINIC_LOCATION: ClinicLocation = {
 };
 
 export const CONTACT_CHANNELS: ContactChannels = {
-  whatsappDisplay: "(11) 99998-6082",
-  whatsappRaw: "5511999986082",
-  phoneMainDisplay: "(11) 99998-6082",
-  phoneMainRaw: "5511999986082",
-  phoneSecondaryDisplay: "(11) 99649-6082",
-  phoneSecondaryRaw: "5511996496082",
+  whatsappDisplay: "(11) 99649-6082",
+  whatsappRaw: "5511996496082",
+  phoneMainDisplay: "(11) 99649-6082",
+  phoneMainRaw: "5511996496082",
+  phoneSecondaryDisplay: "(11) 99998-6082",
+  phoneSecondaryRaw: "5511999986082",
   email: "contato@escoladefasciaterapiaemovimento.com",
   social: {
     instagram: "https://www.instagram.com/fasciaterapia.fasciavocemesmo",
@@ -973,7 +973,7 @@ export const INSTITUTIONAL_FAQS = [
   {
     question: "Como agendar um horário no consultório?",
     answer:
-      "Os agendamentos são realizados diretamente pelo WhatsApp oficial no número (11) 99998-6082 ou pelo telefone secundário (11) 99649-6082. Nossa equipe responderá informando os horários disponíveis e as orientações para sua primeira consulta.",
+      "Os agendamentos são realizados diretamente pelo WhatsApp oficial no número (11) 99649-6082 ou pelo telefone (11) 99998-6082. Nossa equipe responderá informando os horários disponíveis e as orientações para sua primeira consulta.",
   },
 ];
 

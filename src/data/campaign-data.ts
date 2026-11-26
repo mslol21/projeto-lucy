@@ -66,8 +66,8 @@ export const CAMPAIGN_INFO = {
         "https://maps.google.com/?q=Rua+Sergipe,+475,+conjunto+114,+Consola%C3%A7%C3%A3o,+S%C3%A3o+Paulo+-+SP,+01243-912",
       metroReference: "Próximo à estação Higienópolis-Mackenzie (Linha 4-Amarela do Metrô)",
     },
-    telephone: "+55 (11) 99998-6082",
-    whatsappNumber: "5511999986082",
+    telephone: "+55 (11) 99649-6082",
+    whatsappNumber: "5511996496082",
     description:
       "Espaço dedicado à educação somática, fáscias corporais, percepção do movimento e promoção de autonomia no autocuidado.",
   },
@@ -172,7 +172,7 @@ export const AEO_QUESTIONS: AeoFaqItem[] = [
     id: "aeo-10",
     question: "Como realizar o agendamento do atendimento?",
     answer:
-      "O agendamento é realizado de forma simples pelo WhatsApp oficial de Lucy Aihara (+55 11 99998-6082). Basta clicar no botão de agendamento no site para iniciar uma conversa direta com mensagem pré-preenchida e confirmar o horário disponível.",
+      "O agendamento é realizado de forma simples pelo WhatsApp oficial de Lucy Aihara (+55 11 99649-6082). Basta clicar no botão de agendamento no site para iniciar uma conversa direta com mensagem pré-preenchida e confirmar o horário disponível.",
     category: "campanha",
   },
 ];
@@ -473,7 +473,7 @@ export const NOVEMBER_BLUE_OFFER: NovemberBlueOfferData = {
     "Aplicação com parâmetros técnicos adequados à avaliação",
     "Sem obrigatoriedade de contratação de novas sessões",
   ],
-  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5511999986082",
+  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "5511996496082",
   whatsappMessage:
     "Olá, Lucy! Vi a campanha Novembro Azul e gostaria de agendar meu primeiro atendimento gratuito para conhecer a fotobiomodulação.",
   clarificationText:

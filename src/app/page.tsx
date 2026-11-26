@@ -84,7 +84,7 @@ export default function HomePage() {
         "@id": "https://novembroazul.escoladefasciaterapiaemovimento.com/#consultorio",
         name: CLINIC_LOCATION.clinicName,
         image: "https://novembroazul.escoladefasciaterapiaemovimento.com/images/placa-acrilica-consultorio.jpg",
-        telephone: ["+55-11-99998-6082", "+55-11-99649-6082"],
+        telephone: ["+55-11-99649-6082", "+55-11-99998-6082"],
         url: "https://novembroazul.escoladefasciaterapiaemovimento.com",
         address: {
           "@type": "PostalAddress",

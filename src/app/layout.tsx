@@ -116,7 +116,7 @@ export default function RootLayout({
         "@id": `${siteUrl}/#localbusiness`,
         name: "Escola de Fasciaterapia e Movimento — Lucy Aihara",
         url: siteUrl,
-        telephone: "+55-11-99998-6082",
+        telephone: "+55-11-99649-6082",
         priceRange: "$$",
         image: `${siteUrl}/images/logo-horizontal-hd.png`,
         description:
